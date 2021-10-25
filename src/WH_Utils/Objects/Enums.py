@@ -1,7 +1,30 @@
+"""
+This is a simple module that is largly for type safty. It's more lightly documented that
+most of the library because it should be pretty self explanitory. They are just simple
+enum classes for the most part.
+"""
+
 from enum import Enum
 
 
 class UserRank(str, Enum):
+    """Enum for the possible ranks of users
+
+    Simple enum class for the possible ranks a user can have. These are linked to permissions.
+
+    Args
+    ---------
+
+        admin: Highest rank available. Can do literally anything. This should probably only ever be Ethan and McClain.
+
+        analyst: Developed specifically for internal WH employees. They should have the ability to read update and soft delete.
+
+        user: This is the default class for a paying user.
+
+        user_expired: If they were once a user but no longer. Basically a user soft delete.
+
+
+    """
     admin = "admin"
     analyst = "analyst"
     user = "user"
@@ -9,12 +32,32 @@ class UserRank(str, Enum):
 
 
 class Followables(str, Enum):
+    """ All available followable entities
+
+    Args
+    -----
+        company
+        client
+        event
+    """
     company = "company"
     client = "client"
     event = "event"
 
 
 class EventType(str, Enum):
+    """ The possible MIM events.
+
+    Args
+    -----
+        IPO
+        acquisition
+        trust_dis
+        divorce
+        lottery
+        injury
+        other
+    """
     IPO = "IPO"
     acquisition = "acquisition"
     trust_dis = "trust_dis"
@@ -25,6 +68,19 @@ class EventType(str, Enum):
 
 
 class CompanyType(str, Enum):
+    """ Possible stages of company.
+
+    Args
+    ------
+
+        public: a publicly traded company
+        private: a privatly held company
+        state_owned: self explanitory
+        subsidiary_of_public: I honestly don't know
+        sole_proprietor: a small company owned by a single person
+        partnership: like a sole_proprietor but with > 1 person
+
+    """
     public = 'public'
     private = 'private'
     state_owned = 'state_owned'

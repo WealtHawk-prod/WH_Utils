@@ -1,5 +1,36 @@
+"""
+This is an extremly powerful module for interacting with, creating, and modifying and object we
+deal with on a continual basis. This includes: Users, Clients, Companies, and Events. The idea is
+that you will be able to create, pull or construct a new object simply by the way you interact with
+the __init__ methods.
+
+For example, to pull a client from the database you might invoke it like this:
+
+```
+client = Client(WH_ID = "random_letters", auth_dict = auth_header)
+```
+
+While if you wanted to construct a client you could pass a data dict in or even pass
+a coresignal_id or linkedin_url instead:
+
+```
+client = Client(linkedin_url = "https://linkedin.com/mcclain-thiel", auth_dict = coresignal_auth)
+```
+
+Similarly, if you want to push this back to the daatbase, the class will know if this is a POST or PUT request and
+handle everything accordingly.
+
+Additionally, I've added some nice to have debugging features. All these classes are based on the new "Dataclass"
+structure which provides some cool features like pretty printing and automatic hashing. So these classes all
+have fancy printing functions and are all set for hashing stuff.
+
+Previously some of this was handled by the pydantic version called Baseclass. I reworked that
+because I wanted to use the inheritance for other stuff and I don't know how MI works in python.
+
+
+"""
 from datetime import datetime, date
-from typing import Any, Optional
+from typing import Any, Optional, Union, List
 
 from pydantic import Json, HttpUrl
 
@@ -9,9 +40,27 @@ from dataclasses import dataclass
 
 @dataclass
 class BaseModel:
+    """
+    Base model that will handle some common functionality. Shouldn't really be used I
+    just don't want to repeat every line of code.
+    """
 
-    def __init__(self, WH_ID: str = None, auth_header: dict = None):
+    def __init__(self, WH_ID: str = None, auth_header: dict = None, data_dict = None):
+        """
+        verify combonation of variables and call the right function with the right params.
+
+        """
         return
+
+    def _build_from_WH_db(WH_ID: str, auth_header: dict):
+        return
+
+    def _build_from_data_dict(data: dict):
+        return
+
+    def _build_from_coresignal(coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: dict):
+        return
+
 
 @dataclass
 class User(BaseModel):

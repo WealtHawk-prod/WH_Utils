@@ -40,7 +40,9 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Utils" href="utils.html" />
+    <link rel="prev" title="External" href="external.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -85,9 +87,21 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="reference.html#modules">Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="external.html">External</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#module-WH_Utils.Objects.Enums">Enums</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-WH_Utils.Objects.Models">Models</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html">Utils</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributor Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="codeofconduct.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
@@ -140,6 +154,8 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
+          <li><a href="reference.html">Reference</a> &raquo;</li>
+        
       <li>Objects</li>
     
     
@@ -169,33 +185,101 @@
 </div>
 <div class="section" id="module-WH_Utils.Objects.Enums">
 <span id="enums"></span><h2>Enums<a class="headerlink" href="#module-WH_Utils.Objects.Enums" title="Permalink to this headline">¶</a></h2>
+<p>This is a simple module that is largly for type safty. It’s more lightly documented that
+most of the library because it should be pretty self explanitory. They are just simple
+enum classes for the most part.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="WH_Utils.Objects.Enums.CompanyType">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Enums.</span></span><span class="sig-name descname"><span class="pre">CompanyType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Enums.CompanyType" title="Permalink to this definition">¶</a></dt>
-<dd><p>An enumeration.</p>
+<dd><p>Possible stages of company.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>public</strong> (<em>a publicly traded company</em>) – </p></li>
+<li><p><strong>private</strong> (<em>a privatly held company</em>) – </p></li>
+<li><p><strong>state_owned</strong> (<em>self explanitory</em>) – </p></li>
+<li><p><strong>subsidiary_of_public</strong> (<em>I honestly don't know</em>) – </p></li>
+<li><p><strong>sole_proprietor</strong> (<em>a small company owned by a single person</em>) – </p></li>
+<li><p><strong>partnership</strong> (<em>like a sole_proprietor but with &gt; 1 person</em>) – </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="WH_Utils.Objects.Enums.EventType">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Enums.</span></span><span class="sig-name descname"><span class="pre">EventType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Enums.EventType" title="Permalink to this definition">¶</a></dt>
-<dd><p>An enumeration.</p>
+<dd><p>The possible MIM events.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>IPO</strong> – </p></li>
+<li><p><strong>acquisition</strong> – </p></li>
+<li><p><strong>trust_dis</strong> – </p></li>
+<li><p><strong>divorce</strong> – </p></li>
+<li><p><strong>lottery</strong> – </p></li>
+<li><p><strong>injury</strong> – </p></li>
+<li><p><strong>other</strong> – </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="WH_Utils.Objects.Enums.Followables">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Enums.</span></span><span class="sig-name descname"><span class="pre">Followables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Enums.Followables" title="Permalink to this definition">¶</a></dt>
-<dd><p>An enumeration.</p>
+<dd><p>All available followable entities</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>company</strong> – </p></li>
+<li><p><strong>client</strong> – </p></li>
+<li><p><strong>event</strong> – </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="WH_Utils.Objects.Enums.UserRank">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Enums.</span></span><span class="sig-name descname"><span class="pre">UserRank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Enums.UserRank" title="Permalink to this definition">¶</a></dt>
-<dd><p>An enumeration.</p>
+<dd><p>Enum for the possible ranks of users</p>
+<p>Simple enum class for the possible ranks a user can have. These are linked to permissions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>admin</strong> (<em>Highest rank available. Can do literally anything. This should probably only ever be Ethan and McClain.</em>) – </p></li>
+<li><p><strong>analyst</strong> (<em>Developed specifically for internal WH employees. They should have the ability to read update and soft delete.</em>) – </p></li>
+<li><p><strong>user</strong> (<em>This is the default class for a paying user.</em>) – </p></li>
+<li><p><strong>user_expired</strong> (<em>If they were once a user but no longer. Basically a user soft delete.</em>) – </p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
 <div class="section" id="module-WH_Utils.Objects.Models">
 <span id="models"></span><h2>Models<a class="headerlink" href="#module-WH_Utils.Objects.Models" title="Permalink to this headline">¶</a></h2>
+<p>This is an extremly powerful module for interacting with, creating, and modifying and object we
+deal with on a continual basis. This includes: Users, Clients, Companies, and Events. The idea is
+that you will be able to create, pull or construct a new object simply by the way you interact with
+the __init__ methods.</p>
+<p>For example, to pull a client from the database you might invoke it like this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">client</span> <span class="pre">=</span> <span class="pre">Client(WH_ID</span> <span class="pre">=</span> <span class="pre">&quot;random_letters&quot;,</span> <span class="pre">auth_dict</span> <span class="pre">=</span> <span class="pre">auth_header)</span>
+<span class="pre">`</span></code></p>
+<p>While if you wanted to construct a client you could pass a data dict in or even pass
+a coresignal_id or linkedin_url instead:</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">client</span> <span class="pre">=</span> <span class="pre">Client(linkedin_url</span> <span class="pre">=</span> <span class="pre">&quot;https://linkedin.com/mcclain-thiel&quot;,</span> <span class="pre">auth_dict</span> <span class="pre">=</span> <span class="pre">coresignal_auth)</span>
+<span class="pre">`</span></code></p>
+<p>Similarly, if you want to push this back to the daatbase, the class will know if this is a POST or PUT request and
+handle everything accordingly.</p>
+<p>Additionally, I’ve added some nice to have debugging features. All these classes are based on the new “Dataclass”
+structure which provides some cool features like pretty printing and automatic hashing. So these classes all
+have fancy printing functions and are all set for hashing stuff.</p>
+<p>Previously some of this was handled by the pydantic version called Baseclass. I reworked that
+because I wanted to use the inheritance for other stuff and I don’t know how MI works in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="WH_Utils.Objects.Models.AddTaskSchema">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">AddTaskSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">pydantic.types.Json</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.AddTaskSchema" title="Permalink to this definition">¶</a></dt>
@@ -215,7 +299,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="WH_Utils.Objects.Models.BaseModel">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">BaseModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.BaseModel" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">BaseModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.BaseModel" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -360,6 +444,10 @@
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="utils.html" class="btn btn-neutral float-right" title="Utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="external.html" class="btn btn-neutral float-left" title="External" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

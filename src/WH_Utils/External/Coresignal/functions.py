@@ -1,19 +1,37 @@
+"""
+Simple functions for interacting with coresignal in a progromatic way
+"""
+
+
 import pandas as pd
 import requests
 import numpy as np
 import os, sys
 import json
+from pydantic import Json, HttpUrl
+from typing import List
 
 
 
-def get_person_by_id(id_number, auth_dict):
+
+def get_person_by_id(id_number: int, auth_dict: dict) -> dict:
     """
     This function just fetches a person by the id number from coresignal.
-    params:
-        self: its in a class
-        id_number: the coresignal id number. Should be aquired from a coresignal query.
-    returns:
-        person_data (JSON): the full response from coresignal
+
+    Args
+    -------
+
+
+        id_number: int
+            the coresignal id number. Should be aquired from a coresignal query.
+        auth_dict: auth_dict
+            the authorization header. Check here for instructions on how to make this
+
+    Returns
+    ----------
+
+        person_data: dict
+            the full response from coresignal
     """
     url = "https://api.coresignal.com/dbapi/v1/collect/member/{}".format(id_number)
     response = requests.get(url, headers=auth_dict)
@@ -23,13 +41,24 @@ def get_person_by_id(id_number, auth_dict):
     else:
         raise ValueError("Bad Response Code. Response code: {}".format(response.status_code))
 
-def get_person_by_url(linkedin_url, auth_dict):
-    """
-    Returns the coresignal for a person given the persons linkedin URL
-    :param linkedin_url:
-    :type linkedin_url:
-    :return:
-    :rtype:
+def get_person_by_url(linkedin_url: HttpUrl , auth_dict: dict) -> dict:
+    """ Returns the coresignal for a person given the persons linkedin URL
+
+    Args
+    -----
+
+        linkedin_url: HttpUrl
+            the linkedin url of the person you want info on
+
+        auth_dict: auth_dict
+            the authorization header. Check here for instructions on how to make this
+
+    Returns
+    ----------
+
+        person_data: dict
+            the full json style respose of the person from coresignal
+
     """
     if linkedin_url.endswith("/"):
         linkedin_url = linkedin_url[:-1]
@@ -44,13 +73,24 @@ def get_person_by_url(linkedin_url, auth_dict):
 
 
 
-def find_employees_by_work_history(company_url, auth_dict):
+def find_employees_by_work_history(company_url: HttpUrl, auth_dict: dict) -> List[int]:
     """
     Finds a list of employee coresignal id numbers based on where the employees worked.
-    params:
-        company_url: the linkedin_url of the company you want to find past employees of.
-    returns:
-        list of strings where every item is an id number of someone who worked at the target comapny
+
+    Args
+    ------
+
+        company_url: HttpUrl
+            the linkedin_url of the company you want to find past employees of.
+
+        auth_dict: auth_dict
+            the authorization header. Check here for instructions on how to make this
+
+    Returns
+    --------
+
+        person_ids: List[int]
+            list of strings where every item is an id number of someone who worked at the target comapny
     """
     url = "https://api.coresignal.com/dbapi/v1/search/member"
     data = {"experience_company_linkedin_url": company_url}
