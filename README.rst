@@ -1,20 +1,19 @@
 Wh_Utils
 ========
 
-|PyPI| |Status| |Python Version| |License|
 
 |Read the Docs| |Tests| |Codecov|
 
 |pre-commit| |Black|
 
 
-.. |Read the Docs| image:: https://img.shields.io/readthedocs/WH_Utils/latest.svg?label=Read%20the%20Docs
+.. |Read the Docs| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
    :target: https://mcclain-thiel.github.io/WH_Utils/
    :alt: Read the documentation at https://mcclain-thiel.github.io/WH_Utils/
 .. |Tests| image:: https://github.com/McClain-Thiel/WH_Utils/workflows/Tests/badge.svg
    :target: https://github.com/McClain-Thiel/WH_Utils/actions?workflow=Tests
    :alt: Tests
-.. |Codecov| .. image:: https://codecov.io/gh/McClain-Thiel/WH_Utils/branch/master/graph/badge.svg?token=ZJI9YLCSQ9
+.. |Codecov| image:: https://codecov.io/gh/McClain-Thiel/WH_Utils/branch/master/graph/badge.svg?token=ZJI9YLCSQ9
    :target: :target: https://codecov.io/gh/McClain-Thiel/WH_Utils
    :alt: Codecov
 .. |pre-commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
