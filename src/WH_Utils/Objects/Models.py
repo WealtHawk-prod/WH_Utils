@@ -35,35 +35,14 @@ from typing import Any, Optional, Union, List
 from pydantic import Json, HttpUrl
 
 from src.WH_Utils.Objects.Enums import UserRank, EventType, CompanyType
+from src.WH_Utils.Objects.Object_utils import verify_json, verify_auth_header
+
+
 from dataclasses import dataclass
 
 
 @dataclass
-class BaseModel:
-    """
-    Base model that will handle some common functionality. Shouldn't really be used I
-    just don't want to repeat every line of code.
-    """
-
-    def __init__(self, WH_ID: str = None, auth_header: dict = None, data_dict = None):
-        """
-        verify combonation of variables and call the right function with the right params.
-
-        """
-        return
-
-    def _build_from_WH_db(WH_ID: str, auth_header: dict):
-        return
-
-    def _build_from_data_dict(data: dict):
-        return
-
-    def _build_from_coresignal(coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: dict):
-        return
-
-
-@dataclass
-class User(BaseModel):
+class User:
     id: Optional[str]
     first_name: Optional[str]
     last_name: Optional[str]
@@ -77,8 +56,33 @@ class User(BaseModel):
     class Config:
         arbitrary_types_allowed = True
 
+    def __init__(self, WH_ID: str = None, auth_header: dict = None, data_dict = None):
+        """
+        verify combonation of variables and call the right function with the right params.
+
+        """
+
+        return
+
+    def _build_from_WH_db(self, WH_ID: str, auth_header: dict) -> None:
+        return
+
+    def _build_from_data_dict(self, data: dict) -> None:
+        verify_json("user", data)
+        return
+
+    def send_to_db(self, auth_header: dict) -> None:
+        return
+
+    def __repr__(self) -> str:
+        return "UserID: {} \n Name: {},{}\n Email: {}, \n, Rank: {}".format(self.id, self.last_name, self.first_name, self.email, self.rank)
+
+    def __str__(self) -> str:
+        return "UserID: {} \n Name: {},{}\n Email: {}, \n, Rank: {}".format(self.id, self.last_name, self.first_name, self.email, self.rank)
+
+
 @dataclass
-class Client(BaseModel):
+class Client:
     id: Optional[str]
     name: Optional[str]
     location: Optional[str]
@@ -97,8 +101,35 @@ class Client(BaseModel):
     class Config:
         arbitrary_types_allowed = True
 
+    def __init__(self, WH_ID: str = None, auth_header: dict = None, data_dict = None):
+        """
+        verify combonation of variables and call the right function with the right params.
+
+        """
+
+        return
+
+    def _build_from_WH_db(self, WH_ID: str, auth_header: dict) -> None:
+        return
+
+    def _build_from_data_dict(self, data: dict):
+        verify_json("client", data)
+        return
+
+    def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: dict) -> None:
+        return
+
+    def send_to_db(self, auth_header: dict) -> None:
+        return
+
+    def __repr__(self) -> str:
+        return "ClientID: {} \n Name: {} \n Location: {}".format(self.id, self.name, self.location)
+
+    def __str__(self) -> str:
+        return "ClientID: {} \n Name: {} \n Location: {}".format(self.id, self.name, self.location)
+
 @dataclass
-class Company(BaseModel):
+class Company:
     id: Optional[str]
     name: Optional[str]
     coresignal_id: Optional[int]
@@ -116,8 +147,36 @@ class Company(BaseModel):
     class Config:
         arbitrary_types_allowed = True
 
+    def __init__(self, WH_ID: str = None, auth_header: dict = None, data_dict = None):
+        """
+        verify combonation of variables and call the right function with the right params.
+
+        """
+
+        return
+
+    def _build_from_WH_db(self, WH_ID: str, auth_header: dict) -> None:
+        return
+
+    def _build_from_data_dict(self, data: dict) -> None:
+        verify_json("client", data)
+        return
+
+    def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: dict) -> None:
+        return
+
+    def send_to_db(self, auth_header: dict) -> None:
+        return
+
+    def __repr__(self) -> str:
+        return "CompanyID: {} \n Name: {}".format(self.id, self.name)
+
+    def __str__(self) -> str:
+        return "CompanyID: {} \n Name: {}".format(self.id, self.name)
+
+
 @dataclass
-class Event(BaseModel):
+class Event:
     id: Optional[str]
     title: Optional[str]
     description: Optional[str]
@@ -134,8 +193,36 @@ class Event(BaseModel):
     class Config:
         arbitrary_types_allowed = True
 
+    def __init__(self, WH_ID: str = None, auth_header: dict = None, data_dict = None):
+        """
+        verify combonation of variables and call the right function with the right params.
+
+        """
+
+        return
+
+    def _build_from_WH_db(self, WH_ID: str, auth_header: dict) -> None:
+        return
+
+    def _build_from_data_dict(self, data: dict) -> None:
+        verify_json("client", data)
+        return
+
+    def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: dict) -> None:
+        return
+
+    def send_to_db(self, auth_header: dict) -> None:
+        return
+
+
+    def __repr__(self) -> str:
+        return "EventID: {} \n Title: {}".format(self.id, self.title)
+
+    def __str__(self) -> str:
+        return "EventID: {} \n Title: {}".format(self.id, self.title)
+
 @dataclass
-class SignupSchema(BaseModel):
+class SignupSchema:
     email: Optional[str]
     first_name: Optional[str]
     last_name: Optional[str]
@@ -146,7 +233,7 @@ class SignupSchema(BaseModel):
     rank: Optional[str]
 
 @dataclass
-class AddTaskSchema(BaseModel):
+class AddTaskSchema:
     title: Optional[str]
     content: Optional[Json]
     email: Optional[str]

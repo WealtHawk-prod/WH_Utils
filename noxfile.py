@@ -170,7 +170,7 @@ def xdoctest(session: Session) -> None:
 @session(name="docs-build", python="3.9")
 def docs_build(session: Session) -> None:
     """Build the documentation."""
-    args = session.posargs or ["docs", "docs/_build"]
+    args = session.posargs or ["build_docs", "docs"]
     session.install(".")
     session.install("sphinx", "sphinx-click", "sphinx-rtd-theme")
 
@@ -184,7 +184,7 @@ def docs_build(session: Session) -> None:
 @session(python="3.9")
 def docs(session: Session) -> None:
     """Build and serve the documentation with live reloading on file changes."""
-    args = session.posargs or ["--open-browser", "docs", "docs/_build"]
+    args = session.posargs or ["--open-browser", "build_docs", "docs"]
     session.install(".")
     session.install("sphinx", "sphinx-autobuild", "sphinx-click", "sphinx-rtd-theme")
 
