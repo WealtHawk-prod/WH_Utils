@@ -11,6 +11,7 @@ jobs:
         architecture: x64
     - run: pip install nox==2019.11.9
     - run: pip install poetry==1.0.5
+    - run: pip install nox-poetry
     - run: nox --sessions coverage
       env:
         CODECOV_TOKEN: 3b6584ba-a419-4828-beda-f2f6e769de87
