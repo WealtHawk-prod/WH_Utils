@@ -7,26 +7,15 @@ Wh_Utils
 
 |pre-commit| |Black|
 
-.. |PyPI| image:: https://img.shields.io/pypi/v/WH_Utils.svg
-   :target: https://pypi.org/project/WH_Utils/
-   :alt: PyPI
-.. |Status| image:: https://img.shields.io/pypi/status/WH_Utils.svg
-   :target: https://pypi.org/project/WH_Utils/
-   :alt: Status
-.. |Python Version| image:: https://img.shields.io/pypi/pyversions/WH_Utils
-   :target: https://pypi.org/project/WH_Utils
-   :alt: Python Version
-.. |License| image:: https://img.shields.io/pypi/l/WH_Utils
-   :target: https://opensource.org/licenses/MIT
-   :alt: License
+
 .. |Read the Docs| image:: https://img.shields.io/readthedocs/WH_Utils/latest.svg?label=Read%20the%20Docs
-   :target: https://WH_Utils.readthedocs.io/
-   :alt: Read the documentation at https://WH_Utils.readthedocs.io/
+   :target: https://mcclain-thiel.github.io/WH_Utils/
+   :alt: Read the documentation at https://mcclain-thiel.github.io/WH_Utils/
 .. |Tests| image:: https://github.com/McClain-Thiel/WH_Utils/workflows/Tests/badge.svg
    :target: https://github.com/McClain-Thiel/WH_Utils/actions?workflow=Tests
    :alt: Tests
-.. |Codecov| image:: https://codecov.io/gh/McClain-Thiel/WH_Utils/branch/main/graph/badge.svg
-   :target: https://codecov.io/gh/McClain-Thiel/WH_Utils
+.. |Codecov| .. image:: https://codecov.io/gh/McClain-Thiel/WH_Utils/branch/master/graph/badge.svg?token=ZJI9YLCSQ9
+   :target: :target: https://codecov.io/gh/McClain-Thiel/WH_Utils
    :alt: Codecov
 .. |pre-commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
    :target: https://github.com/pre-commit/pre-commit
@@ -36,53 +25,15 @@ Wh_Utils
    :alt: Black
 
 
-Features
---------
+What is it?
+---------------
 
-* TODO
-
-
-Requirements
-------------
-
-* TODO
+The `WH_Utils` repo is meant to make development easier across the organization by standardizing the way
+we interact with common objects. For example, there are modules for `Objects` that contain all enums used
+by the orgainization and a `Models` module that contains a powerful class based representation of common
+objects. For more info on this check out the docs.
 
 
-Installation
-------------
-
-You can install *Wh_Utils* via pip_ from PyPI_:
-
-.. code:: console
-
-   $ pip install WH_Utils
-
-
-Usage
------
-
-Please see the `Command-line Reference <Usage_>`_ for details.
-
-
-Contributing
-------------
-
-Contributions are very welcome.
-To learn more, see the `Contributor Guide`_.
-
-
-License
--------
-
-Distributed under the terms of the `MIT license`_,
-*Wh_Utils* is free and open source software.
-
-
-Issues
-------
-
-If you encounter any problems,
-please `file an issue`_ along with a detailed description.
 
 
 Credits
