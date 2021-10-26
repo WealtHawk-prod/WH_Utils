@@ -7,7 +7,7 @@ Wh_Utils
 |pre-commit| |Black|
 
 
-.. |Read the Docs| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+.. |Read the Docs| image:: https://img.shields.io/badge/Docs-Here-blue.svg
    :target: https://mcclain-thiel.github.io/WH_Utils/
    :alt: Read the documentation at https://mcclain-thiel.github.io/WH_Utils/
 .. |Tests| image:: https://github.com/McClain-Thiel/WH_Utils/workflows/Tests/badge.svg
