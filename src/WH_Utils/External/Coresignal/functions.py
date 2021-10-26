@@ -9,12 +9,10 @@ import numpy as np
 import os, sys
 import json
 from pydantic import Json, HttpUrl
-from typing import List
+from typing import List, Dict, Optional, Any
 
 
-
-
-def get_person_by_id(id_number: int, auth_dict: dict) -> dict:
+def get_person_by_id(id_number: int, auth_dict: Dict[str, Any]) -> Any:
     """
     This function just fetches a person by the id number from coresignal.
 
@@ -41,7 +39,7 @@ def get_person_by_id(id_number: int, auth_dict: dict) -> dict:
     else:
         raise ValueError("Bad Response Code. Response code: {}".format(response.status_code))
 
-def get_person_by_url(linkedin_url: HttpUrl , auth_dict: dict) -> dict:
+def get_person_by_url(linkedin_url: str , auth_dict: Dict[str, Any]) -> Any:
     """ Returns the coresignal for a person given the persons linkedin URL
 
     Args
@@ -73,7 +71,7 @@ def get_person_by_url(linkedin_url: HttpUrl , auth_dict: dict) -> dict:
 
 
 
-def find_employees_by_work_history(company_url: HttpUrl, auth_dict: dict) -> List[int]:
+def find_employees_by_work_history(company_url: str, auth_dict: Dict[str, Any]) -> List[int]:
     """
     Finds a list of employee coresignal id numbers based on where the employees worked.
 
@@ -95,5 +93,5 @@ def find_employees_by_work_history(company_url: HttpUrl, auth_dict: dict) -> Lis
     url = "https://api.coresignal.com/dbapi/v1/search/member"
     data = {"experience_company_linkedin_url": company_url}
     response = requests.post(url, headers=auth_dict, json=data)
-    t = response.text[1:-1].split(',')
+    t = [int(x) for x in response.text[1:-1].split(',')]
     return t

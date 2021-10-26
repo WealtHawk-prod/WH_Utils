@@ -20,7 +20,7 @@ except ImportError:
 
 
 package = "WH_Utils"
-python_versions = ["3.9", "3.8", "3.7", "3.6"]
+python_versions = ["3.9"] #, "3.8", "3.7", "3.6"]
 nox.needs_version = ">= 2021.6.6"
 nox.options.sessions = (
     "pre-commit",
@@ -117,7 +117,7 @@ def safety(session: Session) -> None:
 @session(python=python_versions)
 def mypy(session: Session) -> None:
     """Type-check using mypy."""
-    args = session.posargs or ["src", "tests", "docs/conf.py"]
+    args = session.posargs or ["src", "build_docs/conf.py"]
     session.install(".")
     session.install("mypy", "pytest")
     session.run("mypy", *args)

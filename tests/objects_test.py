@@ -16,3 +16,12 @@ class TestEnums:
     def test_user_enum_invalid(self):
         with pytest.raises(ValueError):
             s = WH_Enums.UserRank("not a rank")
+
+
+class TestModels:
+
+    def test_user_valid_json(self):
+        assert True
+
+    def test_user_invalid_json(self):
+        assert True

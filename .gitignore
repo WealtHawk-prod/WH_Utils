@@ -1,3 +1,7 @@
 */__pycache__
 env
 .ds_store
+__pycache__
+.mypy_cache
+.pytest_cache
+.nox

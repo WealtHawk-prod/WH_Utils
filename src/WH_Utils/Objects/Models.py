@@ -30,12 +30,12 @@ because I wanted to use the inheritance for other stuff and I don't know how MI 
 
 """
 from datetime import datetime, date
-from typing import Any, Optional, Union, List
+from typing import Any, Optional, Union, List, Dict, Any
 
 from pydantic import Json, HttpUrl
 
-from src.WH_Utils.Objects.Enums import UserRank, EventType, CompanyType
-from src.WH_Utils.Objects.Object_utils import verify_json, verify_auth_header
+from WH_Utils.Objects.Enums import UserRank, EventType, CompanyType
+from WH_Utils.Objects.Object_utils import verify_json, verify_auth_header
 
 
 from dataclasses import dataclass
@@ -56,7 +56,10 @@ class User:
     class Config:
         arbitrary_types_allowed = True
 
-    def __init__(self, WH_ID: str = None, auth_header: dict = None, data_dict = None):
+    def __init__(self,
+                WH_ID: Optional[str] = None,
+                auth_header: Optional[Dict[str, Any]] = None,
+                data_dict: Optional[Dict[str, Any]] = None) -> None:
         """
         verify combonation of variables and call the right function with the right params.
 
@@ -64,14 +67,14 @@ class User:
 
         return
 
-    def _build_from_WH_db(self, WH_ID: str, auth_header: dict) -> None:
+    def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
         return
 
-    def _build_from_data_dict(self, data: dict) -> None:
+    def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
         verify_json("user", data)
         return
 
-    def send_to_db(self, auth_header: dict) -> None:
+    def send_to_db(self, auth_header: Dict[str, Any]) -> None:
         return
 
     def __repr__(self) -> str:
@@ -101,7 +104,10 @@ class Client:
     class Config:
         arbitrary_types_allowed = True
 
-    def __init__(self, WH_ID: str = None, auth_header: dict = None, data_dict = None):
+    def __init__(self,
+                WH_ID: Optional[str] = None,
+                auth_header: Optional[Dict[str, Any]] = None,
+                data_dict: Optional[Dict[str, Any]] = None) -> None:
         """
         verify combonation of variables and call the right function with the right params.
 
@@ -109,17 +115,17 @@ class Client:
 
         return
 
-    def _build_from_WH_db(self, WH_ID: str, auth_header: dict) -> None:
+    def _build_from_WH_db(self, WH_ID: Optional[str], auth_header: Dict[str, Any]) -> None:
         return
 
-    def _build_from_data_dict(self, data: dict):
+    def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
         verify_json("client", data)
         return
 
-    def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: dict) -> None:
+    def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: Dict[str, Any]) -> None:
         return
 
-    def send_to_db(self, auth_header: dict) -> None:
+    def send_to_db(self, auth_header: Dict[str, Any]) -> None:
         return
 
     def __repr__(self) -> str:
@@ -147,7 +153,10 @@ class Company:
     class Config:
         arbitrary_types_allowed = True
 
-    def __init__(self, WH_ID: str = None, auth_header: dict = None, data_dict = None):
+    def __init__(self,
+                WH_ID: Optional[str] = None,
+                auth_header: Optional[Dict[str, Any]] = None,
+                data_dict: Optional[Dict[str, Any]]= None) -> None:
         """
         verify combonation of variables and call the right function with the right params.
 
@@ -155,17 +164,17 @@ class Company:
 
         return
 
-    def _build_from_WH_db(self, WH_ID: str, auth_header: dict) -> None:
+    def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
         return
 
-    def _build_from_data_dict(self, data: dict) -> None:
+    def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
         verify_json("client", data)
         return
 
-    def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: dict) -> None:
+    def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: Dict[str, Any]) -> None:
         return
 
-    def send_to_db(self, auth_header: dict) -> None:
+    def send_to_db(self, auth_header: Dict[str, Any]) -> None:
         return
 
     def __repr__(self) -> str:
@@ -193,7 +202,10 @@ class Event:
     class Config:
         arbitrary_types_allowed = True
 
-    def __init__(self, WH_ID: str = None, auth_header: dict = None, data_dict = None):
+    def __init__(self,
+                WH_ID: Optional[str] = None,
+                auth_header: Optional[Dict[str, Any]] = None,
+                data_dict: Optional[Dict[str, Any]] = None):
         """
         verify combonation of variables and call the right function with the right params.
 
@@ -201,17 +213,17 @@ class Event:
 
         return
 
-    def _build_from_WH_db(self, WH_ID: str, auth_header: dict) -> None:
+    def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
         return
 
-    def _build_from_data_dict(self, data: dict) -> None:
+    def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
         verify_json("client", data)
         return
 
-    def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: dict) -> None:
+    def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: Dict[str, Any]) -> None:
         return
 
-    def send_to_db(self, auth_header: dict) -> None:
+    def send_to_db(self, auth_header: Dict[str, Any]) -> None:
         return
 
 

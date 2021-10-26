@@ -1,7 +1,6 @@
 
 
-def test_func(this):
+def test_func(this: str) -> str:
     """
     yall bozos
     """
-    
