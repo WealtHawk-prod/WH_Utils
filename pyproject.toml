@@ -1,12 +1,16 @@
 [tool.poetry]
 name = "WH_Utils"
-version = "0.0.0"
+version = "0.0.1"
 description = "Wh_Utils"
 authors = ["McClain Thiel <mcclain@wealthawk.com>"]
 license = "MIT"
 readme = "README.rst"
 homepage = "https://github.com/McClain-Thiel/WH_Utils"
 repository = "https://github.com/McClain-Thiel/WH_Utils"
+packages = [
+    { include = "src/WH_Utils" },
+    { include = "src/WH_Utils/**/*.py" },
+]
 documentation = "https://WH_Utils.readthedocs.io"
 classifiers = [
     "Development Status :: 2 - Pre-Alpha",
