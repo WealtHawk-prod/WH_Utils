@@ -18,8 +18,6 @@ def get_person_by_id(id_number: int, auth_dict: Dict[str, Any]) -> Any:
 
     Args
     -------
-
-
         id_number: int
             the coresignal id number. Should be aquired from a coresignal query.
         auth_dict: auth_dict
