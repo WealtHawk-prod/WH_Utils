@@ -87,3 +87,4 @@ class CompanyType(str, Enum):
     subsidiary_of_public = 'subsidiary_of_public'
     sole_proprietor = 'sole proprietor'
     partnership = 'partnership'
+

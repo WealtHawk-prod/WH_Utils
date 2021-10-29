@@ -61,7 +61,7 @@ class User:
                 auth_header: Optional[Dict[str, Any]] = None,
                 data_dict: Optional[Dict[str, Any]] = None) -> None:
         """
-        verify combonation of variables and call the right function with the right params.
+        verify combination of variables and call the right function with the right params.
 
         """
 
