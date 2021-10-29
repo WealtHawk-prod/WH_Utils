@@ -31,6 +31,7 @@ because I wanted to use the inheritance for other stuff and I don't know how MI 
 """
 from datetime import datetime, date
 from typing import Any, Optional, Union, List, Dict, Any
+import requests
 
 from pydantic import Json, HttpUrl
 
@@ -39,6 +40,10 @@ from WH_Utils.Objects.Object_utils import verify_json, verify_auth_header
 
 
 from dataclasses import dataclass
+
+WH_DB_URL = "https://db.wealthawk.com"
+CORESIGNAL_URL = ""
+
 
 
 @dataclass
@@ -52,6 +57,7 @@ class User:
     firebase_id: Optional[str]
     created: Optional[datetime]
     last_modified: Optional[datetime]
+    in_database: bool
 
     class Config:
         arbitrary_types_allowed = True
@@ -64,14 +70,30 @@ class User:
         verify combination of variables and call the right function with the right params.
 
         """
+        if WH_ID and auth_header:
+            self._build_from_WH_db(WH_ID, auth_header)
+        elif data_dict:
+            self._build_from_data_dict(data_dict)
+        else:
+            raise ValueError("Invalid combonation of init parameters")
+
 
         return
 
     def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
-        return
+        self.in_database = True
+        verify_auth_header(auth_header)
+        request = requests.get(WH_DB_URL + "/users", params={'id':WH_ID}, headers=auth_header)
+        content = request.json()
+
+        for key in self.__dict__.keys():
+            self.__dict__[key] = content[key]
+
 
     def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
         verify_json("user", data)
+        for key in self.__dict__.keys():
+            self.__dict__[key] = data[key]
         return
 
     def send_to_db(self, auth_header: Dict[str, Any]) -> None:
