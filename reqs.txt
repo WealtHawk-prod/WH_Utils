@@ -4,3 +4,4 @@ requests
 pydantic
 sphinx
 sphinx-rtd-theme
+pytest

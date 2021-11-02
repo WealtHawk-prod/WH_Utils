@@ -14,6 +14,7 @@ build/
 dist/
 *.egg-info/
 docs/build_*
+.nox/
 
 # misc
 .DS_Store
