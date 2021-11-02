@@ -6,7 +6,7 @@ WH_Utils
 [![Read the Docs](https://img.shields.io/badge/Docs-Here-blue.svg)](https://mcclain-thiel.github.io/WH_Utils/)
 [![Tests](https://github.com/McClain-Thiel/WH_Utils/workflows/Tests/badge.svg)](https://github.com/McClain-Thiel/WH_Utils/actions?workflow=Tests)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-
+[![Lines of Code](https://tokei.rs/b1/github/McClain-Thiel/WH_Utils)](https://github.com/McClain-Thiel/WH_Utils)
 
 What is it?
 ---------------
