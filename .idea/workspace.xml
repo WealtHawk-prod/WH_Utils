@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:starter" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a98f7a6d-03c6-44f0-909a-09eda3aa46c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WH_Utils/__version__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build_docs/README.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reqs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_objects.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS61A/lab08/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS61A/lab08/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS61A/untitled/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../CS61A/untitled/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DDS/.idea/DDS.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DDS/.idea/dictionaries/McClain.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DDS/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DDS/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DDS/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DDS/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DDS/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DDS/DDS.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DDS/DDS.r" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DDS/mathhw.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DDS/networks.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DDS/testR.R" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ECSpec.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS182/HW1_2/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS182/HW1_2/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS182/HW1_2/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS182/HW1_2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS182/HW1_2/deeplearning/main_debug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS182/assignment1_python3/deeplearning/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS182/assignment1_python3/deeplearning/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS182/assignment1_python3/deeplearning/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS194/Proj1/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS194/Proj1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS194/Proj1/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS194/Proj1/website/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS194/Proj1/website/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS194/Proj1/website/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Fall_2020/CS194/Proj1/website/.idea/website.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Hulu_challenge/strategy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README_WWI.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Summer_19/CS188/machinelearning/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Summer_19/CS188/machinelearning/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Summer_19/CS188/machinelearning/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Summer_19/CS188/multiagent/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Summer_19/CS188/multiagent/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Summer_19/CS188/reinforcement/moss_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Summer_19/CS188/tracking/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Summer_19/CS188/tracking/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Trials/deep-test/venv/network.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/.idea/anon.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/Static/upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/face_blurring.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/processing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/requirments.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/templates/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/templates/processing.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/templates/success.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../anon/templates/upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../appeng-0/.idea/libraries/Google_App_Engine_SDK.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../appeng-0/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../appeng-0/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../appeng-2/.idea/libraries/Google_App_Engine_SDK.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../appeng-2/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../appeng-2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../appeng-2/appeng/appeng/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../appeng7/.idea/libraries/Google_App_Engine_SDK.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../appeng7/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../appeng7/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../autofaceblur/.idea/libraries/Google_App_Engine_SDK.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../autofaceblur/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../autofaceblur/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../autofaceblur/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../autofaceblur/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../autofaceblur/templates/success.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../autofaceblur/templates/upload.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/.idea/blobs.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/app/_init_.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/app/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/app/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/app/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/app/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/app/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/app/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../blobs/app/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dj1-src/webapp/authentication/auth0.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dj1-src/webapp/authentication/authorization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dj1-src/webapp/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dj1-src/webapp/templates/webapp/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dj1-src/webapp/templates/webapp/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dj1-src/webapp/templates/webapp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dj1-src/webapp/templates/webapp/profile.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dj1-src/webapp/templates/webapp/videos.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dj1-src/webapp/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dj1/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../dj1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../django-project-template-master/.idea/django-project-template-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../django-project-template-master/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../django-project-template-master/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../django-project-template-master/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../django-project-template-master/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../his.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../mine.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_site/demo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_site/modules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_site/my_node.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_static_v2/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_static_v2/.idea/jsLinters/jshint.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_static_v2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_static_v2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_static_v2/.idea/personal_static_v2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_static_v2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_webapp/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_webapp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_website/.idea/libraries/R_User_Library.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_website/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_website/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_website/.idea/personal-website.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_website/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_website/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_website/public/projects.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_website/server/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_website/server/src/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_website/server/src/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../personal_website/static/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sample_website/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sample_website/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sample_website/.idea/sample_website.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sample_website/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../sp_2020/CS161/proj2/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_site/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_site/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_site/.idea/test_site.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test_site/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/GAN.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/nw_alligner.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/recognition.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled/visualization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled1/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../untitled1/.idea/vcs.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="JupyterTrust" id="b226d260-52e3-49dd-8d6f-8457ead80acc" />
+  <component name="ProjectId" id="20KtUOf5ZcJdEnHZzrBIqCoQ9e7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python tests.pytest for test_objects.TestModels.test_user_from_db">
+    <configuration name="pytest for test_objects.TestEnums" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="WH_Utils2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_objects.TestEnums&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_objects.TestModels" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="WH_Utils2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_objects.TestModels&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_objects.TestModels.test_user_from_db" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="WH_Utils2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_objects.TestModels.test_user_from_db&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for test_objects.TestModels.test_user_from_db" />
+        <item itemvalue="Python tests.pytest for test_objects.TestModels" />
+        <item itemvalue="Python tests.pytest for test_objects.TestEnums" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a98f7a6d-03c6-44f0-909a-09eda3aa46c6" name="Default Changelist" comment="" />
+      <created>1635805122300</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1635805122300</updated>
+      <workItem from="1635805123685" duration="8050000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="424" y="199" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635806182327">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="424" y="199" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1635806182327" />
+    <state x="697" y="346" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1635806176015">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="697" y="346" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1635806176015" />
+    <state width="1878" height="250" key="GridCell.Tab.0.bottom" timestamp="1635891851005">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="250" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1635891851005" />
+    <state width="1878" height="250" key="GridCell.Tab.0.center" timestamp="1635891851003">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="250" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1635891851003" />
+    <state width="1878" height="250" key="GridCell.Tab.0.left" timestamp="1635891851001">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="250" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1635891851001" />
+    <state width="1878" height="250" key="GridCell.Tab.0.right" timestamp="1635891851004">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1878" height="250" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1635891851004" />
+    <state x="469" y="176" key="SettingsEditor" timestamp="1635806100738">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="469" y="176" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1635806100738" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/WH_Utils2$pytest_for_test_objects_TestEnums.coverage" NAME="pytest for test_objects.TestEnums Coverage Results" MODIFIED="1635807104160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/WH_Utils2$pytest_for_test_objects_TestModels.coverage" NAME="pytest for test_objects.TestModels Coverage Results" MODIFIED="1635808172142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/WH_Utils2$pytest_for_test_objects_TestModels_test_user_from_db.coverage" NAME="pytest for test_objects.TestModels.test_user_from_db Coverage Results" MODIFIED="1635809145331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+  </component>
+</project>

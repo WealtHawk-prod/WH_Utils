@@ -1,0 +1,1224 @@
+{
+  "id": "9d1889e4-1ecc-40c7-880e-f83aba3c8be6",
+  "name": "InsideScientific | A Scientist.com Company",
+  "coresignal_id": 3588372,
+  "linkedin_url": "https://www.linkedin.com/company/insidescientific/",
+  "industry": "Events Services",
+  "description": "InsideScientific is an online environment rich with information for life science researchers. Resources include educational webinars, in-lab workshops and training programs, laboratory protocols, application notes and more. In addition, scientists can browse our suppliers database to learn more about the tools and technologies offered by manufacturers around the globe. Our mission is to augment scientific discovery by facilitating and continually improving the exchange of scientific information.\n\nInsideScientific is a Scientist.com company. Scientist.com is the pharmaceutical industry’s leading AI-powered marketplace for outsourced R&D. The marketplace simplifies R&D sourcing, saves time and money, reduces risk and provides access to the latest innovative tools and technologies. Scientist.com operates private enterprise marketplaces for most of the world’s major pharmaceutical companies, over 80 biotechnology companies and the US National Institutes of Health (NIH).",
+  "location": "London, CA",
+  "logo": "https://media-exp1.licdn.com/dms/image/C4D0BAQFNrjWu55uKWA/company-logo_200_200/0/1626196558772?e=2159024400&v=beta&t=FJI1qtjkN-qf8_JxqZD8lFPk51PO_f8C6MRgXs_r4XA",
+  "type": "private",
+  "website": "https://www.insidescientific.com",
+  "created": "2021-10-14T04:18:00",
+  "last_modified": "2021-10-14T04:18:00",
+  "full_data": {
+    "id": 3588372,
+    "url": "https://www.linkedin.com/company/insidescientific",
+    "hash": "267464a5148272b56d0eb2d5c75c211b",
+    "name": "InsideScientific | A Scientist.com Company",
+    "size": "1-10 employees",
+    "type": "Privately Held",
+    "created": "2016-06-22 21:54:46",
+    "deleted": 0,
+    "founded": 2013,
+    "website": "https://www.insidescientific.com",
+    "industry": "Events Services",
+    "logo_url": "https://media-exp1.licdn.com/dms/image/C4D0BAQFNrjWu55uKWA/company-logo_200_200/0/1626196558772?e=2159024400&v=beta&t=FJI1qtjkN-qf8_JxqZD8lFPk51PO_f8C6MRgXs_r4XA",
+    "followers": null,
+    "source_id": 3562426,
+    "description": "InsideScientific is an online environment rich with information for life science researchers. Resources include educational webinars, in-lab workshops and training programs, laboratory protocols, application notes and more. In addition, scientists can browse our suppliers database to learn more about the tools and technologies offered by manufacturers around the globe. Our mission is to augment scientific discovery by facilitating and continually improving the exchange of scientific information.\n\nInsideScientific is a Scientist.com company. Scientist.com is the pharmaceutical industry’s leading AI-powered marketplace for outsourced R&D. The marketplace simplifies R&D sourcing, saves time and money, reduces risk and provides access to the latest innovative tools and technologies. Scientist.com operates private enterprise marketplaces for most of the world’s major pharmaceutical companies, over 80 biotechnology companies and the US National Institutes of Health (NIH).",
+    "last_updated": "2021-10-07 06:44:27",
+    "canonical_url": "https://ca.linkedin.com/company/insidescientific",
+    "canonical_hash": "2938ced57fd058ace1d80627ddf12b34",
+    "employees_count": 8,
+    "last_updated_ux": 1633589066,
+    "headquarters_zip": null,
+    "headquarters_city": null,
+    "headquarters_state": null,
+    "last_response_code": 200,
+    "headquarters_country": null,
+    "headquarters_street1": null,
+    "headquarters_street2": null,
+    "company_shorthand_name": "insidescientific",
+    "canonical_shorthand_name": "insidescientific",
+    "headquarters_new_address": null,
+    "company_similar_collection": [
+      {
+        "id": 18123603,
+        "url": "https://www.linkedin.com/company/neurotar-ltd",
+        "created": "2019-10-20 12:52:07",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-05-03 01:33:10"
+      },
+      {
+        "id": 18123604,
+        "url": "https://www.linkedin.com/company/adinstruments",
+        "created": "2019-10-20 12:52:07",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-05-03 01:33:10"
+      },
+      {
+        "id": 18123605,
+        "url": "https://www.linkedin.com/company/techalliance-of-southwestern-ontario",
+        "created": "2019-10-20 12:52:07",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-05-03 01:33:10"
+      },
+      {
+        "id": 18123606,
+        "url": "https://www.linkedin.com/company/envigo-",
+        "created": "2019-10-20 12:52:07",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-04-07 08:07:19"
+      },
+      {
+        "id": 18123607,
+        "url": "https://www.linkedin.com/company/covance",
+        "created": "2019-10-20 12:52:07",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-11-25 02:22:48"
+      },
+      {
+        "id": 18123608,
+        "url": "https://www.linkedin.com/company/iqvia",
+        "created": "2019-10-20 12:52:07",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-11-25 02:22:48"
+      },
+      {
+        "id": 50063685,
+        "url": "https://www.linkedin.com/company/american-preclinical-services",
+        "created": "2019-11-25 02:22:48",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-05-03 01:33:10"
+      },
+      {
+        "id": 50063686,
+        "url": "https://www.linkedin.com/company/abilitechmedical",
+        "created": "2019-11-25 02:22:48",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-05-03 01:33:10"
+      },
+      {
+        "id": 75283589,
+        "url": "https://www.linkedin.com/company/dynacure",
+        "created": "2020-01-26 10:57:12",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-05-03 01:33:10"
+      },
+      {
+        "id": 75283590,
+        "url": "https://www.linkedin.com/company/covance",
+        "created": "2020-01-26 10:57:12",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-03-19 03:33:19"
+      },
+      {
+        "id": 75283592,
+        "url": "https://www.linkedin.com/company/iqvia",
+        "created": "2020-01-26 10:57:12",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-03-19 03:33:19"
+      },
+      {
+        "id": 75283594,
+        "url": "https://www.linkedin.com/company/hoper-educacao",
+        "created": "2020-01-26 10:57:12",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-03-19 03:33:19"
+      },
+      {
+        "id": 112877053,
+        "url": "https://www.linkedin.com/company/tecniplast",
+        "created": "2020-03-19 03:33:19",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-05-03 01:33:10"
+      },
+      {
+        "id": 112877054,
+        "url": "https://www.linkedin.com/company/catalent-pharma-solutions",
+        "created": "2020-03-19 03:33:19",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-05-03 01:33:10"
+      },
+      {
+        "id": 112877055,
+        "url": "https://www.linkedin.com/company/dsm",
+        "created": "2020-03-19 03:33:19",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-05-03 01:33:10"
+      },
+      {
+        "id": 127782497,
+        "url": "https://www.linkedin.com/company/isc-mktg-solutions",
+        "created": "2020-04-07 08:07:19",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-11-25 17:51:31"
+      },
+      {
+        "id": 142263237,
+        "url": "https://www.linkedin.com/company/3ts-alliance",
+        "created": "2020-05-03 01:33:10",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-08-26 07:21:32"
+      },
+      {
+        "id": 142263238,
+        "url": "https://www.linkedin.com/company/labroots",
+        "created": "2020-05-03 01:33:10",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-08-26 07:21:32"
+      },
+      {
+        "id": 142263239,
+        "url": "https://www.linkedin.com/company/americanbakers",
+        "created": "2020-05-03 01:33:10",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-08-26 07:21:32"
+      },
+      {
+        "id": 142263240,
+        "url": "https://www.linkedin.com/company/smrs",
+        "created": "2020-05-03 01:33:10",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-08-26 07:21:32"
+      },
+      {
+        "id": 142263241,
+        "url": "https://www.linkedin.com/company/drinkloverboy",
+        "created": "2020-05-03 01:33:10",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-07-03 08:21:51"
+      },
+      {
+        "id": 142263242,
+        "url": "https://www.linkedin.com/company/a-rodcorp",
+        "created": "2020-05-03 01:33:10",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-06-08 13:30:37"
+      },
+      {
+        "id": 142263243,
+        "url": "https://www.linkedin.com/company/theramex",
+        "created": "2020-05-03 01:33:10",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-06-08 13:30:37"
+      },
+      {
+        "id": 142263244,
+        "url": "https://www.linkedin.com/company/nomad-foods",
+        "created": "2020-05-03 01:33:10",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-06-08 13:30:37"
+      },
+      {
+        "id": 142263245,
+        "url": "https://www.linkedin.com/company/little-spoon-organic",
+        "created": "2020-05-03 01:33:10",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-06-08 13:30:37"
+      },
+      {
+        "id": 165030107,
+        "url": "https://www.linkedin.com/company/logicalbiology",
+        "created": "2020-06-08 13:30:37",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-11-25 17:51:31"
+      },
+      {
+        "id": 165030108,
+        "url": "https://www.linkedin.com/company/discerndx",
+        "created": "2020-06-08 13:30:37",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-08-26 07:21:32"
+      },
+      {
+        "id": 165030109,
+        "url": "https://www.linkedin.com/company/american-physiological-society",
+        "created": "2020-06-08 13:30:37",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-02-15 18:22:05"
+      },
+      {
+        "id": 165030110,
+        "url": "https://www.linkedin.com/company/food-hub-magazine",
+        "created": "2020-06-08 13:30:37",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-07-03 08:21:51"
+      },
+      {
+        "id": 176254393,
+        "url": "https://www.linkedin.com/company/national-postdoctoral-association",
+        "created": "2020-07-03 08:21:51",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-08-26 07:21:32"
+      },
+      {
+        "id": 176254394,
+        "url": "https://www.linkedin.com/company/the-animal-medical-center",
+        "created": "2020-07-03 08:21:51",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-08-26 07:21:32"
+      },
+      {
+        "id": 219200360,
+        "url": "https://www.linkedin.com/company/cell-signaling-technology",
+        "created": "2020-08-26 07:21:32",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-02-15 18:22:05"
+      },
+      {
+        "id": 219200361,
+        "url": "https://www.linkedin.com/company/aaasorg",
+        "created": "2020-08-26 07:21:32",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-12-14 21:35:58"
+      },
+      {
+        "id": 219200362,
+        "url": "https://www.linkedin.com/company/finapes",
+        "created": "2020-08-26 07:21:32",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-10-09 17:53:52"
+      },
+      {
+        "id": 219200363,
+        "url": "https://www.linkedin.com/company/research-publishing.net",
+        "created": "2020-08-26 07:21:32",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-11-25 17:51:31"
+      },
+      {
+        "id": 219200364,
+        "url": "https://www.linkedin.com/company/scintica-instrumentation",
+        "created": "2020-08-26 07:21:32",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-11-25 17:51:31"
+      },
+      {
+        "id": 219200365,
+        "url": "https://www.linkedin.com/company/tecniplast",
+        "created": "2020-08-26 07:21:32",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-09-17 22:59:57"
+      },
+      {
+        "id": 219200366,
+        "url": "https://www.linkedin.com/company/liblynx-llc",
+        "created": "2020-08-26 07:21:32",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-10-09 17:53:52"
+      },
+      {
+        "id": 232307471,
+        "url": "https://www.linkedin.com/company/merckpolska",
+        "created": "2020-09-17 22:59:57",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-10-09 17:53:52"
+      },
+      {
+        "id": 246120501,
+        "url": "https://www.linkedin.com/company/aaace-office",
+        "created": "2020-10-09 17:53:52",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-12-14 21:35:58"
+      },
+      {
+        "id": 246120502,
+        "url": "https://www.linkedin.com/company/simplyhr-llc",
+        "created": "2020-10-09 17:53:52",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-12-14 21:35:58"
+      },
+      {
+        "id": 246120503,
+        "url": "https://www.linkedin.com/company/k-mine",
+        "created": "2020-10-09 17:53:52",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-12-14 21:35:58"
+      },
+      {
+        "id": 298367862,
+        "url": "https://ca.linkedin.com/company/scintica-instrumentation",
+        "created": "2020-11-25 17:51:31",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-06-21 00:39:11"
+      },
+      {
+        "id": 298367863,
+        "url": "https://ca.linkedin.com/company/isc-mktg-solutions",
+        "created": "2020-11-25 17:51:31",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-01-09 08:08:05"
+      },
+      {
+        "id": 298367864,
+        "url": "https://in.linkedin.com/company/logicalbiology",
+        "created": "2020-11-25 17:51:31",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-12-14 21:35:58"
+      },
+      {
+        "id": 298367865,
+        "url": "https://be.linkedin.com/company/adhd-asc-dyslexia-family-resources-belgium",
+        "created": "2020-11-25 17:51:31",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-12-14 21:35:58"
+      },
+      {
+        "id": 324680455,
+        "url": "https://nl.linkedin.com/company/publiekrechtelijk-dispuut-ius-mobile",
+        "created": "2020-12-14 21:35:58",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-02-15 18:22:05"
+      },
+      {
+        "id": 324680456,
+        "url": "https://ca.linkedin.com/company/neurescence-inc",
+        "created": "2020-12-14 21:35:58",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-02-15 18:22:05"
+      },
+      {
+        "id": 324680457,
+        "url": "https://www.linkedin.com/company/mestag-therapeutics",
+        "created": "2020-12-14 21:35:58",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-01-09 08:08:05"
+      },
+      {
+        "id": 324680458,
+        "url": "https://www.linkedin.com/company/leaf-expression-systems",
+        "created": "2020-12-14 21:35:58",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-01-09 08:08:05"
+      },
+      {
+        "id": 324680459,
+        "url": "https://nl.linkedin.com/company/kneppelhout",
+        "created": "2020-12-14 21:35:58",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-01-09 08:08:05"
+      },
+      {
+        "id": 324680460,
+        "url": "https://gr.linkedin.com/company/jagreece",
+        "created": "2020-12-14 21:35:58",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-01-09 08:08:05"
+      },
+      {
+        "id": 350414324,
+        "url": "https://www.linkedin.com/company/romtec-inc",
+        "created": "2021-01-09 08:08:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-02-15 18:22:05"
+      },
+      {
+        "id": 350414325,
+        "url": "https://www.linkedin.com/company/rom3rehab",
+        "created": "2021-01-09 08:08:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-02-15 18:22:05"
+      },
+      {
+        "id": 350414326,
+        "url": "https://www.linkedin.com/company/innovive",
+        "created": "2021-01-09 08:08:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-02-15 18:22:05"
+      },
+      {
+        "id": 350414327,
+        "url": "https://se.linkedin.com/company/kvalitetsmagasinet",
+        "created": "2021-01-09 08:08:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-02-15 18:22:05"
+      },
+      {
+        "id": 350414328,
+        "url": "https://www.linkedin.com/company/azonetwork-group",
+        "created": "2021-01-09 08:08:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-02-15 18:22:05"
+      },
+      {
+        "id": 373563232,
+        "url": "https://nz.linkedin.com/company/adinstruments",
+        "created": "2021-02-15 18:22:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-06-21 00:39:11"
+      },
+      {
+        "id": 373563233,
+        "url": "https://in.linkedin.com/company/money9",
+        "created": "2021-02-15 18:22:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-04-11 00:21:56"
+      },
+      {
+        "id": 373563234,
+        "url": "https://www.linkedin.com/company/critical-thinking-film",
+        "created": "2021-02-15 18:22:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-04-11 00:21:56"
+      },
+      {
+        "id": 373563235,
+        "url": "https://www.linkedin.com/company/indus-instruments",
+        "created": "2021-02-15 18:22:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-04-11 00:21:56"
+      },
+      {
+        "id": 373563236,
+        "url": "https://www.linkedin.com/company/human-anatomy-and-physiology",
+        "created": "2021-02-15 18:22:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-05-23 13:14:02"
+      },
+      {
+        "id": 373563237,
+        "url": "https://www.linkedin.com/company/kcs---professional-services",
+        "created": "2021-02-15 18:22:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-04-11 00:21:56"
+      },
+      {
+        "id": 373563238,
+        "url": "https://in.linkedin.com/company/health-technology",
+        "created": "2021-02-15 18:22:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-04-11 00:21:56"
+      },
+      {
+        "id": 373563239,
+        "url": "https://nz.linkedin.com/company/keystone-trust",
+        "created": "2021-02-15 18:22:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-04-11 00:21:56"
+      },
+      {
+        "id": 373563240,
+        "url": "https://au.linkedin.com/company/h-i-lighting-sa",
+        "created": "2021-02-15 18:22:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-04-11 00:21:56"
+      },
+      {
+        "id": 391550187,
+        "url": "https://ca.linkedin.com/company/isc-mktg-solutions",
+        "created": "2021-04-11 00:21:56",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-06-21 00:39:11"
+      },
+      {
+        "id": 391550188,
+        "url": "https://www.linkedin.com/company/haps-on-linkedin",
+        "created": "2021-04-11 00:21:56",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-06-21 00:39:11"
+      },
+      {
+        "id": 391550189,
+        "url": "https://www.linkedin.com/company/azonetwork-group",
+        "created": "2021-04-11 00:21:56",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-06-21 00:39:11"
+      },
+      {
+        "id": 391550190,
+        "url": "https://www.linkedin.com/company/interactive-human-anatomy",
+        "created": "2021-04-11 00:21:56",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-06-21 00:39:11"
+      },
+      {
+        "id": 391550191,
+        "url": "https://www.linkedin.com/company/international-systems-management-corp.",
+        "created": "2021-04-11 00:21:56",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-06-21 00:39:11"
+      },
+      {
+        "id": 391550192,
+        "url": "https://www.linkedin.com/company/graceylanegallery",
+        "created": "2021-04-11 00:21:56",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-06-21 00:39:11"
+      },
+      {
+        "id": 391550193,
+        "url": "https://lv.linkedin.com/company/anatomy-next",
+        "created": "2021-04-11 00:21:56",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-06-21 00:39:11"
+      },
+      {
+        "id": 415865541,
+        "url": "https://www.linkedin.com/company/standing-up-to-pots",
+        "created": "2021-05-23 13:14:02",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-06-21 00:39:11"
+      },
+      {
+        "id": 493797141,
+        "url": "https://ca.linkedin.com/company/isc-mktg-solutions",
+        "created": "2021-09-12 19:26:02",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 493797142,
+        "url": "https://ca.linkedin.com/company/scintica-instrumentation",
+        "created": "2021-09-12 19:26:02",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 493797143,
+        "url": "https://www.linkedin.com/company/haps-on-linkedin",
+        "created": "2021-09-12 19:26:02",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 493797144,
+        "url": "https://nz.linkedin.com/company/adinstruments",
+        "created": "2021-09-12 19:26:02",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 493797145,
+        "url": "https://www.linkedin.com/company/azonetwork-group",
+        "created": "2021-09-12 19:26:02",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 493797146,
+        "url": "https://www.linkedin.com/company/interactive-human-anatomy",
+        "created": "2021-09-12 19:26:02",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 493797147,
+        "url": "https://www.linkedin.com/company/international-systems-management-corp.",
+        "created": "2021-09-12 19:26:02",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 493797148,
+        "url": "https://www.linkedin.com/company/graceylanegallery",
+        "created": "2021-09-12 19:26:02",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 493797149,
+        "url": "https://www.linkedin.com/company/anatomy-next",
+        "created": "2021-09-12 19:26:02",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 493797150,
+        "url": "https://www.linkedin.com/company/standing-up-to-pots",
+        "created": "2021-09-12 19:26:02",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      }
+    ],
+    "company_shorthand_name_hash": "2c926d4342285b9a85329c4d716d2230",
+    "headquarters_country_parsed": "Canada",
+    "company_locations_collection": [
+      {
+        "id": 16988888,
+        "created": "2020-07-03 08:21:51",
+        "deleted": 0,
+        "company_id": 3588372,
+        "is_primary": 0,
+        "last_updated": "2021-10-07 06:44:26",
+        "location_address": "London, CA"
+      }
+    ],
+    "canonical_shorthand_name_hash": "2c926d4342285b9a85329c4d716d2230",
+    "company_affiliated_collection": [
+      {
+        "id": 458781,
+        "created": "2019-10-20 12:52:07",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-04-07 08:07:19",
+        "affiliated_company_id": null,
+        "affiliated_company_url": "https://www.linkedin.com/company/insidescientific-webinars"
+      },
+      {
+        "id": 2402214,
+        "created": "2020-04-07 08:07:19",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26",
+        "affiliated_company_id": 26742742,
+        "affiliated_company_url": "https://www.linkedin.com/showcase/insidescientific-webinars"
+      }
+    ],
+    "company_stock_info_collection": [],
+    "headquarters_country_restored": "Canada",
+    "company_also_viewed_collection": [
+      {
+        "id": 13415691,
+        "created": "2016-06-22 21:54:46",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2016-12-15 22:30:18",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/notocord"
+      },
+      {
+        "id": 13415692,
+        "created": "2016-06-22 21:54:46",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2016-12-15 22:30:18",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/data-sciences-international"
+      },
+      {
+        "id": 13415693,
+        "created": "2016-06-22 21:54:46",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2016-12-15 22:30:18",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/artus-biotech-usa-inc"
+      },
+      {
+        "id": 13415694,
+        "created": "2016-06-22 21:54:46",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2016-12-15 22:30:18",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/pulse-life-sciences"
+      },
+      {
+        "id": 13415695,
+        "created": "2016-06-22 21:54:46",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2016-12-15 22:30:18",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/donn-sheldon"
+      },
+      {
+        "id": 13415696,
+        "created": "2016-06-22 21:54:46",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2016-12-15 22:30:18",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/batori"
+      },
+      {
+        "id": 57330962,
+        "created": "2016-12-15 22:30:17",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2017-12-17 09:12:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/sonometrics-corporation"
+      },
+      {
+        "id": 57330963,
+        "created": "2016-12-15 22:30:17",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2017-12-17 09:12:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/inten.to"
+      },
+      {
+        "id": 57330964,
+        "created": "2016-12-15 22:30:17",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2017-08-17 06:40:29",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/psfk-labs"
+      },
+      {
+        "id": 57330965,
+        "created": "2016-12-15 22:30:17",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2017-05-17 18:46:35",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/sixteen-ventures"
+      },
+      {
+        "id": 57330966,
+        "created": "2016-12-15 22:30:17",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2017-05-17 18:46:35",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/astella-investimentos"
+      },
+      {
+        "id": 57330967,
+        "created": "2016-12-15 22:30:17",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2017-02-11 00:44:22",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/scisense-inc."
+      },
+      {
+        "id": 81791630,
+        "created": "2017-02-11 00:44:22",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2017-12-17 09:12:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/bia-overseas-sa"
+      },
+      {
+        "id": 91755286,
+        "created": "2017-05-17 18:46:35",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2018-07-11 02:44:16",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/club-hub"
+      },
+      {
+        "id": 91755287,
+        "created": "2017-05-17 18:46:35",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2017-12-17 09:12:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/bosch"
+      },
+      {
+        "id": 104600425,
+        "created": "2017-08-17 06:40:29",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2017-12-17 09:12:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/astella-investimentos"
+      },
+      {
+        "id": 120747860,
+        "created": "2017-12-17 09:12:06",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2018-12-04 03:18:58",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/sable-systems-inc"
+      },
+      {
+        "id": 120747861,
+        "created": "2017-12-17 09:12:06",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2018-09-09 14:24:05",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/wrightmedical"
+      },
+      {
+        "id": 120747862,
+        "created": "2017-12-17 09:12:06",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2018-03-13 05:27:15",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/cutting-edge-tile-&-grout-cleaning"
+      },
+      {
+        "id": 120747863,
+        "created": "2017-12-17 09:12:06",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2018-03-13 05:27:15",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/ordan-thermal"
+      },
+      {
+        "id": 120747864,
+        "created": "2017-12-17 09:12:06",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2018-03-13 05:27:15",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/repair-palace"
+      },
+      {
+        "id": 153962411,
+        "created": "2018-08-10 04:56:26",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-08-01 14:27:34",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/chimera-collective"
+      },
+      {
+        "id": 153962412,
+        "created": "2018-08-10 04:56:26",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-05-30 11:39:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/monarchandmisfits"
+      },
+      {
+        "id": 153962413,
+        "created": "2018-08-10 04:56:26",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-03-11 16:04:33",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/b.-the-communications-agency"
+      },
+      {
+        "id": 159324444,
+        "created": "2018-09-09 14:24:04",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-05-30 11:39:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/bookmark-content-and-communications"
+      },
+      {
+        "id": 159324445,
+        "created": "2018-09-09 14:24:04",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-02-17 02:59:05",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/edelman"
+      },
+      {
+        "id": 186632778,
+        "created": "2019-02-17 02:59:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-08-01 14:27:34",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/prowinko-nederland-b-v-"
+      },
+      {
+        "id": 186632779,
+        "created": "2019-02-17 02:59:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-08-01 14:27:34",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/health-at-hand-healthcare"
+      },
+      {
+        "id": 195094003,
+        "created": "2019-03-11 16:04:32",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-08-01 14:27:34",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/vivaquant"
+      },
+      {
+        "id": 229646554,
+        "created": "2019-05-30 11:39:07",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-10-20 12:52:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/neurotar-ltd"
+      },
+      {
+        "id": 229646555,
+        "created": "2019-05-30 11:39:07",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-10-20 12:52:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/hoper-educacao"
+      },
+      {
+        "id": 254591315,
+        "created": "2019-08-01 14:27:34",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-10-20 12:52:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/techalliance-of-southwestern-ontario"
+      },
+      {
+        "id": 254591316,
+        "created": "2019-08-01 14:27:34",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-10-20 12:52:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/envigo-"
+      },
+      {
+        "id": 254591317,
+        "created": "2019-08-01 14:27:34",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-10-20 12:52:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/covance"
+      },
+      {
+        "id": 254591318,
+        "created": "2019-08-01 14:27:34",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2019-10-20 12:52:07",
+        "viewed_company_id": null,
+        "viewed_company_url": "https://www.linkedin.com/company/iqvia"
+      }
+    ],
+    "company_specialties_collection": [
+      {
+        "id": 5020997,
+        "created": "2016-06-22 21:54:46",
+        "deleted": 0,
+        "specialty": "Webinars",
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 5020998,
+        "created": "2016-06-22 21:54:46",
+        "deleted": 1,
+        "specialty": "Lead Generation",
+        "company_id": 3588372,
+        "last_updated": "2017-05-17 18:46:35"
+      },
+      {
+        "id": 5020999,
+        "created": "2016-06-22 21:54:46",
+        "deleted": 1,
+        "specialty": "Content Marketing",
+        "company_id": 3588372,
+        "last_updated": "2017-05-17 18:46:35"
+      },
+      {
+        "id": 5021000,
+        "created": "2016-06-22 21:54:46",
+        "deleted": 1,
+        "specialty": "Market Research Programs",
+        "company_id": 3588372,
+        "last_updated": "2017-05-17 18:46:35"
+      },
+      {
+        "id": 5021001,
+        "created": "2016-06-22 21:54:46",
+        "deleted": 0,
+        "specialty": "Workshops",
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 5021002,
+        "created": "2016-06-22 21:54:46",
+        "deleted": 0,
+        "specialty": "Training Events",
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 69910375,
+        "created": "2021-10-07 06:44:26",
+        "deleted": 0,
+        "specialty": "virtual events",
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 69910376,
+        "created": "2021-10-07 06:44:26",
+        "deleted": 0,
+        "specialty": "life sciences",
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 69910377,
+        "created": "2021-10-07 06:44:26",
+        "deleted": 0,
+        "specialty": "biotechnology",
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 69910378,
+        "created": "2021-10-07 06:44:26",
+        "deleted": 0,
+        "specialty": "lab instrumentation",
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 69910379,
+        "created": "2021-10-07 06:44:26",
+        "deleted": 0,
+        "specialty": "science communication",
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      }
+    ],
+    "company_funding_rounds_collection": [],
+    "company_crunchbase_info_collection": [],
+    "company_featured_employees_collection": [
+      {
+        "id": 11972456,
+        "url": "https://www.linkedin.com/in/andyhenton",
+        "created": "2019-10-20 12:52:07",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 11972457,
+        "url": "https://www.linkedin.com/in/mehdiadb",
+        "created": "2019-10-20 12:52:07",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2020-01-26 10:57:12"
+      },
+      {
+        "id": 11972458,
+        "url": "https://www.linkedin.com/in/hayleigh-culliton-2b585382",
+        "created": "2019-10-20 12:52:07",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 11972459,
+        "url": "https://www.linkedin.com/in/liam-sanio",
+        "created": "2019-10-20 12:52:07",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-02-15 18:22:05"
+      },
+      {
+        "id": 41580240,
+        "url": "https://www.linkedin.com/in/jasondcahill",
+        "created": "2020-04-07 08:07:19",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      },
+      {
+        "id": 60639962,
+        "url": "https://www.linkedin.com/in/natashapoley",
+        "created": "2021-02-15 18:22:05",
+        "deleted": 1,
+        "company_id": 3588372,
+        "last_updated": "2021-05-23 13:14:02"
+      },
+      {
+        "id": 65894478,
+        "url": "https://www.linkedin.com/in/liam-sanio",
+        "created": "2021-05-23 13:14:02",
+        "deleted": 0,
+        "company_id": 3588372,
+        "last_updated": "2021-10-07 06:44:26"
+      }
+    ],
+    "company_featured_investors_collection": []
+  }
+}
