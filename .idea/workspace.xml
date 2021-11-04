@@ -26,8 +26,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a98f7a6d-03c6-44f0-909a-09eda3aa46c6" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WH_Utils/Automation/ParseRegForms/ParseRegD.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WH_Utils/Automation/ParseRegForms/Utils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WH_Utils/Automation/ParseRegForms/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/WH_Utils/__version__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/build_docs/README.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build_docs/automation.rst" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/reqs.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tests/test_objects.py" afterDir="false" />
@@ -229,6 +233,11 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WH_Utils/Automation/ParseRegForms" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python tests.pytest for test_objects.TestModels.test_user_from_db">
     <configuration name="pytest for test_objects.TestEnums" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="WH_Utils2" />
@@ -297,7 +306,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635805122300</updated>
-      <workItem from="1635805123685" duration="9428000" />
+      <workItem from="1635805123685" duration="14654000" />
     </task>
     <servers />
   </component>

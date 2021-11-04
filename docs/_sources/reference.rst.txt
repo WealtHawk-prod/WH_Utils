@@ -15,4 +15,5 @@ Modules
 
    external
    objects
+   automation
    utils

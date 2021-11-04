@@ -5,3 +5,4 @@ pydantic
 sphinx
 sphinx-rtd-theme
 pytest
+bs4
