@@ -25,16 +25,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a98f7a6d-03c6-44f0-909a-09eda3aa46c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WH_Utils/Automation/ParseRegForms/ParseRegD.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WH_Utils/Automation/ParseRegForms/Utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WH_Utils/Automation/ParseRegForms/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WH_Utils/__version__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build_docs/README.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build_docs/automation.rst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reqs.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_objects.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../CS61A/lab08/.idea/libraries/R_User_Library.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../CS61A/lab08/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../CS61A/untitled/.idea/libraries/R_User_Library.xml" beforeDir="false" />
@@ -79,6 +69,9 @@
       <change beforePath="$PROJECT_DIR$/../../Summer_19/CS188/tracking/.idea/libraries/R_User_Library.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Summer_19/CS188/tracking/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Trials/deep-test/venv/network.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WH_Utils/Objects/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WH_Utils/Objects/Models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../anon/.idea/anon.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../anon/.idea/libraries/R_User_Library.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../anon/.idea/misc.xml" beforeDir="false" />
@@ -212,7 +205,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JupyterTrust" id="b226d260-52e3-49dd-8d6f-8457ead80acc" />
   <component name="ProjectId" id="20KtUOf5ZcJdEnHZzrBIqCoQ9e7" />
@@ -306,7 +299,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1635805122300</updated>
-      <workItem from="1635805123685" duration="14654000" />
+      <workItem from="1635805123685" duration="15095000" />
+      <workItem from="1636083620302" duration="672000" />
     </task>
     <servers />
   </component>
@@ -323,6 +317,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="424" y="199" width="1071" height="730" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635806182327">
@@ -333,21 +328,25 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="697" y="346" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1635806176015" />
-    <state width="1878" height="250" key="GridCell.Tab.0.bottom" timestamp="1635891851005">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1878" height="250" key="GridCell.Tab.0.bottom" timestamp="1636040130086">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state width="1878" height="250" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1636040130086" />
     <state width="1878" height="250" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1635891851005" />
-    <state width="1878" height="250" key="GridCell.Tab.0.center" timestamp="1635891851003">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1878" height="250" key="GridCell.Tab.0.center" timestamp="1636040130083">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state width="1878" height="250" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1636040130083" />
     <state width="1878" height="250" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1635891851003" />
-    <state width="1878" height="250" key="GridCell.Tab.0.left" timestamp="1635891851001">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1878" height="250" key="GridCell.Tab.0.left" timestamp="1636040130082">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state width="1878" height="250" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1636040130082" />
     <state width="1878" height="250" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1635891851001" />
-    <state width="1878" height="250" key="GridCell.Tab.0.right" timestamp="1635891851004">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state width="1878" height="250" key="GridCell.Tab.0.right" timestamp="1636040130084">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
+    <state width="1878" height="250" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1636040130084" />
     <state width="1878" height="250" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1635891851004" />
     <state x="469" y="176" key="SettingsEditor" timestamp="1635806100738">
       <screen x="0" y="0" width="1920" height="1080" />

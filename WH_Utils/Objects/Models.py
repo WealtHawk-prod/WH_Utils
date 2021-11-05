@@ -36,7 +36,8 @@ import requests
 from pydantic import Json, HttpUrl
 
 from WH_Utils.Objects.Enums import UserRank, EventType, CompanyType
-from WH_Utils.Objects.Object_utils import verify_json, verify_auth_header, minus_key
+from WH_Utils.Objects.Object_utils import verify_json, verify_auth_header, minus_key, linkedin_dates_to_ts, get_company_data
+from WH_Utils.External import Coresignal
 
 
 from dataclasses import dataclass
@@ -106,7 +107,9 @@ class User:
             response = requests.put(url, params = data, header = auth_header)
         else:
             response = requests.post(url, params = data, header = auth_header)
-        return
+
+        if response.status_code != 200:
+            raise ConnectionError(response.content)
 
     def __repr__(self) -> str:
         return "UserID: {} \n Name: {},{}\n Email: {}, \n, Rank: {}".format(self.id, self.last_name, self.first_name, self.email, self.rank)
@@ -138,26 +141,101 @@ class Client:
     def __init__(self,
                 WH_ID: Optional[str] = None,
                 auth_header: Optional[Dict[str, Any]] = None,
-                data_dict: Optional[Dict[str, Any]] = None) -> None:
+                data_dict: Optional[Dict[str, Any]] = None,
+                coresignal_id: Optional[int] = None) -> None:
         """
         verify combonation of variables and call the right function with the right params.
 
         """
+        if WH_ID and auth_header:
+            self._build_from_WH_db(WH_ID, auth_header)
+        elif data_dict:
+            self._build_from_data_dict(data_dict)
+        elif coresignal_id and auth_header:
+            self._build_from_coresignal(coresignal_id, auth_header)
+        else:
+            raise ValueError("Invalid combination of init parameters")
 
         return
 
     def _build_from_WH_db(self, WH_ID: Optional[str], auth_header: Dict[str, Any]) -> None:
-        return
+        self.in_database = True
+        verify_auth_header(auth_header)
+        request = requests.get(WH_DB_URL + "/client", params={'id': WH_ID}, headers=auth_header)
+        content = request.json()
+
+        for key in self.__dict__.keys():
+            self.__dict__[key] = content[key]
+
+        self.in_database = True
 
     def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
         verify_json("client", data)
-        return
+        for key in self.__dict__.keys():
+            self.__dict__[key] = data[key]
+
+        self.in_database = False
 
     def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: Dict[str, Any]) -> None:
-        return
+        if coresignal_id:
+            self._build_from_coresignal_id(coresignal_id, auth_header)
+        elif linkedin_url:
+            self._build_from_linkedin_url(linkedin_url, auth_header)
+        else:
+            raise ValueError("Incompatible input variables")
+
+    def _build_from_coresignal_id(self, id, auth_header):
+        data = Coresignal.get_person_by_id(id, auth_header)
+        self._build_from_coresignal_json(data)
+
+    def _build_from_linkedin_url(self, linkedin_url, auth_header):
+        data = Coresignal.get_person_by_url(linkedin_url, auth_header)
+        self._build_from_coresignal_json(data)
+
+    def _build_from_coresignal_json(self, data):
+        self.coresignal_id = data['id']
+        self.name = data['name']
+        self.location = data['location']
+        self.linkedin_url = data['url']
+        self.picture = data['logo_url']
+
+        if self.company:
+            exp = get_company_data(self.company, data['member_experience_collection'])
+            self.start_date = linkedin_dates_to_ts(exp['date_from']) if exp['date_from'] else None
+            self.end_date = linkedin_dates_to_ts(exp['date_to']) if exp['date_to'] else None
+            self.company = exp['company_name']
+
+        relevant_fields = ['id', 'name', 'title', 'url', 'hash', 'location', 'industry', 'summary', 'logo_url',
+                           'last_response_code', 'created', 'last_updated', 'outdated', 'deleted', 'country',
+                           'experience_count', 'last_updated_ux', 'member_shorthand_name', 'member_shorthand_name_hash',
+                           'canonical_url', 'canonical_hash', 'member_awards_collection',
+                           'member_certifications_collection', 'member_courses_collection',
+                           'member_education_collection', 'member_experience_collection', 'member_groups_collection',
+                           'member_interests_collection', 'member_languages_collection',
+                           'member_organizations_collection', 'member_patents_collection', 'member_projects_collection',
+                           'member_publications_collection', 'member_skills_collection',
+                           'member_test_scores_collection', 'member_volunteering_cares_collection',
+                           'member_volunteering_opportunities_collection', 'member_volunteering_positions_collection',
+                           'member_websites_collection']
+
+
+        self.full_data = dict((k, data[k]) for k in relevant_fields)
+        self.analytics = {}
+        self.in_database = False
+
 
     def send_to_db(self, auth_header: Dict[str, Any]) -> None:
-        return
+        data = self.__dict__
+        data = minus_key("in_database", data)
+        url = "https://db.wealthawk.com/client"
+
+        if self.in_database:
+            response = requests.put(url, params=data, header=auth_header)
+        else:
+            response = requests.post(url, params=data, header=auth_header)
+
+        if response.status_code != 200:
+            raise ConnectionError(response.content)
 
     def __repr__(self) -> str:
         return "ClientID: {} \n Name: {} \n Location: {}".format(self.id, self.name, self.location)
