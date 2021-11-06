@@ -76,16 +76,15 @@ class User:
         elif data_dict:
             self._build_from_data_dict(data_dict)
         else:
-            raise ValueError("Invalid combonation of init parameters")
+            raise ValueError("Invalid combination of init parameters")
 
 
     def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
-        self.in_database = True
         verify_auth_header(auth_header)
-        request = requests.get(WH_DB_URL + "/users", params={'id':WH_ID}, headers=auth_header)
-        content = request.json()
+        request = requests.get(WH_DB_URL + "/user", params={'userID': WH_ID}, headers=auth_header)
+        content = request.json()[0]
 
-        for key in self.__dict__.keys():
+        for key in list(content.keys()):
             self.__dict__[key] = content[key]
 
         self.in_database = True

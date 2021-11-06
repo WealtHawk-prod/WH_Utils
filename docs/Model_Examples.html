@@ -21,8 +21,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Automation" href="automation.html" />
-    <link rel="prev" title="Objects" href="objects.html" /> 
+    <link rel="next" title="Reference" href="reference.html" />
+    <link rel="prev" title="Model Examples and Usage" href="model_usage.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -41,22 +41,18 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="reference.html">Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="reference.html#modules">Modules</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="external.html">External</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="objects.html">Objects</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="objects.html#module-WH_Utils.Objects.Enums">Enums</a></li>
-<li class="toctree-l4"><a class="reference internal" href="objects.html#module-WH_Utils.Objects.Models">Models</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="objects.html#examples">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="automation.html">Automation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="utils.html">Utils</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="usage.html">Usage</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="usage.html#examples">Examples</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="model_usage.html">Model Examples and Usage</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Setting Up Authentication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#User">User</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Reference</a></li>
 </ul>
 
         </div>
@@ -73,8 +69,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="reference.html">Reference</a> &raquo;</li>
-          <li><a href="objects.html">Objects</a> &raquo;</li>
+          <li><a href="usage.html">Usage</a> &raquo;</li>
+          <li><a href="model_usage.html">Model Examples and Usage</a> &raquo;</li>
       <li>Setting Up Authentication</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/Model_Examples.ipynb.txt" rel="nofollow"> View page source</a>
@@ -383,8 +379,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">WH_API_KEY</span> <span class="o">=</span> <span class="s1">&#39;Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NGNmYTAxOTgyMDNlMjgwN2Q4MzRkYmE2MjBlZjczZjI4ZTRlMmMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vd2gtbWFpbi0zMDc3MjIiLCJhdWQiOiJ3aC1tYWluLTMwNzcyMiIsImF1dGhfdGltZSI6MTYzNjEzMTIxOCwidXNlcl9pZCI6Ik1zc0FpNzFOcUZkMXkySk5GT2tpaXRrSjRJZjIiLCJzdWIiOiJNc3NBaTcxTnFGZDF5MkpORk9raWl0a0o0SWYyIiwiaWF0IjoxNjM2MTMxMjE4LCJleHAiOjE2MzYxMzQ4MTgsImVtYWlsIjoibWNjbGFpbi50aGllbEBiZXJrZWxleS5lZHUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsibWNjbGFpbi50aGllbEBiZXJrZWxleS5lZHUiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.QeHA2_Dz7mbRRNrZ777-D1YMmbIY89nWZBMX9p0t58tQsXI6l4XGHdPyRGZU1HtlfIBAPvXFrHDyMSW-DzobpMc_J6H2yjJc3JRWrwQt0b8mENdG-WGCzipCLIVz8M0inkh2DtbpAvc8NUa7x4eI-MO4q7jIASjH6MxJXXhRCdov8rWnVVLzlOx9z-UB_devxj4x8FW9F4RyQKyfmUZdMKTrmfVT-VtsWU4w2fXHGJGvAfHspXqzcmvwmW1SDK2jCmXm1b-VViHkdew4OYPnbe8Nz5m5bmEJlfhSLeSIj10RpqHi9LZE3vujzhotQRZf9n50SmlVtKXbHGn1WnQHzQ&#39;</span>
-
+<span></span><span class="n">WH_API_KEY</span> <span class="o">=</span> <span class="s1">&#39;Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjY5NGNmYTAxOTgyMDNlMjgwN2Q4MzRkYmE2MjBlZjczZjI4ZTRlMmMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vd2gtbWFpbi0zMDc3MjIiLCJhdWQiOiJ3aC1tYWluLTMwNzcyMiIsImF1dGhfdGltZSI6MTYzNjIyMzA5MywidXNlcl9pZCI6Ik1zc0FpNzFOcUZkMXkySk5GT2tpaXRrSjRJZjIiLCJzdWIiOiJNc3NBaTcxTnFGZDF5MkpORk9raWl0a0o0SWYyIiwiaWF0IjoxNjM2MjIzMDkzLCJleHAiOjE2MzYyMjY2OTMsImVtYWlsIjoibWNjbGFpbi50aGllbEBiZXJrZWxleS5lZHUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsibWNjbGFpbi50aGllbEBiZXJrZWxleS5lZHUiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.K6LQTLtWowsPvNLeomujsTxroK2ARhi1m4-Tc_tq0DI-M1-J35eNkRPcaxwwC7WMdVHyjYbzp2a6y9PO65stMdQ912D9PgQIJaclwZrvl6a4rNyv5eRqlxEwMdtMEcVBW2p4OxPCm6426eOHSo6ChJzzBaE2pVegkPsT58Wu3wkHZ237jLNRFWAGISM-NbbrSLxXlcj30PBxCXGCgVJBGQ7RafHaSfK6OUBfZQr-tMg_dVcv6VRAUzkxBIgU82FRkNAvJ2oP2aZ5yD2-w_6DWqGSubdhdTktA2IgxcNbO-ne4gQfe50Gx8QWaqLU4VOPTLoiJweE66FS45clxdlNQQ&#39;</span>
 
 <span class="n">WH_auth_dict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
@@ -448,22 +443,6 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-id
-first_name
-last_name
-email
-other_info
-rank
-firebase_id
-created
-last_modified
-</pre></div></div>
-</div>
 <div class="nboutput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
@@ -486,7 +465,7 @@ last_modified
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
@@ -495,38 +474,28 @@ last_modified
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
 UserID: 6091f72d-9b4c-4af9-9b25-e75811a2667e
- Name: Thiel,McClain
+ Name: Thiel, McClain
  Email: mcclain.thiel@berkeley.edu,
-, Rank: admin
+ Rank: admin
 </pre></div></div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="k">class</span> <span class="nc">test</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
-</pre></div>
-</div>
-</div>
+</section>
+</section>
+<section id="From-WH-API">
+<h2>From WH API<a class="headerlink" href="#From-WH-API" title="Permalink to this headline"></a></h2>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">t</span> <span class="o">=</span> <span class="n">test</span><span class="p">(</span><span class="s1">&#39;mc&#39;</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span></span><span class="n">user_id</span> <span class="o">=</span> <span class="s2">&quot;6091f72d-9b4c-4af9-9b25-e75811a2667e&quot;</span>
+<span class="n">example_client2</span> <span class="o">=</span> <span class="n">WH_Utils</span><span class="o">.</span><span class="n">User</span><span class="p">(</span><span class="n">WH_ID</span><span class="o">=</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">auth_header</span> <span class="o">=</span> <span class="n">WH_auth_dict</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -535,7 +504,7 @@ UserID: 6091f72d-9b4c-4af9-9b25-e75811a2667e
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
-<span></span><span class="n">t</span><span class="o">.</span><span class="vm">__dict__</span>
+<span></span><span class="n">example_client2</span>
 </pre></div>
 </div>
 </div>
@@ -545,7 +514,10 @@ UserID: 6091f72d-9b4c-4af9-9b25-e75811a2667e
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&#39;name&#39;: &#39;mc&#39;, &#39;age&#39;: 3}
+UserID: 6091f72d-9b4c-4af9-9b25-e75811a2667e
+ Name: Thiel, McClain
+ Email: mcclain.thiel@berkeley.edu,
+ Rank: admin
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
@@ -559,14 +531,13 @@ UserID: 6091f72d-9b4c-4af9-9b25-e75811a2667e
 </div>
 </section>
 </section>
-</section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="objects.html" class="btn btn-neutral float-left" title="Objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="automation.html" class="btn btn-neutral float-right" title="Automation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="model_usage.html" class="btn btn-neutral float-left" title="Model Examples and Usage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="reference.html" class="btn btn-neutral float-right" title="Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
