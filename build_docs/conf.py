@@ -14,6 +14,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
     "sphinx_rtd_theme",
+    "nbsphinx"
 ]
 autodoc_typehints = "description"
 html_theme = "sphinx_rtd_theme"

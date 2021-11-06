@@ -32,6 +32,7 @@ because I wanted to use the inheritance for other stuff and I don't know how MI 
 from datetime import datetime, date
 from typing import Any, Optional, Union, List, Dict, Any
 import requests
+import uuid
 
 from pydantic import Json, HttpUrl
 
@@ -92,8 +93,11 @@ class User:
 
     def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
         verify_json("user", data)
-        for key in self.__dict__.keys():
+        for key in list(data.keys()):
             self.__dict__[key] = data[key]
+
+        if not self.id:
+            self.id = str(uuid.uuid4())
 
         self.in_database = False
 
@@ -112,10 +116,10 @@ class User:
             raise ConnectionError(response.content)
 
     def __repr__(self) -> str:
-        return "UserID: {} \n Name: {},{}\n Email: {}, \n, Rank: {}".format(self.id, self.last_name, self.first_name, self.email, self.rank)
+        return "UserID: {} \n Name: {}, {}\n Email: {}, \n Rank: {}".format(self.id, self.last_name, self.first_name, self.email, self.rank)
 
     def __str__(self) -> str:
-        return "UserID: {} \n Name: {},{}\n Email: {}, \n, Rank: {}".format(self.id, self.last_name, self.first_name, self.email, self.rank)
+        return "UserID: {} \n Name: {}, {}\n Email: {}, \n Rank: {}".format(self.id, self.last_name, self.first_name, self.email, self.rank)
 
 
 @dataclass
@@ -142,7 +146,8 @@ class Client:
                 WH_ID: Optional[str] = None,
                 auth_header: Optional[Dict[str, Any]] = None,
                 data_dict: Optional[Dict[str, Any]] = None,
-                coresignal_id: Optional[int] = None) -> None:
+                coresignal_id: Optional[int] = None,
+                linkedin_url: Optional[str] = None) -> None:
         """
         verify combonation of variables and call the right function with the right params.
 
@@ -152,11 +157,11 @@ class Client:
         elif data_dict:
             self._build_from_data_dict(data_dict)
         elif coresignal_id and auth_header:
-            self._build_from_coresignal(coresignal_id, auth_header)
+            self._build_from_coresignal(coresignal_id=coresignal_id, auth_header=auth_header)
+        elif linkedin_url and coresignal_id:
+            self._build_from_coresignal(linkedin_url=linkedin_url, auth_header=auth_header)
         else:
             raise ValueError("Invalid combination of init parameters")
-
-        return
 
     def _build_from_WH_db(self, WH_ID: Optional[str], auth_header: Dict[str, Any]) -> None:
         self.in_database = True
@@ -164,16 +169,18 @@ class Client:
         request = requests.get(WH_DB_URL + "/client", params={'id': WH_ID}, headers=auth_header)
         content = request.json()
 
-        for key in self.__dict__.keys():
+        for key in list(content.keys()):
             self.__dict__[key] = content[key]
 
         self.in_database = True
 
     def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
         verify_json("client", data)
-        for key in self.__dict__.keys():
+        for key in list(data.keys()):
             self.__dict__[key] = data[key]
 
+        if not self.id:
+            self.id = str(uuid.uuid4())
         self.in_database = False
 
     def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: Dict[str, Any]) -> None:
@@ -265,13 +272,23 @@ class Company:
     def __init__(self,
                 WH_ID: Optional[str] = None,
                 auth_header: Optional[Dict[str, Any]] = None,
-                data_dict: Optional[Dict[str, Any]]= None) -> None:
+                data_dict: Optional[Dict[str, Any]]= None,
+                coresignal_id: Optional[int] = None,
+                linkedin_url: Optional[str] = None) -> None:
         """
         verify combonation of variables and call the right function with the right params.
 
         """
-
-        return
+        if WH_ID and auth_header:
+            self._build_from_WH_db(WH_ID, auth_header)
+        elif data_dict:
+            self._build_from_data_dict(data_dict)
+        elif coresignal_id and auth_header:
+            self._build_from_coresignal(coresignal_id=coresignal_id, auth_header=auth_header)
+        elif linkedin_url and coresignal_id:
+            self._build_from_coresignal(linkedin_url=linkedin_url, auth_header=auth_header)
+        else:
+            raise ValueError("Invalid combination of init parameters")
 
     def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
         return
