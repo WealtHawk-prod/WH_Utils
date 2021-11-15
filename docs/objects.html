@@ -109,8 +109,8 @@
 <h1>Objects<a class="headerlink" href="#objects" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#module-WH_Utils.Objects.Enums" id="id1">Enums</a></p></li>
-<li><p><a class="reference internal" href="#module-WH_Utils.Objects.Models" id="id2">Models</a></p></li>
+<li><p><a class="reference internal" href="#module-WH_Utils.Objects.Enums" id="id3">Enums</a></p></li>
+<li><p><a class="reference internal" href="#module-WH_Utils.Objects.Models" id="id4">Models</a></p></li>
 </ul>
 </div>
 <section id="module-WH_Utils.Objects.Enums">
@@ -203,33 +203,22 @@ a coresignal_id or linkedin_url instead:</p>
 <p><code class="docutils literal notranslate"><span class="pre">`</span>
 <span class="pre">client</span> <span class="pre">=</span> <span class="pre">Client(linkedin_url</span> <span class="pre">=</span> <span class="pre">&quot;https://linkedin.com/mcclain-thiel&quot;,</span> <span class="pre">auth_dict</span> <span class="pre">=</span> <span class="pre">coresignal_auth)</span>
 <span class="pre">`</span></code></p>
-<p>Similarly, if you want to push this back to the daatbase, the class will know if this is a POST or PUT request and
-handle everything accordingly.</p>
+<p>Similarly, if you want to push this back to the datatbase, the class will know if this is a POST or PUT request and
+handle everything accordingly. <a href="#id1"><span class="problematic" id="id2">**</span></a>NOTE: ** It does this by making an <cite>in_database</cite> parameter for every instance. This
+is determined by how the object was created. Foe example if you initialize the object with parameters WH_ID and auth_dict,
+then the object is pulled from the database and we theerefore know that it is already present in the WH DB so <cite>in_database</cite>
+is set to <cite>True</cite> and calling <cite>send_to_database()</cite> on this object will result in a <cite>PUT</cite> request. Any other form of
+initialization will assume that the model is not in the database and so will result in <cite>POST</cite> request. If you know
+the object is in the database but the <cite>in_database</cite> attribute is false, you can change it which will in turn change
+how the object is pushed to the DB.</p>
 <p>Additionally, I’ve added some nice to have debugging features. All these classes are based on the new “Dataclass”
 structure which provides some cool features like pretty printing and automatic hashing. So these classes all
 have fancy printing functions and are all set for hashing stuff.</p>
 <p>Previously some of this was handled by the pydantic version called Baseclass. I reworked that
 because I wanted to use the inheritance for other stuff and I don’t know how MI works in python.</p>
 <dl class="py class">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Models.AddTaskSchema">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">AddTaskSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">pydantic.types.Json</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.AddTaskSchema" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>title</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>content</strong> (<em>Optional</em><em>[</em><em>pydantic.types.Json</em><em>]</em>) – </p></li>
-<li><p><strong>email</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py class">
 <dt class="sig sig-object py" id="WH_Utils.Objects.Models.Client">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coresignal_id</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linkedin_url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.Client" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coresignal_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linkedin_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.Client" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -244,6 +233,32 @@ because I wanted to use the inheritance for other stuff and I don’t know how M
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.Client.send_to_db">
+<span class="sig-name descname"><span class="pre">send_to_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth_header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.Client.send_to_db" title="Permalink to this definition"></a></dt>
+<dd><p>Sends the current object to the WH Database</p>
+<p>It will try to figure out if the object is already in the database by looking at the initialization
+method by looking at the <cite>in_database</cite> attribute. For example, if you constructed the object using
+WH_auth credentials and a WH_ID, then obviously the object is in the DB and so the function will
+attempt a PUT request to update the user. If ‘in_database’ is <cite>False</cite> then it will attempt a <cite>POST</cite>
+request. It’s python so its mutable obviously so change it if needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>auth_header</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – the authorization header for the WH database. It should be a dict with at least the key
+‘Authorization’ where the value is the key generated by logging in</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>response</strong> – the response of the backend API to your request. If it was a sucessful POST request it will look like:
+&gt;&gt;&gt; exampleClient.send_to_db(WH_auth_dict).content.decode()
+Not expecting client in database. Attempting Post request.
+‘{“id”:”1fd84bd0-779d-4a10-8c71-e2cf008d23ed”}’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -263,50 +278,80 @@ because I wanted to use the inheritance for other stuff and I don’t know how M
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.Company.send_to_db">
+<span class="sig-name descname"><span class="pre">send_to_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth_header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.Company.send_to_db" title="Permalink to this definition"></a></dt>
+<dd><p>Sends the current object to the WH Database</p>
+<p>It will try to figure out if the object is already in the database by looking at the initialization
+method by looking at the <cite>in_database</cite> attribute. For example, if you constructed the object using
+WH_auth credentials and a WH_ID, then obviously the object is in the DB and so the function will
+attempt a PUT request to update the user. If ‘in_database’ is <cite>False</cite> then it will attempt a <cite>POST</cite>
+request. It’s python so its mutable obviously so change it if needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>auth_header</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – the authorization header for the WH database. It should be a dict with at least the key
+‘Authorization’ where the value is the key generated by logging in</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>response</strong> – the response of the backend API to your request. If it was a sucessful POST request it will look like:
+&gt;&gt;&gt; exampleClient.send_to_db(WH_auth_dict).content.decode()
+Not expecting client in database. Attempting Post request.
+‘{“id”:”1fd84bd0-779d-4a10-8c71-e2cf008d23ed”}’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>requests.Response</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="WH_Utils.Objects.Models.Event">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Coresignal_ID</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">LinkedInURL</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">pydantic.networks.HttpUrl</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.Event" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.Event" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>WH_ID</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
 <li><p><strong>auth_header</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
 <li><p><strong>data_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
-<li><p><strong>Coresignal_ID</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – </p></li>
-<li><p><strong>LinkedInURL</strong> (<em>Optional</em><em>[</em><em>pydantic.networks.HttpUrl</em><em>]</em>) – </p></li>
 </ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.Event.send_to_db">
+<span class="sig-name descname"><span class="pre">send_to_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth_header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.Event.send_to_db" title="Permalink to this definition"></a></dt>
+<dd><p>Sends the current object to the WH Database</p>
+<p>It will try to figure out if the object is already in the database by looking at the initialization
+method by looking at the <cite>in_database</cite> attribute. For example, if you constructed the object using
+WH_auth credentials and a WH_ID, then obviously the object is in the DB and so the function will
+attempt a PUT request to update the user. If ‘in_database’ is <cite>False</cite> then it will attempt a <cite>POST</cite>
+request. It’s python so its mutable obviously so change it if needed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>auth_header</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – the authorization header for the WH database. It should be a dict with at least the key
+‘Authorization’ where the value is the key generated by logging in</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>response</strong> – the response of the backend API to your request. If it was a sucessful POST request it will look like:
+&gt;&gt;&gt; exampleClient.send_to_db(WH_auth_dict).content.decode()
+Not expecting client in database. Attempting Post request.
+‘{“id”:”1fd84bd0-779d-4a10-8c71-e2cf008d23ed”}’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>requests.Response</p>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py class">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Models.SignupSchema">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">SignupSchema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_name</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">picture</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.SignupSchema" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>email</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>first_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>last_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>location</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>picture</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>password</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>company</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>rank</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="WH_Utils.Objects.Models.User">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.User" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.User" title="Permalink to this definition"></a></dt>
+<dd><p>The user class is the model for interacting with the accounts of WEALTHAWK clients</p>
+<p>Columns documented below will match the columns in the WH database</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>WH_ID</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
@@ -318,6 +363,106 @@ because I wanted to use the inheritance for other stuff and I don’t know how M
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.id" title="Permalink to this definition"></a></dt>
+<dd><p>randomly generated UUID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.first_name">
+<span class="sig-name descname"><span class="pre">first_name</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.first_name" title="Permalink to this definition"></a></dt>
+<dd><p>first name of the user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.last_name">
+<span class="sig-name descname"><span class="pre">last_name</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.last_name" title="Permalink to this definition"></a></dt>
+<dd><p>last name if the user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.email">
+<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.email" title="Permalink to this definition"></a></dt>
+<dd><p>email of the user</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.other_info">
+<span class="sig-name descname"><span class="pre">other_info</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.other_info" title="Permalink to this definition"></a></dt>
+<dd><p>any additional information we want to store on the user. Schema is currently undecided</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.rank">
+<span class="sig-name descname"><span class="pre">rank</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.rank" title="Permalink to this definition"></a></dt>
+<dd><p>the rank of a user is the privileges the user has. For example, an Admin user can modify and delete
+clients while a User client can only view clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[<a class="reference internal" href="#WH_Utils.Objects.Enums.UserRank" title="WH_Utils.Objects.Enums.UserRank">UserRank</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.firebase_id">
+<span class="sig-name descname"><span class="pre">firebase_id</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.firebase_id" title="Permalink to this definition"></a></dt>
+<dd><p>the uuid for firebase to match up with authentication</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.created">
+<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.created" title="Permalink to this definition"></a></dt>
+<dd><p>dateetime of the objects creation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[datetime]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.last_modified">
+<span class="sig-name descname"><span class="pre">last_modified</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.last_modified" title="Permalink to this definition"></a></dt>
+<dd><p>datetime of the most recent modification of the object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Optional[datetime]</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>

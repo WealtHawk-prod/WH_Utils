@@ -32,7 +32,7 @@ def verify_json(expected_class: str, json: Dict[str, Any]) -> None:
 
 def _verify_as_client(json: Dict[str, Any]) -> None:
     expected_keys = ['id', 'name', 'location', 'coresignal_id', 'linkedin_url', 'picture', 'event_type', 'company',
-                     'start_date', 'end_date', 'full_data', 'analytics', 'created', 'last_modified']
+                     'start_date', 'end_date', 'full_data', 'analytics', 'date_created', 'last_modified']
     actual_keys = list(json.keys())
     same_keys = set(expected_keys) == set(actual_keys)
     if not same_keys:

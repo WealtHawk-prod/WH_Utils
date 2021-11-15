@@ -17,8 +17,14 @@ a coresignal_id or linkedin_url instead:
 client = Client(linkedin_url = "https://linkedin.com/mcclain-thiel", auth_dict = coresignal_auth)
 ```
 
-Similarly, if you want to push this back to the daatbase, the class will know if this is a POST or PUT request and
-handle everything accordingly.
+Similarly, if you want to push this back to the datatbase, the class will know if this is a POST or PUT request and
+handle everything accordingly. **NOTE: ** It does this by making an `in_database` parameter for every instance. This
+is determined by how the object was created. Foe example if you initialize the object with parameters WH_ID and auth_dict,
+then the object is pulled from the database and we theerefore know that it is already present in the WH DB so `in_database`
+is set to `True` and calling `send_to_database()` on this object will result in a `PUT` request. Any other form of
+initialization will assume that the model is not in the database and so will result in `POST` request. If you know
+the object is in the database but the `in_database` attribute is false, you can change it which will in turn change
+how the object is pushed to the DB.
 
 Additionally, I've added some nice to have debugging features. All these classes are based on the new "Dataclass"
 structure which provides some cool features like pretty printing and automatic hashing. So these classes all
@@ -33,6 +39,7 @@ from datetime import datetime, date
 from typing import Any, Optional, Union, List, Dict, Any
 import requests
 import uuid
+import json
 
 from pydantic import Json, HttpUrl
 
@@ -50,6 +57,42 @@ CORESIGNAL_URL = ""
 
 @dataclass
 class User:
+    """
+    The user class is the model for interacting with the accounts of WEALTHAWK clients
+
+    Columns documented below will match the columns in the WH database
+
+    Attributes
+    -------------
+        id: Optional[str]
+            randomly generated UUID
+
+        first_name: Optional[str]
+            first name of the user
+
+        last_name: Optional[str]
+            last name if the user
+
+        email: Optional[str]
+            email of the user
+
+        other_info: Optional[Any]
+            any additional information we want to store on the user. Schema is currently undecided
+
+        rank: Optional[UserRank]
+            the rank of a user is the privileges the user has. For example, an Admin user can modify and delete
+            clients while a User client can only view clients
+
+        firebase_id: Optional[str]
+            the uuid for firebase to match up with authentication
+
+        created: Optional[datetime]
+            dateetime of the objects creation
+
+        last_modified: Optional[datetime]
+            datetime of the most recent modification of the object
+
+    """
     id: Optional[str]
     first_name: Optional[str]
     last_name: Optional[str]
@@ -68,7 +111,30 @@ class User:
                 auth_header: Optional[Dict[str, Any]] = None,
                 data_dict: Optional[Dict[str, Any]] = None) -> None:
         """
-        verify combination of variables and call the right function with the right params.
+        Initialization function for user
+
+        This function allows several combinations of parameters tha behave differently.
+
+        if only `data_dict` parameter is passed in:
+            a `User` object will be constructed from the data passed in via the dictionary. The data dict must
+            have the same keys as the object itself.
+
+        if `WH_ID` and `auth_header` are passed in:
+            this will cause the program to attempt to pull the user from the WH database. User with that UUID
+            must already exist in the database and the credentials must be valid and properly formatted.
+
+        All other combinations are invalid.
+
+        Args
+        -----
+            WH_ID: Optional[str]
+                the UUID of a user in the database
+
+            auth_header: Optional[Dict[str, Any]]
+                the authorization header for the WEALTHAWK database
+
+            data_dict: Optional[Dict[str, Any]]
+                data to construct a user from
 
         """
         if WH_ID and auth_header:
@@ -83,9 +149,16 @@ class User:
         verify_auth_header(auth_header)
         request = requests.get(WH_DB_URL + "/user", params={'userID': WH_ID}, headers=auth_header)
         content = request.json()[0]
+        if "detail" in list(content.keys()) and content['detail'] == "User Not Found":
+            raise ValueError("User Not Found or bad auth")
 
         for key in list(content.keys()):
             self.__dict__[key] = content[key]
+
+        # this is a hacky fix for the fact that the api wont send empty JSON types it just sends "null" which
+        # breaks the verification on push
+        if not self.other_info:
+            self.other_info = {}
 
         self.in_database = True
 
@@ -101,18 +174,23 @@ class User:
         self.in_database = False
 
 
-    def send_to_db(self, auth_header: Dict[str, Any]) -> None:
+    def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
         data = self.__dict__
         data = minus_key("in_database", data)
         url = "https://db.wealthawk.com/user"
+        data['other_info'] = json.dumps(self.other_info)
 
         if self.in_database:
-            response = requests.put(url, params = data, header = auth_header)
+            print('From Database. Attempting PUT request.')
+            response = requests.put(url, json = data, headers = auth_header)
         else:
-            response = requests.post(url, params = data, header = auth_header)
+            print('Not from database. Attempting POST request')
+            response = requests.post(url, json = data, headers = auth_header)
 
         if response.status_code != 200:
             raise ConnectionError(response.content)
+
+        return response
 
     def __repr__(self) -> str:
         return "UserID: {} \n Name: {}, {}\n Email: {}, \n Rank: {}".format(self.id, self.last_name, self.first_name, self.email, self.rank)
@@ -123,6 +201,9 @@ class User:
 
 @dataclass
 class Client:
+    """
+
+    """
     id: Optional[str]
     name: Optional[str]
     location: Optional[str]
@@ -148,7 +229,7 @@ class Client:
                 coresignal_id: Optional[int] = None,
                 linkedin_url: Optional[str] = None) -> None:
         """
-        verify combonation of variables and call the right function with the right params.
+        verify combination of variables and call the right function with the right params.
 
         """
         if WH_ID and auth_header:
@@ -163,13 +244,18 @@ class Client:
             raise ValueError("Invalid combination of init parameters")
 
     def _build_from_WH_db(self, WH_ID: Optional[str], auth_header: Dict[str, Any]) -> None:
-        self.in_database = True
         verify_auth_header(auth_header)
-        request = requests.get(WH_DB_URL + "/client", params={'id': WH_ID}, headers=auth_header)
+        request = requests.get(WH_DB_URL + "/client", params={'clientID': WH_ID}, headers=auth_header)
         content = request.json()
 
         for key in list(content.keys()):
             self.__dict__[key] = content[key]
+
+        if not self.full_data or self.full_data == '"null"':
+            self.full_data = {}
+
+        if not self.analytics or self.analytics == '"null"':
+            self.analytics = {}
 
         self.in_database = True
 
@@ -181,6 +267,11 @@ class Client:
         if not self.id:
             self.id = str(uuid.uuid4())
         self.in_database = False
+        if not self.analytics:
+            self.analytics = {}
+
+        if not self.full_data:
+            self.full_data = {}
 
     def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: Dict[str, Any]) -> None:
         if coresignal_id:
@@ -230,18 +321,48 @@ class Client:
         self.in_database = False
 
 
-    def send_to_db(self, auth_header: Dict[str, Any]) -> None:
+    def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
+        """
+        Sends the current object to the WH Database
+
+        It will try to figure out if the object is already in the database by looking at the initialization
+        method by looking at the `in_database` attribute. For example, if you constructed the object using
+        WH_auth credentials and a WH_ID, then obviously the object is in the DB and so the function will
+        attempt a PUT request to update the user. If 'in_database' is `False` then it will attempt a `POST`
+        request. It's python so its mutable obviously so change it if needed.
+
+        Args
+        ------
+            auth_header: Dict[str, Any]
+                the authorization header for the WH database. It should be a dict with at least the key
+                'Authorization' where the value is the key generated by logging in
+
+        Returns
+        ---------
+            response: requests.Response
+                the response of the backend API to your request. If it was a sucessful POST request it will look like:
+                >>> exampleClient.send_to_db(WH_auth_dict).content.decode()
+                Not expecting client in database. Attempting Post request.
+                '{"id":"1fd84bd0-779d-4a10-8c71-e2cf008d23ed"}'
+
+        """
         data = self.__dict__
         data = minus_key("in_database", data)
         url = "https://db.wealthawk.com/client"
+        data['analytics'] = json.dumps(self.analytics)
+        data['full_data'] = json.dumps(self.full_data)
 
         if self.in_database:
-            response = requests.put(url, params=data, header=auth_header)
+            print("Expecting Client in Database. Attempting PUT request")
+            response = requests.put(url, json=data, headers=auth_header)
         else:
-            response = requests.post(url, params=data, header=auth_header)
+            print("Not expecting client in database. Attempting Post request.")
+            response = requests.post(url, json=data, headers=auth_header)
 
         if response.status_code != 200:
             raise ConnectionError(response.content)
+
+        return response
 
     def __repr__(self) -> str:
         return "ClientID: {} \n Name: {} \n Location: {}".format(self.id, self.name, self.location)
@@ -275,7 +396,7 @@ class Company:
                 coresignal_id: Optional[int] = None,
                 linkedin_url: Optional[str] = None) -> None:
         """
-        verify combonation of variables and call the right function with the right params.
+        verify combination of variables and call the right function with the right params.
 
         """
         if WH_ID and auth_header:
@@ -290,17 +411,78 @@ class Company:
             raise ValueError("Invalid combination of init parameters")
 
     def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
-        return
+        verify_auth_header(auth_header)
+        request = requests.get(WH_DB_URL + "/company", params={'companyID': WH_ID}, headers=auth_header)
+        content = request.json()
+
+        for key in list(content.keys()):
+            self.__dict__[key] = content[key]
+
+        if not self.full_data or self.full_data == '"null"':
+            self.full_data = {}
+
+        self.in_database = True
 
     def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
-        verify_json("client", data)
-        return
+        verify_json("company", data)
+        for key in list(data.keys()):
+            self.__dict__[key] = data[key]
+
+        if not self.id:
+            self.id = str(uuid.uuid4())
+
+        if not self.full_data:
+            self.full_data = {}
+
+        self.in_database = False
+
 
     def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: Dict[str, Any]) -> None:
         return
 
-    def send_to_db(self, auth_header: Dict[str, Any]) -> None:
-        return
+    def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
+        """
+        Sends the current object to the WH Database
+
+        It will try to figure out if the object is already in the database by looking at the initialization
+        method by looking at the `in_database` attribute. For example, if you constructed the object using
+        WH_auth credentials and a WH_ID, then obviously the object is in the DB and so the function will
+        attempt a PUT request to update the user. If 'in_database' is `False` then it will attempt a `POST`
+        request. It's python so its mutable obviously so change it if needed.
+
+        Args
+        ------
+            auth_header: Dict[str, Any]
+                the authorization header for the WH database. It should be a dict with at least the key
+                'Authorization' where the value is the key generated by logging in
+
+        Returns
+        ---------
+            response: requests.Response
+                the response of the backend API to your request. If it was a sucessful POST request it will look like:
+                >>> exampleClient.send_to_db(WH_auth_dict).content.decode()
+                Not expecting client in database. Attempting Post request.
+                '{"id":"1fd84bd0-779d-4a10-8c71-e2cf008d23ed"}'
+
+        """
+        data = self.__dict__
+        data = minus_key("in_database", data)
+        url = "https://db.wealthawk.com/company"
+        data['full_data'] = json.dumps(data['full_data'])
+        data['analytics'] = json.dumps(data['analytics'])
+
+
+        if self.in_database:
+            print("Expected that object is already in database. Attempting PUT request")
+            response = requests.put(url, json=data, headers=auth_header)
+        else:
+            print('Object not expected in database. Attempting POST request.')
+            response = requests.post(url, data=data, headers=auth_header)
+
+        if response.status_code != 200:
+            raise ConnectionError(response.content.decode())
+
+        return response
 
     def __repr__(self) -> str:
         return "CompanyID: {} \n Name: {}".format(self.id, self.name)
@@ -330,9 +512,7 @@ class Event:
     def __init__(self,
                 WH_ID: Optional[str] = None,
                 auth_header: Optional[Dict[str, Any]] = None,
-                data_dict: Optional[Dict[str, Any]] = None,
-                Coresignal_ID: Optional[int] = None,
-                LinkedInURL: Optional[HttpUrl] = None):
+                data_dict: Optional[Dict[str, Any]] = None):
         """
         verify combination of variables and call the right function with the right params.
 
@@ -341,25 +521,77 @@ class Event:
             self._build_from_WH_db(WH_ID,auth_header)
         elif data_dict:
             self._build_from_data_dict(data_dict)
-        elif Coresignal_ID and auth_header:
-            self._build_from_coresignal(coresignal_id=Coresignal_ID, auth_header=auth_header)
-        elif LinkedInURL and auth_header:
-            self._build_from_coresignal(linkedin_url=LinkedInURL, auth_header=auth_header)
         else:
             raise ValueError("Invalid Combination of initialization variables. Did you include the auth_header?")
 
     def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
+        verify_auth_header(auth_header)
+        request = requests.get(WH_DB_URL + "/event", params={'eventID': WH_ID}, headers=auth_header)
+        content = request.json()
+
+        for key in list(content.keys()):
+            self.__dict__[key] = content[key]
+
+        if not self.full_data or self.full_data == '"null"':
+            self.full_data = {}
+
+        self.in_database = True
         return
 
     def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
-        verify_json("client", data)
-        return
+        verify_json("company", data)
+        for key in list(data.keys()):
+            self.__dict__[key] = data[key]
 
-    def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: Dict[str, Any]) -> None:
-        return
+        if not self.id:
+            self.id = str(uuid.uuid4())
 
-    def send_to_db(self, auth_header: Dict[str, Any]) -> None:
-        return
+        if not self.full_data:
+            self.full_data = {}
+
+        self.in_database = False
+
+    def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
+        """
+        Sends the current object to the WH Database
+
+        It will try to figure out if the object is already in the database by looking at the initialization
+        method by looking at the `in_database` attribute. For example, if you constructed the object using
+        WH_auth credentials and a WH_ID, then obviously the object is in the DB and so the function will
+        attempt a PUT request to update the user. If 'in_database' is `False` then it will attempt a `POST`
+        request. It's python so its mutable obviously so change it if needed.
+
+        Args
+        ------
+            auth_header: Dict[str, Any]
+                the authorization header for the WH database. It should be a dict with at least the key
+                'Authorization' where the value is the key generated by logging in
+
+        Returns
+        ---------
+            response: requests.Response
+                the response of the backend API to your request. If it was a sucessful POST request it will look like:
+                >>> exampleClient.send_to_db(WH_auth_dict).content.decode()
+                Not expecting client in database. Attempting Post request.
+                '{"id":"1fd84bd0-779d-4a10-8c71-e2cf008d23ed"}'
+
+        """
+        data = self.__dict__
+        data = minus_key("in_database", data)
+        url = "https://db.wealthawk.com/event"
+        data['other_info'] = json.dumps(data['other_info'])
+
+        if self.in_database:
+            print("Expected that object is already in database. Attempting PUT request")
+            response = requests.put(url, json=data, headers=auth_header)
+        else:
+            print('Object not expected in database. Attempting POST request.')
+            response = requests.post(url, data=data, headers=auth_header)
+
+        if response.status_code != 200:
+            raise ConnectionError(response.content.decode())
+
+        return response
 
 
     def __repr__(self) -> str:
@@ -368,19 +600,3 @@ class Event:
     def __str__(self) -> str:
         return "EventID: {} \n Title: {}".format(self.id, self.title)
 
-@dataclass
-class SignupSchema:
-    email: Optional[str]
-    first_name: Optional[str]
-    last_name: Optional[str]
-    location: Optional[str]
-    picture: Optional[str]
-    password: Optional[str]
-    company: Optional[str]
-    rank: Optional[str]
-
-@dataclass
-class AddTaskSchema:
-    title: Optional[str]
-    content: Optional[Json]
-    email: Optional[str]
