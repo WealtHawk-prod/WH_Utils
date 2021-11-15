@@ -190,19 +190,15 @@ enum classes for the most part.</p>
 </section>
 <section id="module-WH_Utils.Objects.Models">
 <span id="models"></span><h2>Models<a class="headerlink" href="#module-WH_Utils.Objects.Models" title="Permalink to this headline"></a></h2>
-<p>This is an extremly powerful module for interacting with, creating, and modifying and object we
+<p>This is an extremely powerful module for interacting with, creating, and modifying and object we
 deal with on a continual basis. This includes: Users, Clients, Companies, and Events. The idea is
 that you will be able to create, pull or construct a new object simply by the way you interact with
-the __init__ methods.</p>
+the <code class="docutils literal notranslate"><span class="pre">__init__</span></code> methods.</p>
 <p>For example, to pull a client from the database you might invoke it like this:</p>
-<p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">client</span> <span class="pre">=</span> <span class="pre">Client(WH_ID</span> <span class="pre">=</span> <span class="pre">&quot;random_letters&quot;,</span> <span class="pre">auth_dict</span> <span class="pre">=</span> <span class="pre">auth_header)</span>
-<span class="pre">`</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">client</span> <span class="pre">=</span> <span class="pre">Client(WH_ID</span> <span class="pre">=</span> <span class="pre">&quot;random_letters&quot;,</span> <span class="pre">auth_dict</span> <span class="pre">=</span> <span class="pre">auth_header)</span></code></p>
 <p>While if you wanted to construct a client you could pass a data dict in or even pass
 a coresignal_id or linkedin_url instead:</p>
-<p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">client</span> <span class="pre">=</span> <span class="pre">Client(linkedin_url</span> <span class="pre">=</span> <span class="pre">&quot;https://linkedin.com/mcclain-thiel&quot;,</span> <span class="pre">auth_dict</span> <span class="pre">=</span> <span class="pre">coresignal_auth)</span>
-<span class="pre">`</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">client</span> <span class="pre">=</span> <span class="pre">Client(linkedin_url</span> <span class="pre">=</span> <span class="pre">&quot;https://linkedin.com/mcclain-thiel&quot;,</span> <span class="pre">auth_dict</span> <span class="pre">=</span> <span class="pre">coresignal_auth)</span></code></p>
 <p>Similarly, if you want to push this back to the datatbase, the class will know if this is a POST or PUT request and
 handle everything accordingly. <a href="#id1"><span class="problematic" id="id2">**</span></a>NOTE: ** It does this by making an <cite>in_database</cite> parameter for every instance. This
 is determined by how the object was created. Foe example if you initialize the object with parameters WH_ID and auth_dict,
@@ -219,14 +215,47 @@ because I wanted to use the inheritance for other stuff and I don’t know how M
 <dl class="py class">
 <dt class="sig sig-object py" id="WH_Utils.Objects.Models.Client">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coresignal_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linkedin_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.Client" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<dd><dl>
+<dt>Class attributes</dt><dd><ul class="simple">
+<li><p>id: Optional[str]</p></li>
+<li><p>name: Optional[str]</p></li>
+<li><p>location: Optional[str]</p></li>
+<li><p>coresignal_id: Optional[int]</p></li>
+<li><p>linkedin_url: Optional[HttpUrl]</p></li>
+<li><p>picture: Optional[HttpUrl]</p></li>
+<li><p>event_type: Optional[EventType]</p></li>
+<li><p>company: Optional[str]</p></li>
+<li><p>start_date: Optional[date]</p></li>
+<li><p>end_date: Optional[date]</p></li>
+<li><p>full_data: Optional[Any]</p></li>
+<li><p>analytics: Optional[Any]</p></li>
+<li><p>date_created: Optional[datetime]</p></li>
+<li><p>last_modified: Optional[datetime]</p></li>
+</ul>
+</dd>
+<dt>Initialization function:</dt><dd><p>This function allows several combinations of parameters tha behave differently.</p>
+<dl class="simple">
+<dt>if only <cite>data_dict</cite> parameter is passed in:</dt><dd><p>a <cite>User</cite> object will be constructed from the data passed in via the dictionary. The data dict must
+have the same keys as the object itself.</p>
+</dd>
+<dt>if <cite>WH_ID</cite> and <cite>auth_header</cite> are passed in:</dt><dd><p>this will cause the program to attempt to pull the user from the WH database. User with that UUID
+must already exist in the database and the credentials must be valid and properly formatted.</p>
+</dd>
+<dt>if (<cite>coresignal_id</cite> or <cite>linkedin_url</cite>) and auth_header are passed in:</dt><dd><p>this attempts to build a client from the data on thier coresignal page. Auth headeer param must have
+coresignal API headers in it.</p>
+</dd>
+</dl>
+<p>All other combinations are invalid.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>WH_ID</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>auth_header</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
-<li><p><strong>data_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
-<li><p><strong>coresignal_id</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – </p></li>
-<li><p><strong>linkedin_url</strong> (<em>Optional</em><em>[</em><em>pydantic.networks.HttpUrl</em><em>]</em>) – </p></li>
+<li><p><strong>WH_ID</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – the UUID of a user in the database</p></li>
+<li><p><strong>auth_header</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – the authorization header for the WEALTHAWK database</p></li>
+<li><p><strong>data_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – data to construct a user from</p></li>
+<li><p><strong>coresignal_id</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – you can construct a user from a coresignal profile by using this ID in combonation with a coresignal auth header</p></li>
+<li><p><strong>linkedin_url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – same as above. constructed from coresignal</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -248,10 +277,17 @@ request. It’s python so its mutable obviously so change it if needed.</p>
 ‘Authorization’ where the value is the key generated by logging in</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>response</strong> – the response of the backend API to your request. If it was a sucessful POST request it will look like:
-&gt;&gt;&gt; exampleClient.send_to_db(WH_auth_dict).content.decode()
-Not expecting client in database. Attempting Post request.
-‘{“id”:”1fd84bd0-779d-4a10-8c71-e2cf008d23ed”}’</p>
+<dd class="field-even"><p><p><strong>response</strong> –</p>
+<p>the response of the backend API to your request. If it was a sucessful <code class="docutils literal notranslate"><span class="pre">POST</span></code> request it will look like:</p>
+<blockquote>
+<div><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">exampleClient</span><span class="o">.</span><span class="n">send_to_db</span><span class="p">(</span><span class="n">WH_auth_dict</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">expecting</span> <span class="pre">client</span> <span class="pre">in</span> <span class="pre">database.</span> <span class="pre">Attempting</span> <span class="pre">Post</span> <span class="pre">request.</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">'{&quot;id&quot;:&quot;1fd84bd0-779d-4a10-8c71-e2cf008d23ed&quot;}'</span></code></p>
+</div></blockquote>
+<p>But a successful <code class="docutils literal notranslate"><span class="pre">PUT</span></code> request will look like:</p>
+</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>requests.Response</p>
@@ -349,116 +385,72 @@ Not expecting client in database. Attempting Post request.
 <dl class="py class">
 <dt class="sig sig-object py" id="WH_Utils.Objects.Models.User">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.User" title="Permalink to this definition"></a></dt>
-<dd><p>The user class is the model for interacting with the accounts of WEALTHAWK clients</p>
-<p>Columns documented below will match the columns in the WH database</p>
+<dd><dl>
+<dt>Class attributes</dt><dd><ul class="simple">
+<li><p>id: Optional[str]</p></li>
+<li><p>first_name: Optional[str]</p></li>
+<li><p>last_name: Optional[str]</p></li>
+<li><p>email: Optional[str]</p></li>
+<li><p>other_info: Optional[Any]</p></li>
+<li><p>rank: Optional[UserRank]</p></li>
+<li><p>firebase_id: Optional[str]</p></li>
+<li><p>created: Optional[datetime]</p></li>
+<li><p>last_modified: Optional[datetime]</p></li>
+</ul>
+</dd>
+<dt>Initialization function:</dt><dd><p>This function allows several combinations of parameters tha behave differently.</p>
+<dl class="simple">
+<dt>if only <cite>data_dict</cite> parameter is passed in:</dt><dd><p>a <cite>User</cite> object will be constructed from the data passed in via the dictionary. The data dict must
+have the same keys as the object itself.</p>
+</dd>
+<dt>if <cite>WH_ID</cite> and <cite>auth_header</cite> are passed in:</dt><dd><p>this will cause the program to attempt to pull the user from the WH database. User with that UUID
+must already exist in the database and the credentials must be valid and properly formatted.</p>
+</dd>
+</dl>
+<p>All other combinations are invalid.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>WH_ID</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>auth_header</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
-<li><p><strong>data_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
+<li><p><strong>WH_ID</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – the UUID of a user in the database</p></li>
+<li><p><strong>auth_header</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – the authorization header for the WEALTHAWK database</p></li>
+<li><p><strong>data_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – data to construct a user from</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.id">
-<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.id" title="Permalink to this definition"></a></dt>
-<dd><p>randomly generated UUID</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.send_to_db">
+<span class="sig-name descname"><span class="pre">send_to_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth_header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.User.send_to_db" title="Permalink to this definition"></a></dt>
+<dd><p>Sends the current object to the WH Database</p>
+<p>It will try to figure out if the object is already in the database by looking at the initialization
+method by looking at the <cite>in_database</cite> attribute. For example, if you constructed the object using
+WH_auth credentials and a WH_ID, then obviously the object is in the DB and so the function will
+attempt a PUT request to update the user. If ‘in_database’ is <cite>False</cite> then it will attempt a <cite>POST</cite>
+request. It’s python so its mutable obviously so change it if needed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Optional[str]</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>auth_header</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – the authorization header for the WH database. It should be a dict with at least the key
+‘Authorization’ where the value is the key generated by logging in</p>
 </dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.first_name">
-<span class="sig-name descname"><span class="pre">first_name</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.first_name" title="Permalink to this definition"></a></dt>
-<dd><p>first name of the user</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Optional[str]</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>response</strong> –</p>
+<p>the response of the backend API to your request. If it was a sucessful <code class="docutils literal notranslate"><span class="pre">POST</span></code> request it will look like:</p>
+<blockquote>
+<div><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">exampleClient</span><span class="o">.</span><span class="n">send_to_db</span><span class="p">(</span><span class="n">WH_auth_dict</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">expecting</span> <span class="pre">client</span> <span class="pre">in</span> <span class="pre">database.</span> <span class="pre">Attempting</span> <span class="pre">Post</span> <span class="pre">request.</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">'{&quot;id&quot;:&quot;1fd84bd0-779d-4a10-8c71-e2cf008d23ed&quot;}'</span></code></p>
+</div></blockquote>
+<p>But a successful <code class="docutils literal notranslate"><span class="pre">PUT</span></code> request will look like:</p>
+</p>
 </dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.last_name">
-<span class="sig-name descname"><span class="pre">last_name</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.last_name" title="Permalink to this definition"></a></dt>
-<dd><p>last name if the user</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Optional[str]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.email">
-<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.email" title="Permalink to this definition"></a></dt>
-<dd><p>email of the user</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Optional[str]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.other_info">
-<span class="sig-name descname"><span class="pre">other_info</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.other_info" title="Permalink to this definition"></a></dt>
-<dd><p>any additional information we want to store on the user. Schema is currently undecided</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Optional[Any]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.rank">
-<span class="sig-name descname"><span class="pre">rank</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.rank" title="Permalink to this definition"></a></dt>
-<dd><p>the rank of a user is the privileges the user has. For example, an Admin user can modify and delete
-clients while a User client can only view clients</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Optional[<a class="reference internal" href="#WH_Utils.Objects.Enums.UserRank" title="WH_Utils.Objects.Enums.UserRank">UserRank</a>]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.firebase_id">
-<span class="sig-name descname"><span class="pre">firebase_id</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.firebase_id" title="Permalink to this definition"></a></dt>
-<dd><p>the uuid for firebase to match up with authentication</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Optional[str]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.created">
-<span class="sig-name descname"><span class="pre">created</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.created" title="Permalink to this definition"></a></dt>
-<dd><p>dateetime of the objects creation</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Optional[datetime]</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Models.User.last_modified">
-<span class="sig-name descname"><span class="pre">last_modified</span></span><a class="headerlink" href="#WH_Utils.Objects.Models.User.last_modified" title="Permalink to this definition"></a></dt>
-<dd><p>datetime of the most recent modification of the object</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type</dt>
-<dd class="field-odd"><p>Optional[datetime]</p>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>requests.Response</p>
 </dd>
 </dl>
 </dd></dl>

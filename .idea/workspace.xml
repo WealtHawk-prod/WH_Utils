@@ -72,8 +72,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model_Examples.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Model_Examples.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WH_Utils/Objects/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WH_Utils/Objects/Models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WH_Utils/Objects/Object_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/WH_Utils/Objects/Object_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build_docs/Model_Examples.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/build_docs/Model_Examples.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.doctrees/objects.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.doctrees/objects.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_sources/Model_Examples.ipynb.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_sources/Model_Examples.ipynb.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/objects.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/objects.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/docs/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/searchindex.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../anon/.idea/anon.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../anon/.idea/libraries/R_User_Library.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../anon/.idea/misc.xml" beforeDir="false" />
@@ -303,7 +309,7 @@
       <updated>1635805122300</updated>
       <workItem from="1635805123685" duration="15095000" />
       <workItem from="1636083620302" duration="9670000" />
-      <workItem from="1636731343331" duration="9713000" />
+      <workItem from="1636731343331" duration="11958000" />
     </task>
     <servers />
   </component>
