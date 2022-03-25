@@ -195,7 +195,7 @@ class User:
             response: requests.Response
                 the response of the backend API to your request. If it was a sucessful ``POST`` request it will look like:
 
-                    >>> exampleClient.send_to_db(WH_auth_dict).content.decode()
+                    ``>>> exampleClient.send_to_db(WH_auth_dict).content.decode()``
 
                     ``Not expecting client in database. Attempting Post request.``
 
@@ -264,7 +264,7 @@ class Client:
             this attempts to build a client from the data on thier coresignal page. Auth headeer param must have
             coresignal API headers in it.
 
-        All other combinations are invalid.
+        All other combinations of the first 5 parameters are invalid.
 
     Args
     -----
@@ -306,17 +306,25 @@ class Client:
                 auth_header: Optional[Dict[str, Any]] = None,
                 data_dict: Optional[Dict[str, Any]] = None,
                 coresignal_id: Optional[int] = None,
-                linkedin_url: Optional[str] = None) -> None:
+                linkedin_url: Optional[str] = None,
+                company_name: Optional[str] = None,
+                event_type: Optional[EventType] = None) -> None:
+
+        self.company = company_name
+        self.event_type = event_type
+
         if WH_ID and auth_header:
             self._build_from_WH_db(WH_ID, auth_header)
         elif data_dict:
             self._build_from_data_dict(data_dict)
         elif coresignal_id and auth_header:
             self._build_from_coresignal(coresignal_id=coresignal_id, auth_header=auth_header)
-        elif linkedin_url and coresignal_id:
+        elif linkedin_url and auth_header:
             self._build_from_coresignal(linkedin_url=linkedin_url, auth_header=auth_header)
         else:
             raise ValueError("Invalid combination of init parameters")
+
+
 
     def _build_from_WH_db(self, WH_ID: Optional[str], auth_header: Dict[str, Any]) -> None:
         verify_auth_header(auth_header)
@@ -348,13 +356,14 @@ class Client:
         if not self.full_data:
             self.full_data = {}
 
-    def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: Dict[str, Any]) -> None:
+    def _build_from_coresignal(self, auth_header: Dict[str, Any], coresignal_id: Optional[int] = None, linkedin_url: Optional[HttpUrl] = None) -> None:
         if coresignal_id:
             self._build_from_coresignal_id(coresignal_id, auth_header)
         elif linkedin_url:
             self._build_from_linkedin_url(linkedin_url, auth_header)
         else:
             raise ValueError("Incompatible input variables")
+        self.id = "NA"
 
     def _build_from_coresignal_id(self, id, auth_header):
         data = Coresignal.get_person_by_id(id, auth_header)
@@ -372,10 +381,20 @@ class Client:
         self.picture = data['logo_url']
 
         if self.company:
-            exp = get_company_data(self.company, data['member_experience_collection'])
-            self.start_date = linkedin_dates_to_ts(exp['date_from']) if exp['date_from'] else None
-            self.end_date = linkedin_dates_to_ts(exp['date_to']) if exp['date_to'] else None
-            self.company = exp['company_name']
+            try:
+                exp = get_company_data(self.company, data['member_experience_collection'])
+                self.start_date = linkedin_dates_to_ts(exp['date_from']) if exp['date_from'] else None
+                self.end_date = linkedin_dates_to_ts(exp['date_to']) if exp['date_to'] else None
+                self.company = exp['company_name']
+            except Exception as e:
+                print("There was an error collecting expirence data. Error: {}".format(e))
+
+        else:
+            self.company = 'NA'
+            self.start_date = datetime(1, 1, 1) #error value
+            self.end_date = datetime(1, 1, 1) #error value
+
+
 
         relevant_fields = ['id', 'name', 'title', 'url', 'hash', 'location', 'industry', 'summary', 'logo_url',
                            'last_response_code', 'created', 'last_updated', 'outdated', 'deleted', 'country',

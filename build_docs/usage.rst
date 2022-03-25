@@ -1,7 +1,8 @@
 Usage
 =====
 
-I'll eventually add some sick notebooks here but for now just read the docs.
+Below are some example notebooks of the module in action. They are organized by high level directory
+downward. See the overview tab for a tour of the library architecture.
 
 Examples
 -----------
@@ -11,3 +12,4 @@ Examples
    :maxdepth: 2
 
    model_usage
+   external_usage

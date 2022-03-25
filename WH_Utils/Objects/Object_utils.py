@@ -180,7 +180,8 @@ def get_company_data(company, exp_dict):
                 break
 
     if not flag:
-        return None
+        company_names = [x['company_name'] for x in exp_dict]
+        raise ValueError("Could not find any expirences with company: {}. Available company names are: {}".format(company, company_names))
 
     keys_we_want = ['title', 'location', 'company_name', 'company_url', 'date_from', 'date_to', 'duration',
                     'description', 'company_id']

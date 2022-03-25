@@ -25,6 +25,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a98f7a6d-03c6-44f0-909a-09eda3aa46c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/build_docs/contributing.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build_docs/external_usage.rst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../minimal_landing/app.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../minimal_landing/src/components/TeamBlock/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../minimal_landing/src/components/TeamBlock/styles.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../minimal_landing/src/pages/SignUp/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../CS61A/lab08/.idea/libraries/R_User_Library.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../CS61A/lab08/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../CS61A/untitled/.idea/libraries/R_User_Library.xml" beforeDir="false" />
@@ -72,14 +78,38 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model_Examples.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Model_Examples.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WH_Utils/Objects/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WH_Utils/Objects/Models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build_docs/Model_Examples.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/build_docs/Model_Examples.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WH_Utils/Objects/Object_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/WH_Utils/Objects/Object_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build_docs/index.rst" beforeDir="false" afterPath="$PROJECT_DIR$/build_docs/index.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build_docs/reference.rst" beforeDir="false" afterPath="$PROJECT_DIR$/build_docs/reference.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build_docs/usage.rst" beforeDir="false" afterPath="$PROJECT_DIR$/build_docs/usage.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.buildinfo" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.buildinfo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.doctrees/automation.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.doctrees/automation.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.doctrees/contributing.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.doctrees/contributing.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.doctrees/environment.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.doctrees/environment.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.doctrees/index.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.doctrees/index.doctree" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/.doctrees/objects.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.doctrees/objects.doctree" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/_sources/Model_Examples.ipynb.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_sources/Model_Examples.ipynb.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.doctrees/reference.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.doctrees/reference.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/.doctrees/usage.doctree" beforeDir="false" afterPath="$PROJECT_DIR$/docs/.doctrees/usage.doctree" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Model_Examples.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model_Examples.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_sources/contributing.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_sources/contributing.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_sources/index.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_sources/index.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_sources/reference.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_sources/reference.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/_sources/usage.rst.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docs/_sources/usage.rst.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/automation.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/automation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/contributing.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/contributing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/external.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/external.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/genindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/genindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/model_usage.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/model_usage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/objects.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/objects.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/objects.inv" beforeDir="false" afterPath="$PROJECT_DIR$/docs/objects.inv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/py-modindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/py-modindex.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/reference.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/reference.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/searchindex.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/searchindex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/usage.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/usage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/utils.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/utils.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../anon/.idea/anon.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../anon/.idea/libraries/R_User_Library.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../anon/.idea/misc.xml" beforeDir="false" />
@@ -309,7 +339,9 @@
       <updated>1635805122300</updated>
       <workItem from="1635805123685" duration="15095000" />
       <workItem from="1636083620302" duration="9670000" />
-      <workItem from="1636731343331" duration="11958000" />
+      <workItem from="1636731343331" duration="15758000" />
+      <workItem from="1639708118375" duration="1283000" />
+      <workItem from="1648213500004" duration="2224000" />
     </task>
     <servers />
   </component>

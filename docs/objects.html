@@ -54,6 +54,7 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
         </div>
@@ -214,7 +215,7 @@ have fancy printing functions and are all set for hashing stuff.</p>
 because I wanted to use the inheritance for other stuff and I don’t know how MI works in python.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="WH_Utils.Objects.Models.Client">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coresignal_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linkedin_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.Client" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Models.</span></span><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coresignal_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linkedin_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Models.Client" title="Permalink to this definition"></a></dt>
 <dd><dl>
 <dt>Class attributes</dt><dd><ul class="simple">
 <li><p>id: Optional[str]</p></li>
@@ -245,7 +246,7 @@ must already exist in the database and the credentials must be valid and properl
 coresignal API headers in it.</p>
 </dd>
 </dl>
-<p>All other combinations are invalid.</p>
+<p>All other combinations of the first 5 parameters are invalid.</p>
 </dd>
 </dl>
 <dl class="field-list simple">
@@ -256,6 +257,8 @@ coresignal API headers in it.</p>
 <li><p><strong>data_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – data to construct a user from</p></li>
 <li><p><strong>coresignal_id</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – you can construct a user from a coresignal profile by using this ID in combonation with a coresignal auth header</p></li>
 <li><p><strong>linkedin_url</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – same as above. constructed from coresignal</p></li>
+<li><p><strong>company_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
+<li><p><strong>event_type</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="#WH_Utils.Objects.Enums.EventType" title="WH_Utils.Objects.Enums.EventType"><em>WH_Utils.Objects.Enums.EventType</em></a><em>]</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type</dt>
@@ -440,9 +443,7 @@ request. It’s python so its mutable obviously so change it if needed.</p>
 <dd class="field-even"><p><p><strong>response</strong> –</p>
 <p>the response of the backend API to your request. If it was a sucessful <code class="docutils literal notranslate"><span class="pre">POST</span></code> request it will look like:</p>
 <blockquote>
-<div><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">exampleClient</span><span class="o">.</span><span class="n">send_to_db</span><span class="p">(</span><span class="n">WH_auth_dict</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-</pre></div>
-</div>
+<div><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">exampleClient.send_to_db(WH_auth_dict).content.decode()</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">expecting</span> <span class="pre">client</span> <span class="pre">in</span> <span class="pre">database.</span> <span class="pre">Attempting</span> <span class="pre">Post</span> <span class="pre">request.</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">'{&quot;id&quot;:&quot;1fd84bd0-779d-4a10-8c71-e2cf008d23ed&quot;}'</span></code></p>
 </div></blockquote>
@@ -471,7 +472,7 @@ request. It’s python so its mutable obviously so change it if needed.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, McClain Thiel.</p>
+    <p>&#169; Copyright 2022, McClain Thiel.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
