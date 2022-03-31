@@ -88,3 +88,17 @@ class CompanyType(str, Enum):
     sole_proprietor = 'sole proprietor'
     partnership = 'partnership'
 
+
+class JobRank(str, Enum):
+    """
+    The possible ranks a person can have within their company ranked from most to least equity
+    """
+    founder = 'founder'
+    c_suite = 'c-suite'
+    vice_president = "vp"
+    director = "director"
+    manager = "manager"
+    senior = "senior"
+    entry_level = "entry"
+    intern = 'intern'
+    other = "other"
