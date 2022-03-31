@@ -25,8 +25,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a98f7a6d-03c6-44f0-909a-09eda3aa46c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/notebooks/developing_models.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../minimal_landing/app.yaml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../minimal_landing/src/components/TeamBlock/index.tsx" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../minimal_landing/src/components/TeamBlock/styles.tsx" afterDir="false" />
@@ -75,10 +73,9 @@
       <change beforePath="$PROJECT_DIR$/../../Summer_19/CS188/tracking/.idea/libraries/R_User_Library.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Summer_19/CS188/tracking/.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Trials/deep-test/venv/network.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WH_Utils2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/WH_Utils2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WH_Utils/Objects/Enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/WH_Utils/Objects/Enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WH_Utils/Objects/Models.py" beforeDir="false" afterPath="$PROJECT_DIR$/WH_Utils/Objects/Models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/notebooks/developing_models.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/developing_models.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../anon/.idea/anon.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../anon/.idea/libraries/R_User_Library.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../anon/.idea/misc.xml" beforeDir="false" />
@@ -311,7 +308,7 @@
       <workItem from="1636731343331" duration="15758000" />
       <workItem from="1639708118375" duration="1283000" />
       <workItem from="1648213500004" duration="2958000" />
-      <workItem from="1648649418721" duration="4555000" />
+      <workItem from="1648649418721" duration="5244000" />
     </task>
     <servers />
   </component>
