@@ -17,6 +17,7 @@ docs/build_*
 .nox/
 .venv
 test_env
+*/.venv
 
 # misc
 .DS_Store
