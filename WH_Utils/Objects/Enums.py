@@ -88,3 +88,28 @@ class CompanyType(str, Enum):
     sole_proprietor = 'sole proprietor'
     partnership = 'partnership'
 
+
+class JobRank(str, Enum):
+    """
+    The possible ranks a person can have within their company ranked from most to least equity
+    """
+    founder = 'founder'
+    c_suite = 'c-suite'
+    vice_president = "vp"
+    director = "director"
+    manager = "manager"
+    senior = "senior"
+    entry_level = "entry"
+    intern = 'intern'
+    other = "other"
+
+
+class EventStage(str, Enum):
+    """
+    The possible stages an event can take
+    """
+    not_started = "Not Started"
+    early_stage = "Early Stage"
+    in_progress = "In Progress"
+    late_stage = "Late Stage"
+    closed = "Closed"

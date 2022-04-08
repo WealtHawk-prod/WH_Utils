@@ -48,8 +48,6 @@ from WH_Utils.External import Coresignal
 from dataclasses import dataclass
 
 WH_DB_URL = "https://db.wealthawk.com"
-CORESIGNAL_URL = ""
-
 
 
 @dataclass
@@ -212,10 +210,8 @@ class User:
         data['other_info'] = json.dumps(self.other_info)
 
         if self.in_database:
-            print('From Database. Attempting PUT request.')
             response = requests.put(url, json = data, headers = auth_header)
         else:
-            print('Not from database. Attempting POST request')
             response = requests.post(url, json = data, headers = auth_header)
 
         if response.status_code != 200:
@@ -231,7 +227,7 @@ class User:
 
 
 @dataclass
-class Client:
+class Prospect:
     """
     Class attributes
         - id: Optional[str]
@@ -260,10 +256,6 @@ class Client:
             this will cause the program to attempt to pull the user from the WH database. User with that UUID
             must already exist in the database and the credentials must be valid and properly formatted.
 
-        if (`coresignal_id` or `linkedin_url`) and auth_header are passed in:
-            this attempts to build a client from the data on thier coresignal page. Auth headeer param must have
-            coresignal API headers in it.
-
         All other combinations of the first 5 parameters are invalid.
 
     Args
@@ -276,12 +268,6 @@ class Client:
 
         data_dict: Optional[Dict[str, Any]]
             data to construct a user from
-
-        coresignal_id: Optional[int]
-            you can construct a user from a coresignal profile by using this ID in combonation with a coresignal auth header
-
-        linkedin_url: Optional[str]
-            same as above. constructed from coresignal
     """
     id: Optional[str]
     name: Optional[str]
@@ -305,8 +291,6 @@ class Client:
                 WH_ID: Optional[str] = None,
                 auth_header: Optional[Dict[str, Any]] = None,
                 data_dict: Optional[Dict[str, Any]] = None,
-                coresignal_id: Optional[int] = None,
-                linkedin_url: Optional[str] = None,
                 company_name: Optional[str] = None,
                 event_type: Optional[EventType] = None) -> None:
 
@@ -317,18 +301,13 @@ class Client:
             self._build_from_WH_db(WH_ID, auth_header)
         elif data_dict:
             self._build_from_data_dict(data_dict)
-        elif coresignal_id and auth_header:
-            self._build_from_coresignal(coresignal_id=coresignal_id, auth_header=auth_header)
-        elif linkedin_url and auth_header:
-            self._build_from_coresignal(linkedin_url=linkedin_url, auth_header=auth_header)
         else:
             raise ValueError("Invalid combination of init parameters")
 
 
-
     def _build_from_WH_db(self, WH_ID: Optional[str], auth_header: Dict[str, Any]) -> None:
         verify_auth_header(auth_header)
-        request = requests.get(WH_DB_URL + "/client", params={'clientID': WH_ID}, headers=auth_header)
+        request = requests.get(WH_DB_URL + "/person", params={'personID': WH_ID}, headers=auth_header)
         content = request.json()
 
         for key in list(content.keys()):
@@ -355,65 +334,6 @@ class Client:
 
         if not self.full_data:
             self.full_data = {}
-
-    def _build_from_coresignal(self, auth_header: Dict[str, Any], coresignal_id: Optional[int] = None, linkedin_url: Optional[HttpUrl] = None) -> None:
-        if coresignal_id:
-            self._build_from_coresignal_id(coresignal_id, auth_header)
-        elif linkedin_url:
-            self._build_from_linkedin_url(linkedin_url, auth_header)
-        else:
-            raise ValueError("Incompatible input variables")
-        self.id = "NA"
-
-    def _build_from_coresignal_id(self, id, auth_header):
-        data = Coresignal.get_person_by_id(id, auth_header)
-        self._build_from_coresignal_json(data)
-
-    def _build_from_linkedin_url(self, linkedin_url, auth_header):
-        data = Coresignal.get_person_by_url(linkedin_url, auth_header)
-        self._build_from_coresignal_json(data)
-
-    def _build_from_coresignal_json(self, data):
-        self.coresignal_id = data['id']
-        self.name = data['name']
-        self.location = data['location']
-        self.linkedin_url = data['url']
-        self.picture = data['logo_url']
-
-        if self.company:
-            try:
-                exp = get_company_data(self.company, data['member_experience_collection'])
-                self.start_date = linkedin_dates_to_ts(exp['date_from']) if exp['date_from'] else None
-                self.end_date = linkedin_dates_to_ts(exp['date_to']) if exp['date_to'] else None
-                self.company = exp['company_name']
-            except Exception as e:
-                print("There was an error collecting expirence data. Error: {}".format(e))
-
-        else:
-            self.company = 'NA'
-            self.start_date = datetime(1, 1, 1) #error value
-            self.end_date = datetime(1, 1, 1) #error value
-
-
-
-        relevant_fields = ['id', 'name', 'title', 'url', 'hash', 'location', 'industry', 'summary', 'logo_url',
-                           'last_response_code', 'created', 'last_updated', 'outdated', 'deleted', 'country',
-                           'experience_count', 'last_updated_ux', 'member_shorthand_name', 'member_shorthand_name_hash',
-                           'canonical_url', 'canonical_hash', 'member_awards_collection',
-                           'member_certifications_collection', 'member_courses_collection',
-                           'member_education_collection', 'member_experience_collection', 'member_groups_collection',
-                           'member_interests_collection', 'member_languages_collection',
-                           'member_organizations_collection', 'member_patents_collection', 'member_projects_collection',
-                           'member_publications_collection', 'member_skills_collection',
-                           'member_test_scores_collection', 'member_volunteering_cares_collection',
-                           'member_volunteering_opportunities_collection', 'member_volunteering_positions_collection',
-                           'member_websites_collection']
-
-
-        self.full_data = dict((k, data[k]) for k in relevant_fields)
-        self.analytics = {}
-        self.in_database = False
-
 
     def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
         """
@@ -444,12 +364,10 @@ class Client:
 
                 But a successful ``PUT`` request will look like:
 
-
-
         """
         data = self.__dict__
         data = minus_key("in_database", data)
-        url = "https://db.wealthawk.com/client"
+        url = WH_DB_URL + "/person"
         data['analytics'] = json.dumps(self.analytics)
         data['full_data'] = json.dumps(self.full_data)
 
@@ -466,10 +384,11 @@ class Client:
         return response
 
     def __repr__(self) -> str:
-        return "ClientID: {} \n Name: {} \n Location: {}".format(self.id, self.name, self.location)
+        return "ProspectID: {} \n Name: {} \n Location: {}".format(self.id, self.name, self.location)
 
     def __str__(self) -> str:
-        return "ClientID: {} \n Name: {} \n Location: {}".format(self.id, self.name, self.location)
+        return "ProspectID: {} \n Name: {} \n Location: {}".format(self.id, self.name, self.location)
+
 
 @dataclass
 class Company:
@@ -493,9 +412,7 @@ class Company:
     def __init__(self,
                 WH_ID: Optional[str] = None,
                 auth_header: Optional[Dict[str, Any]] = None,
-                data_dict: Optional[Dict[str, Any]]= None,
-                coresignal_id: Optional[int] = None,
-                linkedin_url: Optional[str] = None) -> None:
+                data_dict: Optional[Dict[str, Any]]= None) -> None:
         """
         verify combination of variables and call the right function with the right params.
 
@@ -504,10 +421,6 @@ class Company:
             self._build_from_WH_db(WH_ID, auth_header)
         elif data_dict:
             self._build_from_data_dict(data_dict)
-        elif coresignal_id and auth_header:
-            self._build_from_coresignal(coresignal_id=coresignal_id, auth_header=auth_header)
-        elif linkedin_url and coresignal_id:
-            self._build_from_coresignal(linkedin_url=linkedin_url, auth_header=auth_header)
         else:
             raise ValueError("Invalid combination of init parameters")
 
@@ -538,9 +451,6 @@ class Company:
         self.in_database = False
 
 
-    def _build_from_coresignal(self, coresignal_id: Optional[int], linkedin_url: Optional[HttpUrl], auth_header: Dict[str, Any]) -> None:
-        return
-
     def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
         """
         Sends the current object to the WH Database
@@ -568,7 +478,7 @@ class Company:
         """
         data = self.__dict__
         data = minus_key("in_database", data)
-        url = "https://db.wealthawk.com/company"
+        url = WH_DB_URL + "/company"
         data['full_data'] = json.dumps(data['full_data'])
         data['analytics'] = json.dumps(data['analytics'])
 

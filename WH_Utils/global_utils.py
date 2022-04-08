@@ -1,6 +1,8 @@
+import os
+import sys
 
 
-def test_func(this: str) -> str:
+def backend_auth():
     """
-    yall bozos
+    This returns an auth header to access the WEALTHAWK backend
     """
