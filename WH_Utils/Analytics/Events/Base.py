@@ -1,9 +1,6 @@
 from WH_Utils.Objects.Models import Event
 from WH_Utils.Objects.Enums import EventType, EventStage
-from WH_Utils.global_utils import backend_auth
-
-import numpy as np
-import pandas as pd
+from WH_Utils.Utils.global_utils import backend_auth
 
 """Basic Event Analytics
 
