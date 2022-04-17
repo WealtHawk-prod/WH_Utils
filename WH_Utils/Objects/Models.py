@@ -324,6 +324,24 @@ class Prospect:
         else:
             return langs
 
+    @property
+    def event(self, auth_header: Dict[str, Any]) -> Optional['Event']:
+        verify_auth_header(auth_header)
+
+        # access db api to get event_id
+        request = requests.get(WH_DB_URL + "/relate/person_to_event",
+                               params={'personID': self.id}, headers=auth_header)
+        content = request.json()
+
+        if len(content) == 0:
+            return None
+
+        event_id = content[0]['eventID']
+
+        # Get event object from ID
+        event = Event(WH_ID=event_id, auth_header=auth_header)
+        return event
+
     def _build_from_WH_db(self, WH_ID: Optional[str], auth_header: Dict[str, Any]) -> None:
         verify_auth_header(auth_header)
         request = requests.get(WH_DB_URL + "/person", params={'personID': WH_ID}, headers=auth_header)
