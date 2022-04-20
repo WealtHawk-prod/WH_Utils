@@ -37,13 +37,15 @@ from typing import Any, Optional, Union, List, Dict, Any
 import requests
 import uuid
 import json
+import numpy as np
+import pandas as pd
+from datetime import datetime, timedelta
 
 from pydantic import Json, HttpUrl
 
 from WH_Utils.Objects.Enums import UserRank, EventType, CompanyType
 from WH_Utils.Objects.Object_utils import verify_json, verify_auth_header, minus_key, linkedin_dates_to_ts, get_company_data
-from WH_Utils.External import Coresignal
-
+from WH_Utils.Utils import parse_linkedin_date
 
 from dataclasses import dataclass
 
@@ -323,6 +325,40 @@ class Prospect:
             return None
         else:
             return langs
+
+    @property
+    def age(self) -> Optional[int]:
+        """
+        simple estimator of age sets college graduation at 22 years old
+        """
+        if not self.full_data:
+            return None
+
+        # first we can try by finding when they graduated high school / college.
+        date = None
+        member_edu = self.full_data['member_education_collection']
+        education_table = pd.DataFrame.from_records(member_edu).fillna({"title": '', "subtitle": ''})
+
+        high_school_edu = education_table[education_table.title.str.contains("high school", case=False)].dropna(
+            subset=['date_to'])  # might be able to expand term list here
+        if len(high_school_edu):
+            date = list(high_school_edu.loc[:, "date_from"])[0]
+            date = parse_linkedin_date(date)
+
+        bach_edu = education_table[education_table.subtitle.str.contains("Bachelor", case=False)].dropna(
+            subset=['date_from'])  # might be able to expand term list here
+        if len(bach_edu):
+            date = list(bach_edu.loc[:, "date_from"])[0]
+            date = parse_linkedin_date(date)
+
+        # we assume they are 18 at `date` if we have it
+        if not date:
+            return None
+
+        birthdate = date - timedelta(days=18 * 365)
+        time_delta = datetime.now() - birthdate
+        return int(time_delta.days / 365)
+
 
     def _build_from_WH_db(self, WH_ID: Optional[str], auth_header: Dict[str, Any]) -> None:
         verify_auth_header(auth_header)
