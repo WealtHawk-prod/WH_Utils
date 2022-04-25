@@ -32,6 +32,10 @@ because I wanted to use the inheritance for other stuff and I don't know how MI 
 
 
 """
+
+#TODO this file is depricated.
+
+
 from datetime import datetime, date
 from typing import Any, Optional, Union, List, Dict, Any
 import requests
