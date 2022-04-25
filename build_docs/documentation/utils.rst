@@ -10,5 +10,5 @@ Utils
 -----------------
 
 
-.. automodule:: WH_Utils.global_utils
+.. automodule:: WH_Utils.Utils
    :members:

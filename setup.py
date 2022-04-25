@@ -26,11 +26,11 @@ setup(
     url=about['__url__'],
     packages=['WH_Utils'],
     include_package_data=True,
-    python_requires=">=3.8.*",
+    python_requires=">=3.7.*",
     install_requires=['numpy', 'requests'],
     license=about['__license__'],
     zip_safe=False,
-    #entry_points={   'console_scripts': ['py-package-template=py_pkg.entry_points:main'],},
+    #entry_points={'console_scripts': ['py-package-template=py_pkg.entry_points:main'],},
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',

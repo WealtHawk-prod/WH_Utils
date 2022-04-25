@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automation &mdash; Wh_Utils  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Analytics" href="analytics.html" />
+    <link rel="prev" title="Objects" href="objects.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Wh_Utils
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="documentation.html#modules">Modules</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="objects.html">Objects</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Automation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parse-regulatory-forms">Parse Regulatory Forms</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-WH_Utils.Automation.ParseRegForms.ParseRegD">Reg D</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="analytics.html">Analytics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html">Utils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Wh_Utils</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="documentation.html">Documentation</a> &raquo;</li>
+      <li>Automation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/automation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="automation">
+<h1>Automation<a class="headerlink" href="#automation" title="Permalink to this headline"></a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#parse-regulatory-forms" id="id1">Parse Regulatory Forms</a></p></li>
+<li><p><a class="reference internal" href="#module-WH_Utils.Automation.ParseRegForms.ParseRegD" id="id2">Reg D</a></p></li>
+</ul>
+</div>
+<section id="parse-regulatory-forms">
+<h2>Parse Regulatory Forms<a class="headerlink" href="#parse-regulatory-forms" title="Permalink to this headline"></a></h2>
+<p>Here are the modules and all composite functions to extract individual parts.</p>
+</section>
+<section id="module-WH_Utils.Automation.ParseRegForms.ParseRegD">
+<span id="reg-d"></span><h2>Reg D<a class="headerlink" href="#module-WH_Utils.Automation.ParseRegForms.ParseRegD" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_and_parse_reg_d">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_and_parse_reg_d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_and_parse_reg_d" title="Permalink to this definition"></a></dt>
+<dd><p>Finds and parses a reg D from from the source.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – the url of the reg D for you want to parse</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – Keys: ‘Issuer’, ‘Contact’, ‘Persons’, ‘Industry’, ‘Size’, ‘Exemptions’, ‘FilingType’, ‘LongerThanAYear’, ‘TypeOfSecurities’, ‘BusinessCombination’, ‘MinimumInvestment’, ‘SalesCompensation’, ‘OfferingAndSalesAmount’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_combo">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_combo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_combo" title="Permalink to this definition"></a></dt>
+<dd><p>Actually no idea whats going on here</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soup</strong> (<em>BeautifulSoup</em>) – the BeautifulSoup generated from the reg d for scrape</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – business combo?</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_duration">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_duration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_duration" title="Permalink to this definition"></a></dt>
+<dd><p>Also not sure what this is. Seems to just be a bool where its greater or less than a year.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soup</strong> (<em>BeautifulSoup</em>) – the BeautifulSoup generated from the reg d for scrape</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>longer_that_year</strong> – If false its shorter than a year</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_exemptions">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_exemptions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_exemptions" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the list of exceptions from the form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soup</strong> (<em>BeautifulSoup</em>) – the BeautifulSoup generated from the reg d for scrape</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – Idk what else to say but for example: [‘Rule 504(b) (not (i), (ii) or (iii))’, ‘Rule 506’]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_industry">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_industry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_industry" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the industry from the form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soup</strong> (<em>BeautifulSoup</em>) – the BeautifulSoup generated from the reg d for scrape</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – the industry</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_issuer">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_issuer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_issuer" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the issuer dict from the form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soup</strong> (<em>BeautifulSoup</em>) – the BeautifulSoup generated from the reg d for scrape</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – keys: ‘CIK’, ‘EntityType’, ‘PreviousNames’, ‘Name of Issuer’, ‘Jurisdiction of Incorporation/Organization’, ‘Year of Incorporation/Organization’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_location">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_location</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_location" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the location dict from the form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soup</strong> (<em>BeautifulSoup</em>) – the BeautifulSoup generated from the reg d for scrape</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – keys: ‘Name of Issuer’, ‘Street Address 1’, ‘Street Address 2’, ‘City’, ‘State/Province/Country’, ‘ZIP/PostalCode’, ‘Phone Number of Issuer’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_min_investment">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_min_investment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_min_investment" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the minimum investment as a string. Amount then currency type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soup</strong> (<em>BeautifulSoup</em>) – the BeautifulSoup generated from the reg d for scrape</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>min_investment</strong> – Example: ‘$0 USD’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_offering_amt">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_offering_amt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_offering_amt" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the offering amount in dict form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soup</strong> (<em>BeautifulSoup</em>) – the BeautifulSoup generated from the reg d for scrape</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><p><strong>data</strong> –</p>
+<dl class="simple">
+<dt>example: {‘Total Offering Amount’: ‘$51,605,250’,</dt><dd><p>’Total Amount Sold’: ‘$51,605,250’,
+‘Total Remaining to be Sold’: ‘Indefinite’}</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_related_people">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_related_people</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_related_people" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the list of related people dict from the form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soup</strong> (<em>BeautifulSoup</em>) – the BeautifulSoup generated from the reg d for scrape</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – each item in the list is a dict and has the following keys: ‘Last Name’, ‘First Name’, ‘Middle Name’, ‘Street Address 1’, ‘Street Address 2’, ‘City’, ‘State/Province/Country’, ‘ZIP/PostalCode’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_sales_comp">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_sales_comp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_sales_comp" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the sales comp.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soup</strong> (<em>BeautifulSoup</em>) – the BeautifulSoup generated from the reg d for scrape</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>min_investment</strong> – List of dicts. Schema for dicts is: ‘Recipient’, ‘Recipient CRD Number’, ‘(Associated) Broker or Dealer’, ‘(Associated) Broker or Dealer CRD Number’, ‘Street Address 1’, ‘Street Address 2’, ‘City’, ‘State/Province/Country’, ‘ZIP/Postal Code’, ‘State(s) of Solicitation (select all that apply)Check “All States” or check individual States’, ‘All States’, ‘Foreign/non-US’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_security_types">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_security_types</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_security_types" title="Permalink to this definition"></a></dt>
+<dd><p>Gets the list of security types from the form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soup</strong> (<em>BeautifulSoup</em>) – the BeautifulSoup generated from the reg d for scrape</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – Idk what else to say but for example: [‘Equity’]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.get_type">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">get_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">soup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.get_type" title="Permalink to this definition"></a></dt>
+<dd><p>Truly no idea what this is.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>soup</strong> (<em>BeautifulSoup</em>) – the BeautifulSoup generated from the reg d for scrape</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>type</strong> – yeah I really dont know. The example is: ‘New Notice’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Automation.ParseRegForms.ParseRegD.parse_reg_d">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Automation.ParseRegForms.ParseRegD.</span></span><span class="sig-name descname"><span class="pre">parse_reg_d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Automation.ParseRegForms.ParseRegD.parse_reg_d" title="Permalink to this definition"></a></dt>
+<dd><p>This works just like get_and_parse_reg_d except that the input is the text itself. This
+function won’t get the data for you.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>string</em>) – the string of the data pulled from url of the reg D for you want to parse</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>data</strong> – Keys: ‘Issuer’, ‘Contact’, ‘Persons’, ‘Industry’, ‘Size’, ‘Exemptions’, ‘FilingType’, ‘LongerThanAYear’, ‘TypeOfSecurities’, ‘BusinessCombination’, ‘MinimumInvestment’, ‘SalesCompensation’, ‘OfferingAndSalesAmount’</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="objects.html" class="btn btn-neutral float-left" title="Objects" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="analytics.html" class="btn btn-neutral float-right" title="Analytics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, McClain Thiel.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

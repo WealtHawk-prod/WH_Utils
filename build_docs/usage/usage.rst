@@ -12,4 +12,3 @@ Examples
    :maxdepth: 2
 
    model_usage
-   external_usage
