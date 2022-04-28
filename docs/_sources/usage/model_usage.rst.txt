@@ -1,7 +1,7 @@
-External Examples and Usage
+Model Examples and Usage
 ==========================
 
 .. toctree::
    :maxdepth: 2
 
-   External_examples.ipynb
+   Model_Examples.ipynb

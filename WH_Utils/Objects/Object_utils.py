@@ -4,7 +4,7 @@ import re
 import validators
 import datetime
 
-
+WH_DB_URL = "https://db.wealthawk.com"
 
 class AuthError(Exception):
     pass
@@ -186,6 +186,7 @@ def get_company_data(company, exp_dict):
     keys_we_want = ['title', 'location', 'company_name', 'company_url', 'date_from', 'date_to', 'duration',
                     'description', 'company_id']
     return {k: exp[k] for k in keys_we_want}
+
 
 def linkedin_dates_to_ts(date_string):
     """

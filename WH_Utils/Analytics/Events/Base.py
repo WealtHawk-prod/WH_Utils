@@ -1,4 +1,4 @@
-from WH_Utils.Objects.Models import Event
+from WH_Utils.Objects.Event import Event
 from WH_Utils.Objects.Enums import EventType, EventStage
 from WH_Utils.Utils.global_utils import backend_auth
 

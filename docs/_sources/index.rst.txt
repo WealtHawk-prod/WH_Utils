@@ -50,7 +50,7 @@ Check reference for documentation and usage for examples.
    :maxdepth: 1
 
    overview
-   usage
-   reference
+   usage/usage
+   documentation/documentation
    contributing
 

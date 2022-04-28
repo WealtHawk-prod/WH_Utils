@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setting Up Authentication &mdash; Wh_Utils  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Wh_Utils
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Wh_Utils</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Setting Up Authentication</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/usage/Model_Examples.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">WH_Utils</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="kn">from</span> <span class="nn">importlib</span> <span class="kn">import</span> <span class="n">reload</span>
+<span class="n">reload</span><span class="p">(</span><span class="n">WH_Utils</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<section id="Setting-Up-Authentication">
+<h1>Setting Up Authentication<a class="headerlink" href="#Setting-Up-Authentication" title="Permalink to this headline"></a></h1>
+<section id="WH-Authentication">
+<h2>WH Authentication<a class="headerlink" href="#WH-Authentication" title="Permalink to this headline"></a></h2>
+<ol class="arabic simple">
+<li><p>get API key by going to <a class="reference external" href="https://db.wealthawk.com/docs">https://db.wealthawk.com/docs</a></p></li>
+<li><p>click authorize in the upper right</p></li>
+<li><p>click ‘try it out’ on <code class="docutils literal notranslate"><span class="pre">/api/user</span></code> and then click excecute</p></li>
+<li><p>copy the code in the <code class="docutils literal notranslate"><span class="pre">curl</span></code> box that corrosponds to ‘Authorazation’</p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">WH_API_KEY</span> <span class="o">=</span> <span class="s1">&#39;Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImY1NWUyOTRlZWRjMTY3Y2Q5N2JiNWE4MTliYmY3OTA2MzZmMTIzN2UiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vd2gtbWFpbi0zMDc3MjIiLCJhdWQiOiJ3aC1tYWluLTMwNzcyMiIsImF1dGhfdGltZSI6MTYzNjczOTM2MCwidXNlcl9pZCI6Ik1zc0FpNzFOcUZkMXkySk5GT2tpaXRrSjRJZjIiLCJzdWIiOiJNc3NBaTcxTnFGZDF5MkpORk9raWl0a0o0SWYyIiwiaWF0IjoxNjM2NzM5MzYwLCJleHAiOjE2MzY3NDI5NjAsImVtYWlsIjoibWNjbGFpbi50aGllbEBiZXJrZWxleS5lZHUiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsibWNjbGFpbi50aGllbEBiZXJrZWxleS5lZHUiXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.aVLJ-CgL55XPk5-DCUA1Ks6alOMz5dHPhMRiY1RPNpwoxk4vHeC1OF0-Z3zEPvG3n5s2NBrIiWNh7oWulQ3sFcDVBNknFQyfHnELJjV9yEGfpbr60UPdHWWs71zxITEgiS3b2_WfuwJ06XPZmRj69bYmU0Ag95-s0jiDQRoZYkwRQRf396XocRbDdUhwdBQDjrn90NuSQ6sExQWOyqvTRnpUsRettv9Bu4NAbMLJ89vuFEM755xLbBfX7OSusDOar_8YRUopHYM-Sb8aurYDuRNTl0e9s5Wh4imESw3ooKw__DP2TkSnfZpf4IgdPzyWaIM5KgLMRZE2WsuhKjm4Og&#39;</span>
+
+<span class="n">WH_auth_dict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="n">WH_API_KEY</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<p>You can also do this programatically:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">login_header</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;accept&quot;</span><span class="p">:</span><span class="s2">&quot;application/json&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Content-Type&quot;</span><span class="p">:</span><span class="s2">&quot;application/x-www-form-urlencoded&quot;</span><span class="p">}</span>
+
+<span class="c1">#this is obviously depricated now so you will have to use your own auth info</span>
+<span class="n">login_data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;username&quot;</span><span class="p">:</span><span class="s2">&quot;mcclain.thiel@berkeley.edu&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;password&quot;</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;https://db.wealthawk.com/login&quot;</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">login_header</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">login_data</span><span class="p">)</span>
+
+<span class="n">key</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;access_token&#39;</span><span class="p">]</span>
+<span class="n">access_token_string</span> <span class="o">=</span> <span class="s2">&quot;Bearer </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="n">WH_auth_dict</span><span class="p">[</span><span class="s2">&quot;Authorization&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">access_token_string</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Coresignal-Authentication">
+<h2>Coresignal Authentication<a class="headerlink" href="#Coresignal-Authentication" title="Permalink to this headline"></a></h2>
+<p>Just like above but the whole company shares one API key so I won’t be writing in down here</p>
+</section>
+</section>
+<section id="User">
+<h1>User<a class="headerlink" href="#User" title="Permalink to this headline"></a></h1>
+<p>This is the model for working with our users i.e. the wealth managers. It works pretty much the same for all of the classes (<code class="docutils literal notranslate"><span class="pre">user</span></code>, <code class="docutils literal notranslate"><span class="pre">client</span></code>, <code class="docutils literal notranslate"><span class="pre">company</span></code>, <code class="docutils literal notranslate"><span class="pre">event</span></code>) so feel free to skip after this section but all examples will be included.</p>
+<section id="Creating-Users">
+<h2>Creating Users<a class="headerlink" href="#Creating-Users" title="Permalink to this headline"></a></h2>
+<section id="From-json-/-dict">
+<h3>From json / dict<a class="headerlink" href="#From-json-/-dict" title="Permalink to this headline"></a></h3>
+<p>The dict has to be well formatted and have the same keys as the schema but if its correct, you can make a user object directly from the dict.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tests/test_data/user.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">user_dict</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">user_dict</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;id&#39;: &#39;6091f72d-9b4c-4af9-9b25-e75811a2667e&#39;,
+ &#39;first_name&#39;: &#39;McClain&#39;,
+ &#39;last_name&#39;: &#39;Thiel&#39;,
+ &#39;email&#39;: &#39;mcclain.thiel@berkeley.edu&#39;,
+ &#39;other_info&#39;: {&#39;company&#39;: &#39;wealthawk&#39;,
+  &#39;location&#39;: &#39;Boston&#39;,
+  &#39;position&#39;: &#39;CTO&#39;,
+  &#39;image_url&#39;: &#39;https://media-exp1.licdn.com/dms/image/C5603AQHOIAkQSRQm2w/profile-displayphoto-shrink_800_800/0/1617733440435?e=1633564800&amp;v=beta&amp;t=DYbx6uhToykyXs6dJBkge0jPi7Q5ts5WxgEUCt6wvC4&#39;},
+ &#39;rank&#39;: &#39;admin&#39;,
+ &#39;firebase_id&#39;: &#39;MssAi71NqFd1y2JNFOkiitkJ4If2&#39;,
+ &#39;created&#39;: &#39;2021-07-04T00:29:21&#39;,
+ &#39;last_modified&#39;: &#39;2021-07-04T00:29:21&#39;}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">user_example</span> <span class="o">=</span> <span class="n">WH_Utils</span><span class="o">.</span><span class="n">User</span><span class="p">(</span><span class="n">data_dict</span> <span class="o">=</span> <span class="n">user_dict</span><span class="p">)</span>
+<span class="n">user_example</span><span class="o">.</span><span class="vm">__dict__</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;id&#39;: &#39;6091f72d-9b4c-4af9-9b25-e75811a2667e&#39;,
+ &#39;first_name&#39;: &#39;McClain&#39;,
+ &#39;last_name&#39;: &#39;Thiel&#39;,
+ &#39;email&#39;: &#39;mcclain.thiel@berkeley.edu&#39;,
+ &#39;other_info&#39;: {&#39;company&#39;: &#39;wealthawk&#39;,
+  &#39;location&#39;: &#39;Boston&#39;,
+  &#39;position&#39;: &#39;CTO&#39;,
+  &#39;image_url&#39;: &#39;https://media-exp1.licdn.com/dms/image/C5603AQHOIAkQSRQm2w/profile-displayphoto-shrink_800_800/0/1617733440435?e=1633564800&amp;v=beta&amp;t=DYbx6uhToykyXs6dJBkge0jPi7Q5ts5WxgEUCt6wvC4&#39;},
+ &#39;rank&#39;: &#39;admin&#39;,
+ &#39;firebase_id&#39;: &#39;MssAi71NqFd1y2JNFOkiitkJ4If2&#39;,
+ &#39;created&#39;: &#39;2021-07-04T00:29:21&#39;,
+ &#39;last_modified&#39;: &#39;2021-07-04T00:29:21&#39;,
+ &#39;in_database&#39;: False}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">user_example</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+UserID: 6091f72d-9b4c-4af9-9b25-e75811a2667e
+ Name: Thiel, McClain
+ Email: mcclain.thiel@berkeley.edu,
+ Rank: admin
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="From-WH-API">
+<h2>From WH API<a class="headerlink" href="#From-WH-API" title="Permalink to this headline"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">user_id</span> <span class="o">=</span> <span class="s2">&quot;6091f72d-9b4c-4af9-9b25-e75811a2667e&quot;</span>
+<span class="n">exampleUser</span> <span class="o">=</span> <span class="n">WH_Utils</span><span class="o">.</span><span class="n">User</span><span class="p">(</span><span class="n">WH_ID</span> <span class="o">=</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">auth_header</span> <span class="o">=</span> <span class="n">WH_auth_dict</span><span class="p">)</span>
+<span class="n">exampleUser</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+UserID: 6091f72d-9b4c-4af9-9b25-e75811a2667e
+ Name: Thiel, McClain
+ Email: mcclain.thiel@berkeley.edu,
+ Rank: admin
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">response</span> <span class="o">=</span> <span class="n">exampleUser</span><span class="o">.</span><span class="n">send_to_db</span><span class="p">(</span><span class="n">WH_auth_dict</span><span class="p">)</span>
+<span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+From Database. Attempting PUT request.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(200, &#39;{&#34;id&#34;:&#34;6091f72d-9b4c-4af9-9b25-e75811a2667e&#34;}&#39;)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">exampleUser</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;{&#34;id&#34;: &#34;6091f72d-9b4c-4af9-9b25-e75811a2667e&#34;, &#34;first_name&#34;: &#34;McClain&#34;, &#34;last_name&#34;: &#34;Thiel&#34;, &#34;email&#34;: &#34;mcclain.thiel@berkeley.edu&#34;, &#34;other_info&#34;: {&#34;company&#34;: &#34;wealthawk&#34;, &#34;location&#34;: &#34;Boston&#34;, &#34;position&#34;: &#34;CTO&#34;, &#34;image_url&#34;: &#34;https://media-exp1.licdn.com/dms/image/C5603AQHOIAkQSRQm2w/profile-displayphoto-shrink_800_800/0/1617733440435?e=1633564800&amp;v=beta&amp;t=DYbx6uhToykyXs6dJBkge0jPi7Q5ts5WxgEUCt6wvC4&#34;}, &#34;rank&#34;: &#34;admin&#34;, &#34;firebase_id&#34;: &#34;MssAi71NqFd1y2JNFOkiitkJ4If2&#34;, &#34;created&#34;: &#34;2021-07-04T00:29:21&#34;, &#34;last_modified&#34;: &#34;2021-11-12T18:43:55&#34;, &#34;in_database&#34;: true}&#39;
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Client">
+<h1>Client<a class="headerlink" href="#Client" title="Permalink to this headline"></a></h1>
+<p>As with <code class="docutils literal notranslate"><span class="pre">user</span></code> you can provide a dict to initialize an object:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tests/test_data/client.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">client_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">client_json</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+dict_keys([&#39;id&#39;, &#39;name&#39;, &#39;location&#39;, &#39;coresignal_id&#39;, &#39;linkedin_url&#39;, &#39;picture&#39;, &#39;event_type&#39;, &#39;company&#39;, &#39;start_date&#39;, &#39;end_date&#39;, &#39;full_data&#39;, &#39;analytics&#39;, &#39;date_created&#39;, &#39;last_modified&#39;])
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">exampleClient</span> <span class="o">=</span> <span class="n">WH_Utils</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">data_dict</span><span class="o">=</span><span class="n">client_json</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">exampleClient</span><span class="o">.</span><span class="n">analytics</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+None
+</pre></div></div>
+</div>
+<section id="From-Database">
+<h2>From Database<a class="headerlink" href="#From-Database" title="Permalink to this headline"></a></h2>
+<p>Or pull the object from the WH database</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">exampleClient</span> <span class="o">=</span> <span class="n">WH_Utils</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">WH_ID</span> <span class="o">=</span> <span class="n">exampleClient</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">auth_header</span> <span class="o">=</span> <span class="n">WH_auth_dict</span><span class="p">)</span>
+<span class="n">exampleClient</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ClientID: 5408b0b4-7dc4-461a-a1da-c5627e5c7430
+ Name: Daniele Distefano
+ Location: Zurich, Switzerland
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">exampleClient</span><span class="o">.</span><span class="n">in_database</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">exampleClient</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;fake name 2&quot;</span>
+<span class="n">exampleClient</span><span class="o">.</span><span class="n">send_to_db</span><span class="p">(</span><span class="n">WH_auth_dict</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Not expecting client in database. Attempting Post request.
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;{&#34;id&#34;:&#34;1fd84bd0-779d-4a10-8c71-e2cf008d23ed&#34;}&#39;
+</pre></div></div>
+</div>
+<p>However, because client data is often pulled from linkedin, you can also provide a <code class="docutils literal notranslate"><span class="pre">linkedinURL</span></code> or <code class="docutils literal notranslate"><span class="pre">coresignal_id</span></code> as a parameter and the initialization function will pull data from the coresignal database:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">exampleClient</span><span class="o">.</span><span class="n">full_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">/tmp/ipykernel_28821/3151682578.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>json<span class="ansi-blue-fg">.</span>loads<span class="ansi-blue-fg">(</span>exampleClient<span class="ansi-blue-fg">.</span>full_data<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>keys<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">AttributeError</span>: &#39;str&#39; object has no attribute &#39;keys&#39;
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, McClain Thiel.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

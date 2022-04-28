@@ -32,6 +32,10 @@ because I wanted to use the inheritance for other stuff and I don't know how MI 
 
 
 """
+
+#TODO this file is depricated.
+
+
 from datetime import datetime, date
 from typing import Any, Optional, Union, List, Dict, Any
 import requests
@@ -305,6 +309,26 @@ class Prospect:
             self._build_from_data_dict(data_dict)
         else:
             raise ValueError("Invalid combination of init parameters")
+
+    @property
+    def languages(self) -> Optional[List[str]]:
+        """
+        parses full_data for prospect languages
+        """
+        if not self.full_data or 'member_languages_collection' not in self.full_data:
+            return None
+
+        member_lang = self.full_data['member_languages_collection']
+
+        # iterate through language info to return a list of language names
+        langs = [lang_data['member_language_list']['language']
+                 for lang_data in member_lang
+                 if 'member_language_list' in lang_data]
+
+        if len(langs) == 0:
+            return None
+        else:
+            return langs
 
     @property
     def age(self) -> Optional[int]:
