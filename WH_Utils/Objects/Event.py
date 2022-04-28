@@ -16,6 +16,8 @@ from WH_Utils.Objects.Object_utils import verify_json, verify_auth_header, minus
 
 from dataclasses import dataclass
 
+#todo: insert some safty to ensure the keys are what we expect them to be
+
 @dataclass
 class Event:
     id: Optional[str]
@@ -54,7 +56,7 @@ class Event:
         request = requests.get(WH_DB_URL + "/event", params={'eventID': WH_ID}, headers=auth_header)
         content = request.json()
 
-        for key in list(self.__dict__.keys()): #need to see if this works. Much safer but im not sure if this stuff is initialized yet
+        for key in list(content.keys()):
             self.__dict__[key] = content[key]
 
         if not self.other_info or self.other_info == '"null"':
@@ -67,6 +69,8 @@ class Event:
         verify_json("company", data)
         for key in list(data.keys()):
             self.__dict__[key] = data[key]
+
+
 
         if not self.id:
             self.id = str(uuid.uuid4())

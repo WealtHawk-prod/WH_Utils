@@ -70,7 +70,6 @@ class Prospect:
     end_date: Optional[date]
     full_data: Optional[Any]
     analytics: Optional[Any]
-    event_id: Optional[str]
     date_created: Optional[datetime]
     last_modified: Optional[datetime]
 
@@ -146,6 +145,10 @@ class Prospect:
         birthdate = date - timedelta(days=18 * 365)
         time_delta = datetime.now() - birthdate
         return int(time_delta.days / 365)
+
+    @property
+    def event_id(self) -> str:
+        return requests.get("https://db.wealthawk.com/relate/person_to_event_by_person?personID={}".format(self.id)).json()[0]['eventID']
 
 
     def _build_from_WH_db(self, WH_ID: Optional[str], auth_header: Dict[str, Any]) -> None:
