@@ -29,7 +29,7 @@ setup(
     python_requires=">=3.7.*",
     install_requires=[
         'numpy',
-        'requests'
+        'requests',
         'pandas',
         'pydantic',
         'validators',
