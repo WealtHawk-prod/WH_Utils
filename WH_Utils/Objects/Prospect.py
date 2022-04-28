@@ -121,34 +121,34 @@ class Prospect:
         if not self.full_data:
             return None
 
-        # first we can try by finding when they graduated high school / college.
-        date = None
-        member_edu = self.full_data['member_education_collection']
-        education_table = pd.DataFrame.from_records(member_edu).fillna({"title": '', "subtitle": ''})
+        try:
+            # first we can try by finding when they graduated high school / college.
+            date = None
+            member_edu = self.full_data['member_education_collection']
+            education_table = pd.DataFrame.from_records(member_edu).fillna({"title": '', "subtitle": ''})
 
-        high_school_edu = education_table[education_table.title.str.contains("high school", case=False)].dropna(
-            subset=['date_to'])  # might be able to expand term list here
-        if len(high_school_edu):
-            date = list(high_school_edu.loc[:, "date_from"])[0]
-            date = parse_linkedin_date(date)
+            high_school_edu = education_table[education_table.title.str.contains("high school", case=False)].dropna(
+                subset=['date_to'])  # might be able to expand term list here
+            if len(high_school_edu):
+                date = list(high_school_edu.loc[:, "date_from"])[0]
+                date = parse_linkedin_date(date)
 
-        bach_edu = education_table[education_table.subtitle.str.contains("Bachelor", case=False)].dropna(
-            subset=['date_from'])  # might be able to expand term list here
-        if len(bach_edu):
-            date = list(bach_edu.loc[:, "date_from"])[0]
-            date = parse_linkedin_date(date)
+            bach_edu = education_table[education_table.subtitle.str.contains("Bachelor", case=False)].dropna(
+                subset=['date_from'])  # might be able to expand term list here
+            if len(bach_edu):
+                date = list(bach_edu.loc[:, "date_from"])[0]
+                date = parse_linkedin_date(date)
 
-        # we assume they are 18 at `date` if we have it
-        if not date:
+            # we assume they are 18 at `date` if we have it
+            if not date:
+                return None
+
+            birthdate = date - timedelta(days=18 * 365)
+            time_delta = datetime.now() - birthdate
+            return int(time_delta.days / 365)
+
+        except:
             return None
-
-        birthdate = date - timedelta(days=18 * 365)
-        time_delta = datetime.now() - birthdate
-        return int(time_delta.days / 365)
-
-    @property
-    def event_id(self) -> str:
-        return requests.get("https://db.wealthawk.com/relate/person_to_event_by_person?personID={}".format(self.id)).json()[0]['eventID']
 
 
     def _build_from_WH_db(self, WH_ID: Optional[str], auth_header: Dict[str, Any]) -> None:
