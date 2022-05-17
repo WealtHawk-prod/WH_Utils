@@ -66,17 +66,15 @@ class Event:
         return
 
     def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
-        verify_json("company", data)
+        verify_json("event", data)
         for key in list(data.keys()):
             self.__dict__[key] = data[key]
-
-
 
         if not self.id:
             self.id = str(uuid.uuid4())
 
-        if not self.full_data:
-            self.full_data = {}
+        if not self.other_info:
+            self.other_info = {}
 
         self.in_database = False
 
