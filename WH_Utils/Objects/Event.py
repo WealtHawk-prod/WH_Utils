@@ -107,13 +107,14 @@ class Event:
         data = minus_key("in_database", data)
         url = "https://db.wealthawk.com/event"
         data['other_info'] = json.dumps(data['other_info'])
+        data['date_of'] = str(self.date_of.date())
 
         if self.in_database:
             print("Expected that object is already in database. Attempting PUT request")
             response = requests.put(url, json=data, headers=auth_header)
         else:
             print('Object not expected in database. Attempting POST request.')
-            response = requests.post(url, data=data, headers=auth_header)
+            response = requests.post(url, json=data, headers=auth_header)
 
         if response.status_code != 200:
             raise ConnectionError(response.content.decode())
