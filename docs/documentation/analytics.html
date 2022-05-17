@@ -160,13 +160,17 @@
 <span id="prospects"></span><h2>Prospects<a class="headerlink" href="#module-WH_Utils.Analytics.Prospects.Nodes" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.Nodes.classify_job_title">
-<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.Nodes.</span></span><span class="sig-name descname"><span class="pre">classify_job_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.Nodes.classify_job_title" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.Nodes.</span></span><span class="sig-name descname"><span class="pre">classify_job_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.Nodes.classify_job_title" title="Permalink to this definition"></a></dt>
+<dd><p>Classify a list of job titles into one of the following ranks: [‘C-Suite’, “Director”, “VP”, “Manager”, “Senior”, “Entry”, “Intern”, “Other”]</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – </p>
+<dd class="field-odd"><p><strong>sentences</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – the list of job titles as strings</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="objects.html#WH_Utils.Objects.Enums.JobRank" title="WH_Utils.Objects.Enums.JobRank">WH_Utils.Objects.Enums.JobRank</a></p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>ranks</strong> – The list of the classified ranks</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>List[<a class="reference internal" href="objects.html#WH_Utils.Objects.Enums.JobRank" title="WH_Utils.Objects.Enums.JobRank">JobRank</a>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -174,7 +178,8 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.Nodes.get_company_data">
 <span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.Nodes.</span></span><span class="sig-name descname"><span class="pre">get_company_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prospect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.Nodes.get_company_data" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<dd><p>This function gets all the data related to an employment record</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>prospect</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Prospect.Prospect" title="WH_Utils.Objects.Prospect.Prospect"><em>WH_Utils.Objects.Prospect.Prospect</em></a>) – </p>
 </dd>

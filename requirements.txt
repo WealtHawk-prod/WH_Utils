@@ -61,3 +61,5 @@ validators==0.18.2
 wcwidth==0.2.5
 zipp==3.7.0
 nbsphinx
+transformers
+torch
