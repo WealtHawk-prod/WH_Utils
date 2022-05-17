@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Utils" href="utils.html" />
+    <link rel="next" title="Connectors" href="connectors.html" />
     <link rel="prev" title="Automation" href="automation.html" /> 
 </head>
 
@@ -46,10 +46,11 @@
 <li class="toctree-l3"><a class="reference internal" href="objects.html">Objects</a></li>
 <li class="toctree-l3"><a class="reference internal" href="automation.html">Automation</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Analytics</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#module-WH_Utils.Analytics.Events">Events</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-WH_Utils.Analytics.Prospects">Prospects</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-WH_Utils.Analytics.Events.Base">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-WH_Utils.Analytics.Prospects.Nodes">Prospects</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="connectors.html">Connectors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html">Utils</a></li>
 </ul>
 </li>
@@ -111,15 +112,98 @@
 <h1>Analytics<a class="headerlink" href="#analytics" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#module-WH_Utils.Analytics.Events" id="id1">Events</a></p></li>
-<li><p><a class="reference internal" href="#module-WH_Utils.Analytics.Prospects" id="id2">Prospects</a></p></li>
+<li><p><a class="reference internal" href="#module-WH_Utils.Analytics.Events.Base" id="id1">Events</a></p></li>
+<li><p><a class="reference internal" href="#module-WH_Utils.Analytics.Prospects.Nodes" id="id2">Prospects</a></p></li>
 </ul>
 </div>
-<section id="module-WH_Utils.Analytics.Events">
-<span id="events"></span><h2>Events<a class="headerlink" href="#module-WH_Utils.Analytics.Events" title="Permalink to this headline"></a></h2>
+<section id="module-WH_Utils.Analytics.Events.Base">
+<span id="events"></span><h2>Events<a class="headerlink" href="#module-WH_Utils.Analytics.Events.Base" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Analytics.Events.Base.get_event_stage">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Events.Base.</span></span><span class="sig-name descname"><span class="pre">get_event_stage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Events.Base.get_event_stage" title="Permalink to this definition"></a></dt>
+<dd><p>Classifies the stage of an event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Event.Event" title="WH_Utils.Objects.Event.Event"><em>WH_Utils.Objects.Event.Event</em></a>) – the event you want to classify</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>EventStage</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>NotImplementedError</strong> – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="objects.html#WH_Utils.Objects.Enums.EventStage" title="WH_Utils.Objects.Enums.EventStage">WH_Utils.Objects.Enums.EventStage</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Analytics.Events.Base.get_num_beneficiaries">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Events.Base.</span></span><span class="sig-name descname"><span class="pre">get_num_beneficiaries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Events.Base.get_num_beneficiaries" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the number of affiliated people for an event</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Event.Event" title="WH_Utils.Objects.Event.Event"><em>WH_Utils.Objects.Event.Event</em></a>) – event: the event you want to classify</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>num_beneficiaries</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="module-WH_Utils.Analytics.Prospects">
-<span id="prospects"></span><h2>Prospects<a class="headerlink" href="#module-WH_Utils.Analytics.Prospects" title="Permalink to this headline"></a></h2>
+<section id="module-WH_Utils.Analytics.Prospects.Nodes">
+<span id="prospects"></span><h2>Prospects<a class="headerlink" href="#module-WH_Utils.Analytics.Prospects.Nodes" title="Permalink to this headline"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.Nodes.classify_job_title">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.Nodes.</span></span><span class="sig-name descname"><span class="pre">classify_job_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.Nodes.classify_job_title" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="objects.html#WH_Utils.Objects.Enums.JobRank" title="WH_Utils.Objects.Enums.JobRank">WH_Utils.Objects.Enums.JobRank</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.Nodes.get_company_data">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.Nodes.</span></span><span class="sig-name descname"><span class="pre">get_company_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prospect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.Nodes.get_company_data" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>prospect</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Prospect.Prospect" title="WH_Utils.Objects.Prospect.Prospect"><em>WH_Utils.Objects.Prospect.Prospect</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Dict</em>[str, str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-WH_Utils.Analytics.Prospects.Hawkrank"></span><span class="target" id="module-WH_Utils.Analytics.Prospects.API"></span><dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.API.run_analytics">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.API.</span></span><span class="sig-name descname"><span class="pre">run_analytics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prospect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.API.run_analytics" title="Permalink to this definition"></a></dt>
+<dd><p>Get all analytics for a prospect</p>
+<dl class="simple">
+<dt>Currently supported analytics:</dt><dd><ul class="simple">
+<li><p>ect</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>prospect</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Prospect.Prospect" title="WH_Utils.Objects.Prospect.Prospect"><em>WH_Utils.Objects.Prospect.Prospect</em></a>) – </p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Dict</em>[str, str]</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 </section>
 
@@ -128,7 +212,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="automation.html" class="btn btn-neutral float-left" title="Automation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="utils.html" class="btn btn-neutral float-right" title="Utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="connectors.html" class="btn btn-neutral float-right" title="Connectors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

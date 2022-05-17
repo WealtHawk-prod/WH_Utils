@@ -15,4 +15,5 @@ Modules
    objects
    automation
    analytics
+   connectors
    utils
