@@ -18,7 +18,9 @@
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Automation" href="automation.html" />
+    <link rel="prev" title="Documentation" href="documentation.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -36,8 +38,23 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">Documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="documentation.html#modules">Modules</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Objects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enums">Enums</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#models">Models</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="automation.html">Automation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="analytics.html">Analytics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html">Utils</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
 </ul>
 
@@ -55,6 +72,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="documentation.html">Documentation</a> &raquo;</li>
       <li>Objects</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/documentation/objects.rst.txt" rel="nofollow"> View page source</a>
@@ -93,358 +111,25 @@
 <h1>Objects<a class="headerlink" href="#objects" title="Permalink to this headline"></a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#module-WH_Utils.Objects.Enums" id="id1">Enums</a></p></li>
-<li><p><a class="reference internal" href="#module-WH_Utils.Objects.Prospect" id="id2">Models</a></p></li>
+<li><p><a class="reference internal" href="#enums" id="id1">Enums</a></p></li>
+<li><p><a class="reference internal" href="#models" id="id2">Models</a></p></li>
 </ul>
 </div>
-<section id="module-WH_Utils.Objects.Enums">
-<span id="enums"></span><h2>Enums<a class="headerlink" href="#module-WH_Utils.Objects.Enums" title="Permalink to this headline"></a></h2>
-<p>This is a simple module that is largly for type safty. It’s more lightly documented that
-most of the library because it should be pretty self explanitory. They are just simple
-enum classes for the most part.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Enums.CompanyType">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Enums.</span></span><span class="sig-name descname"><span class="pre">CompanyType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Enums.CompanyType" title="Permalink to this definition"></a></dt>
-<dd><p>Possible stages of company.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>public</strong> (<em>a publicly traded company</em>) – </p></li>
-<li><p><strong>private</strong> (<em>a privatly held company</em>) – </p></li>
-<li><p><strong>state_owned</strong> (<em>self explanitory</em>) – </p></li>
-<li><p><strong>subsidiary_of_public</strong> (<em>I honestly don't know</em>) – </p></li>
-<li><p><strong>sole_proprietor</strong> (<em>a small company owned by a single person</em>) – </p></li>
-<li><p><strong>partnership</strong> (<em>like a sole_proprietor but with &gt; 1 person</em>) – </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Enums.EventStage">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Enums.</span></span><span class="sig-name descname"><span class="pre">EventStage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Enums.EventStage" title="Permalink to this definition"></a></dt>
-<dd><p>The possible stages an event can take</p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Enums.EventType">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Enums.</span></span><span class="sig-name descname"><span class="pre">EventType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Enums.EventType" title="Permalink to this definition"></a></dt>
-<dd><p>The possible MIM events.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>IPO</strong> – </p></li>
-<li><p><strong>acquisition</strong> – </p></li>
-<li><p><strong>trust_dis</strong> – </p></li>
-<li><p><strong>divorce</strong> – </p></li>
-<li><p><strong>lottery</strong> – </p></li>
-<li><p><strong>injury</strong> – </p></li>
-<li><p><strong>other</strong> – </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Enums.Followables">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Enums.</span></span><span class="sig-name descname"><span class="pre">Followables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Enums.Followables" title="Permalink to this definition"></a></dt>
-<dd><p>All available followable entities</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>company</strong> – </p></li>
-<li><p><strong>client</strong> – </p></li>
-<li><p><strong>event</strong> – </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Enums.JobRank">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Enums.</span></span><span class="sig-name descname"><span class="pre">JobRank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Enums.JobRank" title="Permalink to this definition"></a></dt>
-<dd><p>The possible ranks a person can have within their company ranked from most to least equity</p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Enums.UserRank">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Enums.</span></span><span class="sig-name descname"><span class="pre">UserRank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Enums.UserRank" title="Permalink to this definition"></a></dt>
-<dd><p>Enum for the possible ranks of users</p>
-<p>Simple enum class for the possible ranks a user can have. These are linked to permissions.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>admin</strong> (<em>Highest rank available. Can do literally anything. This should probably only ever be Ethan and McClain.</em>) – </p></li>
-<li><p><strong>analyst</strong> (<em>Developed specifically for internal WH employees. They should have the ability to read update and soft delete.</em>) – </p></li>
-<li><p><strong>user</strong> (<em>This is the default class for a paying user.</em>) – </p></li>
-<li><p><strong>user_expired</strong> (<em>If they were once a user but no longer. Basically a user soft delete.</em>) – </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
+<section id="enums">
+<h2>Enums<a class="headerlink" href="#enums" title="Permalink to this headline"></a></h2>
 </section>
-<section id="module-WH_Utils.Objects.Prospect">
-<span id="models"></span><h2>Models<a class="headerlink" href="#module-WH_Utils.Objects.Prospect" title="Permalink to this headline"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Prospect.Prospect">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Prospect.</span></span><span class="sig-name descname"><span class="pre">Prospect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Prospect.Prospect" title="Permalink to this definition"></a></dt>
-<dd><dl>
-<dt>Class attributes</dt><dd><ul class="simple">
-<li><p>id: Optional[str]</p></li>
-<li><p>name: Optional[str]</p></li>
-<li><p>location: Optional[str]</p></li>
-<li><p>coresignal_id: Optional[int]</p></li>
-<li><p>linkedin_url: Optional[HttpUrl]</p></li>
-<li><p>picture: Optional[HttpUrl]</p></li>
-<li><p>event_type: Optional[EventType]</p></li>
-<li><p>company: Optional[str]</p></li>
-<li><p>start_date: Optional[date]</p></li>
-<li><p>end_date: Optional[date]</p></li>
-<li><p>full_data: Optional[Any]</p></li>
-<li><p>analytics: Optional[Any]</p></li>
-<li><p>date_created: Optional[datetime]</p></li>
-<li><p>last_modified: Optional[datetime]</p></li>
-</ul>
-</dd>
-<dt>Initialization function:</dt><dd><p>This function allows several combinations of parameters tha behave differently.</p>
-<dl class="simple">
-<dt>if only <cite>data_dict</cite> parameter is passed in:</dt><dd><p>a <cite>User</cite> object will be constructed from the data passed in via the dictionary. The data dict must
-have the same keys as the object itself.</p>
-</dd>
-<dt>if <cite>WH_ID</cite> and <cite>auth_header</cite> are passed in:</dt><dd><p>this will cause the program to attempt to pull the user from the WH database. User with that UUID
-must already exist in the database and the credentials must be valid and properly formatted.</p>
-</dd>
-</dl>
-<p>All other combinations of the first 5 parameters are invalid.</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>WH_ID</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – the UUID of a user in the database</p></li>
-<li><p><strong>auth_header</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – the authorization header for the WEALTHAWK database</p></li>
-<li><p><strong>data_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – data to construct a user from</p></li>
-<li><p><strong>company_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>event_type</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="#WH_Utils.Objects.Enums.EventType" title="WH_Utils.Objects.Enums.EventType"><em>WH_Utils.Objects.Enums.EventType</em></a><em>]</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-<dl class="py property">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Prospect.Prospect.age">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">age</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#WH_Utils.Objects.Prospect.Prospect.age" title="Permalink to this definition"></a></dt>
-<dd><p>simple estimator of age sets college graduation at 22 years old</p>
-</dd></dl>
-
-<dl class="py property">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Prospect.Prospect.languages">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">languages</span></span><em class="property"><span class="pre">:</span> <span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#WH_Utils.Objects.Prospect.Prospect.languages" title="Permalink to this definition"></a></dt>
-<dd><p>parses full_data for prospect languages</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Prospect.Prospect.send_to_db">
-<span class="sig-name descname"><span class="pre">send_to_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth_header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Prospect.Prospect.send_to_db" title="Permalink to this definition"></a></dt>
-<dd><p>Sends the current object to the WH Database</p>
-<p>It will try to figure out if the object is already in the database by looking at the initialization
-method by looking at the <cite>in_database</cite> attribute. For example, if you constructed the object using
-WH_auth credentials and a WH_ID, then obviously the object is in the DB and so the function will
-attempt a PUT request to update the user. If ‘in_database’ is <cite>False</cite> then it will attempt a <cite>POST</cite>
-request. It’s python so its mutable obviously so change it if needed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>auth_header</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – the authorization header for the WH database. It should be a dict with at least the key
-‘Authorization’ where the value is the key generated by logging in</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><p><strong>response</strong> –</p>
-<p>the response of the backend API to your request. If it was a sucessful <code class="docutils literal notranslate"><span class="pre">POST</span></code> request it will look like:</p>
-<blockquote>
-<div><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">exampleClient</span><span class="o">.</span><span class="n">send_to_db</span><span class="p">(</span><span class="n">WH_auth_dict</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">expecting</span> <span class="pre">client</span> <span class="pre">in</span> <span class="pre">database.</span> <span class="pre">Attempting</span> <span class="pre">Post</span> <span class="pre">request.</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">'{&quot;id&quot;:&quot;1fd84bd0-779d-4a10-8c71-e2cf008d23ed&quot;}'</span></code></p>
-</div></blockquote>
-<p>But a successful <code class="docutils literal notranslate"><span class="pre">PUT</span></code> request will look like:</p>
-</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>requests.Response</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<span class="target" id="module-WH_Utils.Objects.User"></span><dl class="py class">
-<dt class="sig sig-object py" id="WH_Utils.Objects.User.User">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.User.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.User.User" title="Permalink to this definition"></a></dt>
-<dd><dl>
-<dt>Class attributes</dt><dd><ul class="simple">
-<li><p>id: Optional[str]</p></li>
-<li><p>first_name: Optional[str]</p></li>
-<li><p>last_name: Optional[str]</p></li>
-<li><p>email: Optional[str]</p></li>
-<li><p>other_info: Optional[Any]</p></li>
-<li><p>rank: Optional[UserRank]</p></li>
-<li><p>firebase_id: Optional[str]</p></li>
-<li><p>created: Optional[datetime]</p></li>
-<li><p>last_modified: Optional[datetime]</p></li>
-</ul>
-</dd>
-<dt>Initialization function:</dt><dd><p>This function allows several combinations of parameters tha behave differently.</p>
-<dl class="simple">
-<dt>if only <cite>data_dict</cite> parameter is passed in:</dt><dd><p>a <cite>User</cite> object will be constructed from the data passed in via the dictionary. The data dict must
-have the same keys as the object itself.</p>
-</dd>
-<dt>if <cite>WH_ID</cite> and <cite>auth_header</cite> are passed in:</dt><dd><p>this will cause the program to attempt to pull the user from the WH database. User with that UUID
-must already exist in the database and the credentials must be valid and properly formatted.</p>
-</dd>
-</dl>
-<p>All other combinations are invalid.</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>WH_ID</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – the UUID of a user in the database</p></li>
-<li><p><strong>auth_header</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – the authorization header for the WEALTHAWK database</p></li>
-<li><p><strong>data_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – data to construct a user from</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="WH_Utils.Objects.User.User.send_to_db">
-<span class="sig-name descname"><span class="pre">send_to_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth_header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.User.User.send_to_db" title="Permalink to this definition"></a></dt>
-<dd><p>Sends the current object to the WH Database</p>
-<p>It will try to figure out if the object is already in the database by looking at the initialization
-method by looking at the <cite>in_database</cite> attribute. For example, if you constructed the object using
-WH_auth credentials and a WH_ID, then obviously the object is in the DB and so the function will
-attempt a PUT request to update the user. If ‘in_database’ is <cite>False</cite> then it will attempt a <cite>POST</cite>
-request. It’s python so its mutable obviously so change it if needed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>auth_header</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – the authorization header for the WH database. It should be a dict with at least the key
-‘Authorization’ where the value is the key generated by logging in</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><p><strong>response</strong> –</p>
-<p>the response of the backend API to your request. If it was a sucessful <code class="docutils literal notranslate"><span class="pre">POST</span></code> request it will look like:</p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> <span class="pre">exampleClient.send_to_db(WH_auth_dict).content.decode()</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">expecting</span> <span class="pre">client</span> <span class="pre">in</span> <span class="pre">database.</span> <span class="pre">Attempting</span> <span class="pre">Post</span> <span class="pre">request.</span></code></p>
-<p><code class="docutils literal notranslate"><span class="pre">'{&quot;id&quot;:&quot;1fd84bd0-779d-4a10-8c71-e2cf008d23ed&quot;}'</span></code></p>
-</div></blockquote>
-<p>But a successful <code class="docutils literal notranslate"><span class="pre">PUT</span></code> request will look like:</p>
-</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>requests.Response</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<span class="target" id="module-WH_Utils.Objects.Event"></span><p>Description of Event Class</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Event.Event">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Event.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Event.Event" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>WH_ID</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>auth_header</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
-<li><p><strong>data_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Event.Event.send_to_db">
-<span class="sig-name descname"><span class="pre">send_to_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth_header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Event.Event.send_to_db" title="Permalink to this definition"></a></dt>
-<dd><p>Sends the current object to the WH Database</p>
-<p>It will try to figure out if the object is already in the database by looking at the initialization
-method by looking at the <cite>in_database</cite> attribute. For example, if you constructed the object using
-WH_auth credentials and a WH_ID, then obviously the object is in the DB and so the function will
-attempt a PUT request to update the user. If ‘in_database’ is <cite>False</cite> then it will attempt a <cite>POST</cite>
-request. It’s python so its mutable obviously so change it if needed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>auth_header</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – the authorization header for the WH database. It should be a dict with at least the key
-‘Authorization’ where the value is the key generated by logging in</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>response</strong> – the response of the backend API to your request. If it was a sucessful POST request it will look like:
-&gt;&gt;&gt; exampleClient.send_to_db(WH_auth_dict).content.decode()
-Not expecting client in database. Attempting Post request.
-‘{“id”:”1fd84bd0-779d-4a10-8c71-e2cf008d23ed”}’</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>requests.Response</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-<span class="target" id="module-WH_Utils.Objects.Company"></span><p>Description of Company class</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Company.Company">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">WH_Utils.Objects.Company.</span></span><span class="sig-name descname"><span class="pre">Company</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">WH_ID</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_dict</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Company.Company" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>WH_ID</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>auth_header</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
-<li><p><strong>data_dict</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>None</p>
-</dd>
-</dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="WH_Utils.Objects.Company.Company.send_to_db">
-<span class="sig-name descname"><span class="pre">send_to_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth_header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Objects.Company.Company.send_to_db" title="Permalink to this definition"></a></dt>
-<dd><p>Sends the current object to the WH Database</p>
-<p>It will try to figure out if the object is already in the database by looking at the initialization
-method by looking at the <cite>in_database</cite> attribute. For example, if you constructed the object using
-WH_auth credentials and a WH_ID, then obviously the object is in the DB and so the function will
-attempt a PUT request to update the user. If ‘in_database’ is <cite>False</cite> then it will attempt a <cite>POST</cite>
-request. It’s python so its mutable obviously so change it if needed.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>auth_header</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – the authorization header for the WH database. It should be a dict with at least the key
-‘Authorization’ where the value is the key generated by logging in</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>response</strong> – the response of the backend API to your request. If it was a sucessful POST request it will look like:
-&gt;&gt;&gt; exampleClient.send_to_db(WH_auth_dict).content.decode()
-Not expecting client in database. Attempting Post request.
-‘{“id”:”1fd84bd0-779d-4a10-8c71-e2cf008d23ed”}’</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>requests.Response</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
+<section id="models">
+<h2>Models<a class="headerlink" href="#models" title="Permalink to this headline"></a></h2>
 </section>
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="documentation.html" class="btn btn-neutral float-left" title="Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="automation.html" class="btn btn-neutral float-right" title="Automation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
