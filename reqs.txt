@@ -7,5 +7,6 @@ sphinx-rtd-theme
 pytest
 bs4
 validators
-nbsphinx
-pandocpip3
+transformers
+torch
+python-dotenv

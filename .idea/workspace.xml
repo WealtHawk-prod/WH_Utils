@@ -25,9 +25,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a98f7a6d-03c6-44f0-909a-09eda3aa46c6" name="Default Changelist" comment="Merge branch 'main' of https://github.com/McClain-Thiel/WH_Utils&#10;&#10;# Conflicts:&#10;#&#9;.gitignore&#10;#&#9;.idea/workspace.xml&#10;#&#9;WH_Utils/Objects/Enums.py">
+      <change afterPath="$PROJECT_DIR$/WH_Utils/Utils/test_utils.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../airflow/creds/public.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WH_Utils/Objects/Event.py" beforeDir="false" afterPath="$PROJECT_DIR$/WH_Utils/Objects/Event.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WH_Utils/Connectors/Coresignal/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/WH_Utils/Connectors/Coresignal/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WH_Utils/Connectors/WH/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/WH_Utils/Connectors/WH/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reqs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/reqs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_data/auth.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../minimal_landing/app.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../minimal_landing/app.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../minimal_landing/src/components/TeamBlock/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../minimal_landing/src/components/TeamBlock/index.tsx" afterDir="false" />
     </list>
@@ -167,7 +173,8 @@
       <workItem from="1649904501839" duration="1924000" />
       <workItem from="1650919684121" duration="2960000" />
       <workItem from="1651122762730" duration="1350000" />
-      <workItem from="1652721356976" duration="10521000" />
+      <workItem from="1652721356976" duration="12827000" />
+      <workItem from="1652900924594" duration="1587000" />
     </task>
     <servers />
   </component>

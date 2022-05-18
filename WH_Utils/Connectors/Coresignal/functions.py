@@ -145,3 +145,7 @@ def build_prospect(id: Union[int, str], auth_dict: Dict[str, Any], event_type: O
     prospect = Prospect(data_dict=data_dict, event_type=event_type)
 
     return prospect
+
+
+def build_company(id: Union[int, str], auth_dict: Dict[str, str]):
+    return

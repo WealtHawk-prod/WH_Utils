@@ -1,5 +1,5 @@
 import requests
-from typing import List, Dict, Union
+from typing import List, Dict, Union, Optional
 
 from WH_Utils.Objects.Event import Event
 from WH_Utils.Objects.Prospect import Prospect
@@ -31,3 +31,37 @@ def get_company_by_person(client: Union[Prospect, str], auth_header: Dict[str, s
     companyID = requests.get(url, params).json()[0]['companyID']
     company = Company(WH_ID=companyID, auth_header=auth_header)
     return company
+
+
+def post_prospect(auth_dict: Dict[str, str], prospect: Prospect, event: Event, company: Optional[Company] = None) -> requests.Response:
+    """
+    Adds a prospect with all connections to other entities as appropriate
+
+        Args
+        ----
+            auth_dict: Dict[str, str]
+                The WH auth dict to login
+
+            prospect: Prospect
+                The prospect you want to add to the database
+
+            event: Event
+                The event the prospect is related to
+
+            company: Optional[Company]
+                If the client was related to a company, put it here
+
+
+
+        Returns
+        -------
+            status_code: int
+                200 if it works
+
+        Raise
+        -----
+            Error
+
+    """
+
+
