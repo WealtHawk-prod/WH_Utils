@@ -1,16 +1,16 @@
 {
   "id": "6091f72d-9b4c-4af9-9b25-e75811a2667e",
-  "first_name": "McClain",
-  "last_name": "Thiel",
-  "email": "mcclain.thiel@berkeley.edu",
+  "first_name": "test",
+  "last_name": "user",
+  "email": "test.user@wealthawk.edu",
   "other_info": {
     "company": "wealthawk",
     "location": "Boston",
     "position": "CTO",
     "image_url": "https://media-exp1.licdn.com/dms/image/C5603AQHOIAkQSRQm2w/profile-displayphoto-shrink_800_800/0/1617733440435?e=1633564800&v=beta&t=DYbx6uhToykyXs6dJBkge0jPi7Q5ts5WxgEUCt6wvC4"
   },
-  "rank": "admin",
-  "firebase_id": "MssAi71NqFd1y2JNFOkiitkJ4If2",
+  "rank": "user",
+  "firebase_id": "0",
   "created": "2021-07-04T00:29:21",
   "last_modified": "2021-07-04T00:29:21"
 }

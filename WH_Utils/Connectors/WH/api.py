@@ -37,31 +37,28 @@ def post_prospect(auth_dict: Dict[str, str], prospect: Prospect, event: Event, c
     """
     Adds a prospect with all connections to other entities as appropriate
 
-        Args
-        ----
-            auth_dict: Dict[str, str]
-                The WH auth dict to login
+    Args:
+        auth_dict: Dict[str, str]
+            The WH auth dict to login
 
-            prospect: Prospect
-                The prospect you want to add to the database
+        prospect: Prospect
+            The prospect you want to add to the database
 
-            event: Event
-                The event the prospect is related to
+        event: Event
+            The event the prospect is related to
 
-            company: Optional[Company]
-                If the client was related to a company, put it here
-
+        company: Optional[Company]
+            If the client was related to a company, put it here
 
 
-        Returns
-        -------
-            status_code: int
-                200 if it works
+    Returns:
+        status_code: int
+            200 if it works
 
-        Raise
-        -----
-            Error
+    Raise:
+        Error
 
     """
+    return
 
 

@@ -232,6 +232,39 @@ if you know the event type for this prospect you can add it here</p></li>
 </dl>
 </dd></dl>
 
+<dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Connectors.WH.api.post_prospect">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Connectors.WH.api.</span></span><span class="sig-name descname"><span class="pre">post_prospect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prospect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Connectors.WH.api.post_prospect" title="Permalink to this definition"></a></dt>
+<dd><p>Adds a prospect with all connections to other entities as appropriate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>auth_dict</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – Dict[str, str]
+The WH auth dict to login</p></li>
+<li><p><strong>prospect</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Prospect.Prospect" title="WH_Utils.Objects.Prospect.Prospect"><em>WH_Utils.Objects.Prospect.Prospect</em></a>) – Prospect
+The prospect you want to add to the database</p></li>
+<li><p><strong>event</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Event.Event" title="WH_Utils.Objects.Event.Event"><em>WH_Utils.Objects.Event.Event</em></a>) – Event
+The event the prospect is related to</p></li>
+<li><p><strong>company</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="objects.html#WH_Utils.Objects.Company.Company" title="WH_Utils.Objects.Company.Company"><em>WH_Utils.Objects.Company.Company</em></a><em>]</em>) – Optional[Company]
+If the client was related to a company, put it here</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>int</dt><dd><p>200 if it works</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>status_code</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>Error</strong> – </p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 </section>
 
