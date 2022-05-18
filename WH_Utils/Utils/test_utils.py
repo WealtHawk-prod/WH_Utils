@@ -16,10 +16,12 @@ WH_auth_dict = {
 login_header = {"accept":"application/json",
                 "Content-Type":"application/x-www-form-urlencoded"}
 
-login_data = {"username":"mcclain.thiel@berkeley.edu",
-              "password":os.getenv("WH_ACCOUNT_PASSWORD")}
+login_data = {"username": "mcclain.thiel@berkeley.edu",
+              "password": os.getenv("WH_ACCOUNT_PASSWORD")}
 
 response = requests.post("https://db.wealthawk.com/login", headers = login_header, data = login_data)
+
+assert response.status_code == 200, "Error getting auth token: {}".format(response.text)
 
 key = response.json()['access_token']
 access_token_string = "Bearer {}".format(key)
