@@ -100,7 +100,9 @@ def find_employees_by_work_history(company_url: str, auth_dict: Dict[str, Any]) 
     return t
 
 
-def build_prospect(id: Union[int, str], auth_dict: Dict[str, Any], event_type: Optional[EventType] = None) -> Prospect:
+def coresingal_to_prospect(id: Union[int, str], auth_dict: Dict[str, Any],
+                           event_type: Optional[EventType] = None,
+                           company_id: Optional[str] = None) -> Prospect:
     """ Build a prospect from an ID or linkedin url
 
     Args:
@@ -113,12 +115,18 @@ def build_prospect(id: Union[int, str], auth_dict: Dict[str, Any], event_type: O
         event_type: Optional[EventType]
             if you know the event type for this prospect you can add it here
 
+        company_id: Optional[Union[int, str]]
+            If they are associated with a company event and we know the company, put it here (the WH id)
+
     Returns
     --------
         prospect: Prospect
             the prospect
 
     """
+    #TODO: cut down extra data
+    #TODO: add company id to extra data
+
     if isinstance(id, int):
         data = get_person_by_id(id, auth_dict)
 
