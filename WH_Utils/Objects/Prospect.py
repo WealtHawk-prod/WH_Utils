@@ -215,10 +215,8 @@ class Prospect:
         data['full_data'] = json.dumps(self.full_data)
 
         if self.in_database:
-            print("Expecting Client in Database. Attempting PUT request")
             response = requests.put(url, json=data, headers=auth_header)
         else:
-            print("Not expecting client in database. Attempting Post request.")
             response = requests.post(url, json=data, headers=auth_header)
 
         if response.status_code != 200:

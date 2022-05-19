@@ -59,6 +59,8 @@ class Event:
         for key in list(content.keys()):
             self.__dict__[key] = content[key]
 
+        self.date_of = datetime.strptime(self.date_of, '%Y-%m-%d')
+
         if not self.other_info or self.other_info == '"null"':
             self.other_info = {}
 
@@ -72,6 +74,8 @@ class Event:
 
         if not self.id:
             self.id = str(uuid.uuid4())
+
+        self.date_of = datetime.strptime(self.date_of, '%Y-%m-%d')
 
         if not self.other_info:
             self.other_info = {}
@@ -110,10 +114,8 @@ class Event:
         data['date_of'] = str(self.date_of.date())
 
         if self.in_database:
-            print("Expected that object is already in database. Attempting PUT request")
             response = requests.put(url, json=data, headers=auth_header)
         else:
-            print('Object not expected in database. Attempting POST request.')
             response = requests.post(url, json=data, headers=auth_header)
 
         if response.status_code != 200:

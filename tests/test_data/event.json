@@ -1,14 +1,203 @@
 {
-  "id": "3f4e7309-9efa-4ffc-91a4-76ca51ecb4a1",
-  "description": "Advanced BioMatrix, a San Diego company focused on 3D research applications, was acquired by BICO for approximately $15 million on a cash and debt-free basis, according to the Aug. 27 announcement. The sellers may also receive a maximum additional earn-out of $3 million based on milestones over a three-year period. \n\nFounded in 2008, Advanced BioMatrix has built a portfolio of collagen bioinks, high purity extracellular matrix proteins, chemically modified proteins and polysaccharides, and other reagents and cell assays, that are sold to research institutions, and pharmaceutical and biotech companies. \n\n\nFor instance, its products are used in advanced research in the development of new drugs or 3D bioprinted tissue models. \n\n\n“Advanced BioMatrix is ready for the next step in our growth and together with the BICO Group, we are ready to deliver the market's leading product portfolio of bioinks and reagents to our customers,” said David Bagley, president of Advanced BioMatrix. “We look forward to getting to know new colleagues, collaborators, and customers. We are excited to explore the potential that exists regarding synergies and sales opportunities within the Group.” \n\n\nThis is the sixth acquisition this year for BICO, formerly known as Cellink. A couple of months ago, the multibillion-dollar unicorn acquired Discover Echo, a local start-up that develops high-tech microscopes, for $110 million.",
-  "type": "acquisition",
-  "title": "Advanced BioMatrix Acquired by BICO for $15M",
-  "date_of": "2021-07-31",
-  "link": "https://www.sdbj.com/news/2021/aug/31/advanced-biomatrix-acquired-bico-15m/",
-  "industry": "unknown",
+  "id": "e936e1a3-1114-426f-927a-186a92287d66",
+  "description": "SAN DIEGO, June 22, 2021 (GLOBE NEWSWIRE) -- Codex DNA, Inc. (Nasdaq: DNAY) today announced the closing of its initial public offering of 7,666,664 shares of common stock, including the full exercise of the underwriters’ option to purchase up to 999,999 additional shares of common stock, at a public offering price of $16.00 per share. The aggregate gross proceeds to Codex DNA from the offering were approximately $122.7 million, before deducting underwriting discounts and commissions and other offering expenses. All of the shares in the offering were offered by Codex DNA. \n\nCodex DNA’s common stock began trading on The Nasdaq Global Select Market on June 18, 2021 under the ticker symbol \"DNAY.\"\n\nJefferies LLC, Cowen and Company, LLC and KeyBanc Capital Markets Inc. are acting as joint book-running managers for the proposed offering.",
+  "type": "IPO",
+  "title": "Codex DNA IPO",
+  "date_of": "2021-06-23",
+  "link": "https://www.globenewswire.com/news-release/2021/06/22/2251361/0/en/Codex-DNA-Announces-Closing-of-Initial-Public-Offering-and-Full-Exercise-of-the-Underwriters-Option-to-Purchase-Additional-Shares.html",
   "location": "San Diego",
-  "value": 15000000,
-  "other_info": {},
-  "created": "2021-10-14T04:18:32",
-  "last_modified": "2021-10-14T04:18:32"
+  "value": 123000000,
+  "other_info": {
+    "event_id": "01FNWJJAABXYNM1KC9SDS7GKCN",
+    "event_type": "form_response",
+    "form_response": {
+      "token": "i98hkcbgv4li5sad6i98hkcbdqwzm4hu",
+      "answers": [
+        {
+          "text": "Codex DNA IPO",
+          "type": "text",
+          "field": {
+            "id": "q3QmKAzJYGzq",
+            "ref": "b2eeb462-1500-4d36-a198-3de54ec14b00",
+            "type": "short_text"
+          }
+        },
+        {
+          "type": "choice",
+          "field": {
+            "id": "B7iC0k4GVJsg",
+            "ref": "d2188e47-cf07-44d3-9e27-9be707573ec4",
+            "type": "multiple_choice"
+          },
+          "choice": {
+            "label": "IPO"
+          }
+        },
+        {
+          "date": "2021-06-23",
+          "type": "date",
+          "field": {
+            "id": "ba1GfT4AK1oH",
+            "ref": "632265be-6f7a-47f2-8b55-54ddfce7d04d",
+            "type": "date"
+          }
+        },
+        {
+          "text": "SAN DIEGO, June 22, 2021 (GLOBE NEWSWIRE) -- Codex DNA, Inc. (Nasdaq: DNAY) today announced the closing of its initial public offering of 7,666,664 shares of common stock, including the full exercise of the underwriters’ option to purchase up to 999,999 additional shares of common stock, at a public offering price of $16.00 per share. The aggregate gross proceeds to Codex DNA from the offering were approximately $122.7 million, before deducting underwriting discounts and commissions and other offering expenses. All of the shares in the offering were offered by Codex DNA. \n\nCodex DNA’s common stock began trading on The Nasdaq Global Select Market on June 18, 2021 under the ticker symbol \"DNAY.\"\n\nJefferies LLC, Cowen and Company, LLC and KeyBanc Capital Markets Inc. are acting as joint book-running managers for the proposed offering.",
+          "type": "text",
+          "field": {
+            "id": "a0y0vsT8mzNv",
+            "ref": "8790717a-44fe-4a19-9b83-671c89ac657d",
+            "type": "long_text"
+          }
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2021/06/22/2251361/0/en/Codex-DNA-Announces-Closing-of-Initial-Public-Offering-and-Full-Exercise-of-the-Underwriters-Option-to-Purchase-Additional-Shares.html",
+          "type": "url",
+          "field": {
+            "id": "B6l74SnKuwus",
+            "ref": "cddedb92-f93e-4e05-9668-8df10ae4b10f",
+            "type": "website"
+          }
+        },
+        {
+          "text": "San Diego",
+          "type": "text",
+          "field": {
+            "id": "xE8fAQbqFvI9",
+            "ref": "db540399-a6fe-4a58-999f-3c3f7e8424f6",
+            "type": "short_text"
+          }
+        },
+        {
+          "type": "number",
+          "field": {
+            "id": "0abdNMcEMB7q",
+            "ref": "24dcefe3-5de0-42c0-a7a3-e9063bdb4b78",
+            "type": "number"
+          },
+          "number": 123000000
+        },
+        {
+          "text": "BioTech",
+          "type": "text",
+          "field": {
+            "id": "H3HzL7eCIUrM",
+            "ref": "1ac8f4c0-3c66-4e9d-8b5d-16b79ac2cefd",
+            "type": "short_text"
+          }
+        },
+        {
+          "url": "https://www.linkedin.com/company/codex-dna/",
+          "type": "url",
+          "field": {
+            "id": "Rju42sot4Jgq",
+            "ref": "5cc37dd3-49fa-490f-b383-59ad7ee435fc",
+            "type": "website"
+          }
+        },
+        {
+          "url": "https://www.globenewswire.com/news-release/2021/06/22/2251361/0/en/Codex-DNA-Announces-Closing-of-Initial-Public-Offering-and-Full-Exercise-of-the-Underwriters-Option-to-Purchase-Additional-Shares.html",
+          "type": "url",
+          "field": {
+            "id": "9khp8F3EtXeU",
+            "ref": "dd006de1-a354-4b3d-a124-11c038dfd997",
+            "type": "website"
+          }
+        }
+      ],
+      "form_id": "qDBcLX6w",
+      "landed_at": "2021-12-02T03:19:24Z",
+      "definition": {
+        "id": "qDBcLX6w",
+        "title": "Make Event: IPO or Acquisition",
+        "fields": [
+          {
+            "id": "q3QmKAzJYGzq",
+            "ref": "b2eeb462-1500-4d36-a198-3de54ec14b00",
+            "type": "short_text",
+            "title": "Title",
+            "properties": {}
+          },
+          {
+            "id": "B7iC0k4GVJsg",
+            "ref": "d2188e47-cf07-44d3-9e27-9be707573ec4",
+            "type": "multiple_choice",
+            "title": "What type of company event?",
+            "choices": [
+              {
+                "id": "a3nPiLTDqcv0",
+                "label": "IPO"
+              },
+              {
+                "id": "XHN4Tuk7SYdX",
+                "label": "Acquisition"
+              }
+            ],
+            "properties": {},
+            "allow_other_choice": true
+          },
+          {
+            "id": "ba1GfT4AK1oH",
+            "ref": "632265be-6f7a-47f2-8b55-54ddfce7d04d",
+            "type": "date",
+            "title": "When did this happen?",
+            "properties": {}
+          },
+          {
+            "id": "a0y0vsT8mzNv",
+            "ref": "8790717a-44fe-4a19-9b83-671c89ac657d",
+            "type": "long_text",
+            "title": "Description",
+            "properties": {}
+          },
+          {
+            "id": "B6l74SnKuwus",
+            "ref": "cddedb92-f93e-4e05-9668-8df10ae4b10f",
+            "type": "website",
+            "title": "Event Link",
+            "properties": {}
+          },
+          {
+            "id": "xE8fAQbqFvI9",
+            "ref": "db540399-a6fe-4a58-999f-3c3f7e8424f6",
+            "type": "short_text",
+            "title": "Location",
+            "properties": {}
+          },
+          {
+            "id": "0abdNMcEMB7q",
+            "ref": "24dcefe3-5de0-42c0-a7a3-e9063bdb4b78",
+            "type": "number",
+            "title": "Total Value",
+            "properties": {}
+          },
+          {
+            "id": "H3HzL7eCIUrM",
+            "ref": "1ac8f4c0-3c66-4e9d-8b5d-16b79ac2cefd",
+            "type": "short_text",
+            "title": "Industry",
+            "properties": {}
+          },
+          {
+            "id": "Rju42sot4Jgq",
+            "ref": "5cc37dd3-49fa-490f-b383-59ad7ee435fc",
+            "type": "website",
+            "title": "LINKEDIN URL of the acquired or IPO'd company.",
+            "properties": {}
+          },
+          {
+            "id": "9khp8F3EtXeU",
+            "ref": "dd006de1-a354-4b3d-a124-11c038dfd997",
+            "type": "website",
+            "title": "Add any news article links here",
+            "properties": {}
+          }
+        ]
+      },
+      "submitted_at": "2021-12-02T03:21:20Z"
+    }
+  },
+  "created": "2021-12-02T03:21:22",
+  "last_modified": "2021-12-02T03:21:22"
 }

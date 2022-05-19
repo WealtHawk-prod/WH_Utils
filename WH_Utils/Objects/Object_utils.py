@@ -41,8 +41,8 @@ def _verify_as_client(json: Dict[str, Any]) -> None:
 
 
 def _verify_as_company(json: Dict[str, Any]) -> None:
-    expected_keys = ['id', 'name', 'coresignal_id', 'linkedin_url', 'description', 'location', 'logo',
-                     'type', 'website', 'full_data', 'created', 'last_modified']
+    expected_keys = ['id', 'name', 'coresignal_id', 'linkedin_url', 'industry', 'description', 'location', 'logo',
+                     'type', 'website', 'full_data', 'created', 'last_modified', "CIK"]
     actual_keys = list(json.keys())
     same_keys = set(expected_keys) == set(actual_keys)
     if not same_keys:
@@ -61,7 +61,7 @@ def _verify_as_user(json: Dict[str, Any]) -> None:
 
 
 def _verify_as_event(json: Dict[str, Any]) -> None:
-    expected_keys = ['id', 'description', 'type', 'title', 'date_of', 'link', 'industry', 'location', 'value', 'other_info', 'created', 'last_modified']
+    expected_keys = ['id', 'description', 'type', 'title', 'date_of', 'link', 'location', 'value', 'other_info', 'created', 'last_modified']
     actual_keys = list(json.keys())
     same_keys = set(expected_keys) == set(actual_keys)
     if not same_keys:

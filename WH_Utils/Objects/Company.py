@@ -105,15 +105,11 @@ class Company:
         data = minus_key("in_database", data)
         url = WH_DB_URL + "/company"
         data['full_data'] = json.dumps(data['full_data'])
-        data['analytics'] = json.dumps(data['analytics'])
-
 
         if self.in_database:
-            print("Expected that object is already in database. Attempting PUT request")
             response = requests.put(url, json=data, headers=auth_header)
         else:
-            print('Object not expected in database. Attempting POST request.')
-            response = requests.post(url, data=data, headers=auth_header)
+            response = requests.post(url, json=data, headers=auth_header)
 
         if response.status_code != 200:
             raise ConnectionError(response.content.decode())
