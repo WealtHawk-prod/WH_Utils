@@ -44,6 +44,7 @@ class TestSECConnector:
         assert actual_keys == expected_keys, "Unexcpected keys in return dict. \n Actual keys: {} \n Expected Keys: {}".format(
             actual_keys, expected_keys)
 
+    """ these take forever to run. i would avoid
     def test_all_static(self):
         with open("tests/test_data/connectors_data/recent_reg_d_webpage.txt", 'r') as f:
             webpage = f.read()
@@ -55,3 +56,4 @@ class TestSECConnector:
         webpage = functions.get_reg_D_page()
         data = functions.get_all_recent_reg_D(webpage)
         assert len(data) > 1
+    """
