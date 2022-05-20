@@ -10,3 +10,4 @@ validators
 transformers
 torch
 python-dotenv
+requests-random-user-agent

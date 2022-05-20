@@ -80,7 +80,7 @@ def get_all_recent_reg_D(webpage: str) -> List[Dict]:
   reg_d_info = []
   for line in tqdm(parse_recent_reg_D(webpage)):
     reg_d_info.append(get_info_from_line(line))
-    time.sleep(2)
+    time.sleep(.5)
 
   return reg_d_info
 
