@@ -6,7 +6,7 @@ import requests
 class TestUser:
 
     def test_user_valid_json(self):
-        with open("tests/test_data/user.json", 'r') as f:
+        with open("tests/test_data/objects_data/user.json", 'r') as f:
             data = json.load(f)
         user = User(data_dict=data)
         assert isinstance(user, User)
@@ -20,7 +20,7 @@ class TestUser:
         assert isinstance(user, User)
 
     def test_push_to_db(self):
-        with open("tests/test_data/user.json", 'r') as f:
+        with open("tests/test_data/objects_data/user.json", 'r') as f:
             data = json.load(f)
         user = User(data_dict=data)
         response = user.send_to_db(WH_auth_dict)

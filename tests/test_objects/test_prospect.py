@@ -9,7 +9,7 @@ import warnings
 class TestProspect:
 
     def test_user_valid_json(self):
-        with open("tests/test_data/prospect_data_dict.json", 'r') as f:
+        with open("tests/test_data/objects_data/prospect_data_dict.json", 'r') as f:
             data = json.load(f)
         prospect = Prospect(data_dict=data)
         assert isinstance(prospect, Prospect)
@@ -23,7 +23,7 @@ class TestProspect:
         assert isinstance(prospect, Prospect)
 
     def test_push_to_db(self):
-        with open("tests/test_data/prospect_data_dict.json", 'r') as f:
+        with open("tests/test_data/objects_data/prospect_data_dict.json", 'r') as f:
             data = json.load(f)
         prospect = Prospect(data_dict=data)
 

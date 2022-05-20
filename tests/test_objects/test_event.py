@@ -9,7 +9,7 @@ import warnings
 class TestEvent:
 
     def test_event_valid_json(self):
-        with open("tests/test_data/event.json", 'r') as f:
+        with open("tests/test_data/objects_data/event.json", 'r') as f:
             data = json.load(f)
         prospect = Event(data_dict=data)
         assert isinstance(prospect, Event)
@@ -23,7 +23,7 @@ class TestEvent:
         assert isinstance(event, Event)
 
     def test_push_to_db(self):
-        with open("tests/test_data/event.json", 'r') as f:
+        with open("tests/test_data/objects_data/event.json", 'r') as f:
             data = json.load(f)
         event = Event(data_dict=data)
 

@@ -9,7 +9,7 @@ import warnings
 class TestCompany:
 
     def test_company_valid_json(self):
-        with open("tests/test_data/company.json", 'r') as f:
+        with open("tests/test_data/objects_data/company.json", 'r') as f:
             data = json.load(f)
         company = Company(data_dict=data)
         assert isinstance(company, Company)
@@ -23,7 +23,7 @@ class TestCompany:
         assert isinstance(company, Company)
 
     def test_push_to_db(self):
-        with open("tests/test_data/company.json", 'r') as f:
+        with open("tests/test_data/objects_data/company.json", 'r') as f:
             data = json.load(f)
         company = Company(data_dict=data)
 

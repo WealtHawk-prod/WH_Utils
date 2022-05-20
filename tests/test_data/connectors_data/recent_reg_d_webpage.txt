@@ -1,0 +1,290 @@
+<html>
+<head>
+<title>EDGAR Current Events</title>
+<script language="JavaScript" src="/include/sec.js" type="text/javascript"></script>
+</head>
+<body bgcolor="#FFFFFF" link="#807331" vlink="#FF0000">
+<!-- SEC Web Analytics - For information please visit: http://www.sec.gov/privacy.htm#collectedinfo -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TD3BKV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TD3BKV');</script>
+<!-- End SEC Web Analytics -->
+<br />
+<table width="100%"><tr><td width="5%"></td>
+<td width="80%">
+<h1>Results for EDGAR Current Events</h1>
+<p>The total number of matches for 2022-05-19 is <strong>268</strong><br>The total number of forms for 2022-05-19 is <strong>4866</strong><p><pre><strong>Date Filed   Form        CIK Code     Company Name</strong><hr>05-19-2022   <a href="/Archives/edgar/data/1927095/0001288230-22-000011-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927095">1927095</a>   1000 James Apartments LLC
+05-19-2022   <a href="/Archives/edgar/data/1930138/0001930138-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930138">1930138</a>   1101 San Luis Obispo LLC
+05-19-2022   <a href="/Archives/edgar/data/1916545/0001916545-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1916545">1916545</a>   350 Indiana CD LLC
+05-19-2022   <a href="/Archives/edgar/data/1916545/0001916545-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1916545">1916545</a>   350 Indiana CD LLC
+05-19-2022   <a href="/Archives/edgar/data/1928399/0001928399-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928399">1928399</a>   721 Skaneateles, DST
+05-19-2022   <a href="/Archives/edgar/data/1929964/0001929964-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929964">1929964</a>   8F1 Fund I, a series of Roll Up Vehicles, LP
+05-19-2022   <a href="/Archives/edgar/data/1812295/0001812295-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1812295">1812295</a>   A&Q Select (US) LLC - Premier Access
+05-19-2022   <a href="/Archives/edgar/data/1897537/0000902664-22-003027-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1897537">1897537</a>   AB-LSV Partners I (Cayman), L.P.
+05-19-2022   <a href="/Archives/edgar/data/1897288/0000902664-22-003028-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1897288">1897288</a>   AB-LSV Partners I (Delaware), L.P.
+05-19-2022   <a href="/Archives/edgar/data/1927404/0001927404-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927404">1927404</a>   ALI Fund I, a series of JMWTX Investments, LP
+05-19-2022   <a href="/Archives/edgar/data/5981/0001193125-22-154415-index.html">DEFA14A</a>          <a href="browse-edgar?action=getcompany&CIK=5981">5981</a>   AMERICAN VANGUARD CORP
+05-19-2022   <a href="/Archives/edgar/data/5981/0000897069-22-000338-index.html">DFAN14A</a>          <a href="browse-edgar?action=getcompany&CIK=5981">5981</a>   AMERICAN VANGUARD CORP
+05-19-2022   <a href="/Archives/edgar/data/1929960/0001929960-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929960">1929960</a>   AR Fund I, a series of AngelList Quant Fund Direct Investmen
+05-19-2022   <a href="/Archives/edgar/data/1832038/0001193125-22-155177-index.html">DEFA14C</a>       <a href="browse-edgar?action=getcompany&CIK=1832038">1832038</a>   Adagio Therapeutics, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1929175/0001929175-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1929175">1929175</a>   Adamnite Labs, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1100397/0001493152-22-014414-index.html">DEF 14A</a>       <a href="browse-edgar?action=getcompany&CIK=1100397">1100397</a>   Advaxis, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1787508/0001787508-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1787508">1787508</a>   Adze Biotechnology Inc
+05-19-2022   <a href="/Archives/edgar/data/1929939/0001929939-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929939">1929939</a>   AgFunder Atomo SPV-I, LLC
+05-19-2022   <a href="/Archives/edgar/data/1301491/0000935836-22-000351-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1301491">1301491</a>   Akahi Fund L P
+05-19-2022   <a href="/Archives/edgar/data/1929936/0001929936-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929936">1929936</a>   Alpaca, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1750106/0001493152-22-014385-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1750106">1750106</a>   Alset EHome International Inc.
+05-19-2022   <a href="/Archives/edgar/data/1734916/0000921895-22-001735-index.html">DFAN14A</a>       <a href="browse-edgar?action=getcompany&CIK=1734916">1734916</a>   Alta Fox Opportunities Fund, LP
+05-19-2022   <a href="/Archives/edgar/data/1929666/0001929666-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929666">1929666</a>   Arini Co-Invest LLC - Arini Co Investment I Series
+05-19-2022   <a href="/Archives/edgar/data/1929751/0001929666-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929751">1929751</a>   Arini Co-Investment I Series Ltd
+05-19-2022   <a href="/Archives/edgar/data/1928830/0001928830-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928830">1928830</a>   Astral Capital EVOL 2, LLC
+05-19-2022   <a href="/Archives/edgar/data/1120543/0001104659-22-062888-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1120543">1120543</a>   BAILLIE GIFFORD FUNDS
+05-19-2022   <a href="/Archives/edgar/data/1822277/0001822277-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1822277">1822277</a>   BEVERAGE USA HOLDINGS INC.
+05-19-2022   <a href="/Archives/edgar/data/1930069/0001930069-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930069">1930069</a>   BLUESTEM SPECIAL PURPOSE FUND, LLC
+05-19-2022   <a href="/Archives/edgar/data/1725872/0001213900-22-028280-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1725872">1725872</a>   BM Technologies, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1725872/0001213900-22-028285-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1725872">1725872</a>   BM Technologies, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1929594/0001929594-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929594">1929594</a>   BV Design Multifamily DST
+05-19-2022   <a href="/Archives/edgar/data/1754634/0001754634-22-000003-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1754634">1754634</a>   BWR Innovations LLC
+05-19-2022   <a href="/Archives/edgar/data/1929752/0001929752-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929752">1929752</a>   BenWick Inc.
+05-19-2022   <a href="/Archives/edgar/data/1733607/0001733607-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1733607">1733607</a>   Benchmark Space Systems, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1866604/0001866604-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1866604">1866604</a>   Benefit Street Partners Real Estate Opportunistic Structured
+05-19-2022   <a href="/Archives/edgar/data/1926785/0001926785-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1926785">1926785</a>   Breeze 2, LLC
+05-19-2022   <a href="/Archives/edgar/data/1043951/0001043951-22-000005-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1043951">1043951</a>   CAMPBELL FUND TRUST
+05-19-2022   <a href="/Archives/edgar/data/1777837/0000919574-22-003558-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1777837">1777837</a>   CASTLE RIDGE (US), LP
+05-19-2022   <a href="/Archives/edgar/data/1929243/0001929243-22-000003-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1929243">1929243</a>   CHP ARROW ENVIRONMENTAL, LP
+05-19-2022   <a href="/Archives/edgar/data/1929966/0001929966-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929966">1929966</a>   CO Fund II, a series of Data Community Fund, LP
+05-19-2022   <a href="/Archives/edgar/data/844076/0000844076-22-000001-index.html">D/A</a>            <a href="browse-edgar?action=getcompany&CIK=844076">844076</a>   CORE INVESTMENT LIMITED PARTNERSHIP
+05-19-2022   <a href="/Archives/edgar/data/1736901/0001736901-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1736901">1736901</a>   CORSHA, INC.
+05-19-2022   <a href="/Archives/edgar/data/1929395/0001929395-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929395">1929395</a>   CR SPV IV Co-Invest, LP
+05-19-2022   <a href="/Archives/edgar/data/1929391/0001929391-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929391">1929391</a>   Canary Partners, LP
+05-19-2022   <a href="/Archives/edgar/data/1928227/0001928227-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928227">1928227</a>   Caplight Fund STP LLC
+05-19-2022   <a href="/Archives/edgar/data/1898439/0001898439-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1898439">1898439</a>   Cardio Diagnostics Inc.
+05-19-2022   <a href="/Archives/edgar/data/1862918/0001862918-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1862918">1862918</a>   Carstensz Tidewater Fund I, LLC
+05-19-2022   <a href="/Archives/edgar/data/1584804/0001584804-22-000003-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1584804">1584804</a>   Catalyst Resources LLC
+05-19-2022   <a href="/Archives/edgar/data/1929214/0001929214-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929214">1929214</a>   Cava Capital SPV XVI, LLC
+05-19-2022   <a href="/Archives/edgar/data/1658566/0001193125-22-154488-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1658566">1658566</a>   Centennial Resource Development, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1658566/0001193125-22-155037-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1658566">1658566</a>   Centennial Resource Development, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1658566/0001193125-22-155150-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1658566">1658566</a>   Centennial Resource Development, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1857041/0000902664-22-003029-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1857041">1857041</a>   ChapelGate Credit Opportunity Fund Ltd
+05-19-2022   <a href="/Archives/edgar/data/1930042/0001930042-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930042">1930042</a>   Clouds USA Inc.
+05-19-2022   <a href="/Archives/edgar/data/1929193/0000919574-22-003552-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929193">1929193</a>   Coatue Structured Fund LP
+05-19-2022   <a href="/Archives/edgar/data/1929226/0000919574-22-003554-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929226">1929226</a>   Coatue Structured Offshore Feeder Fund LP
+05-19-2022   <a href="/Archives/edgar/data/1794167/0001794167-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1794167">1794167</a>   CoinZoom, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1772269/0001772269-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1772269">1772269</a>   Conserv Solutions Inc
+05-19-2022   <a href="/Archives/edgar/data/1929825/0001461373-22-000024-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929825">1929825</a>   Corevist Holdings, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1927380/0001387131-22-006272-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927380">1927380</a>   Creator Collective Capital (C3) I LP
+05-19-2022   <a href="/Archives/edgar/data/1928637/0001879785-22-000051-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928637">1928637</a>   Crescent Co-Investment Fund 2021, LLC
+05-19-2022   <a href="/Archives/edgar/data/1713506/0000897069-22-000338-index.html">DFAN14A</a>       <a href="browse-edgar?action=getcompany&CIK=1713506">1713506</a>   Cruiser Capital Advisors, LLC
+05-19-2022   <a href="/Archives/edgar/data/1668671/0001567619-22-011246-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1668671">1668671</a>   DAI GEO US, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1421126/0001421126-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1421126">1421126</a>   DANBURY SURGICAL CENTER LP
+05-19-2022   <a href="/Archives/edgar/data/1929441/0001929441-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929441">1929441</a>   DBL Partners TIAB 2022, L.P.
+05-19-2022   <a href="/Archives/edgar/data/1930154/0001930154-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930154">1930154</a>   DEFI SECURITIZED MORTGAGE FUND LLC
+05-19-2022   <a href="/Archives/edgar/data/1929958/0001929958-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929958">1929958</a>   DR Fund I, a series of Spacecadet Ventures, LP
+05-19-2022   <a href="/Archives/edgar/data/1930115/0001930115-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930115">1930115</a>   DW BAKKEN #63 LP
+05-19-2022   <a href="/Archives/edgar/data/1440291/0001440291-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1440291">1440291</a>   Davis Partnership, LP
+05-19-2022   <a href="/Archives/edgar/data/1861954/0000897069-22-000336-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1861954">1861954</a>   DeepWork Parallel Fund I, LP
+05-19-2022   <a href="/Archives/edgar/data/1929988/0001231919-22-000028-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929988">1929988</a>   Determinate Systems, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1756372/0000921895-22-001738-index.html">DFAN14A</a>       <a href="browse-edgar?action=getcompany&CIK=1756372">1756372</a>   Driver Management Co LLC
+05-19-2022   <a href="/Archives/edgar/data/1929164/0001929164-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929164">1929164</a>   Eagle City Fund Dallas, LP
+05-19-2022   <a href="/Archives/edgar/data/1929073/0001929073-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929073">1929073</a>   Eagle Venture Fund III, LP
+05-19-2022   <a href="/Archives/edgar/data/1930173/0001930173-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930173">1930173</a>   Elan Bluff Venture, LLC
+05-19-2022   <a href="/Archives/edgar/data/1911715/0001911715-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1911715">1911715</a>   Embedded Insurance Inc.
+05-19-2022   <a href="/Archives/edgar/data/1929745/0001567619-22-011248-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929745">1929745</a>   Employee Cycle, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1891072/0001891072-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1891072">1891072</a>   EquityZen Growth Technology Fund LLC - Series 1099
+05-19-2022   <a href="/Archives/edgar/data/1928078/0001928078-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928078">1928078</a>   EquityZen Growth Technology Fund LLC - Series 1330
+05-19-2022   <a href="/Archives/edgar/data/1927063/0001096906-22-001185-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927063">1927063</a>   FOREMEDIA GROUP INC.
+05-19-2022   <a href="/Archives/edgar/data/1769648/0000897069-22-000334-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1769648">1769648</a>   Fairmount Healthcare Feeder Fund II Ltd.
+05-19-2022   <a href="/Archives/edgar/data/1769651/0000897069-22-000333-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1769651">1769651</a>   Fairmount Healthcare Fund II L.P.
+05-19-2022   <a href="/Archives/edgar/data/1930001/0001930001-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930001">1930001</a>   Flexxbotics, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1419041/0001193125-22-155026-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1419041">1419041</a>   Forte Biosciences, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1562528/0001193125-22-154421-index.html">DEF 14A</a>       <a href="browse-edgar?action=getcompany&CIK=1562528">1562528</a>   Franklin BSP Realty Trust, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1562528/0001193125-22-154426-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1562528">1562528</a>   Franklin BSP Realty Trust, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1929587/0001929587-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929587">1929587</a>   Freed Holding Co LLC
+05-19-2022   <a href="/Archives/edgar/data/1927252/0001927252-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927252">1927252</a>   GET Fund I, a series of AX-RN-Funds, LP
+05-19-2022   <a href="/Archives/edgar/data/1929967/0001929967-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929967">1929967</a>   GH Fund I, a series of Thincrust Capital, LP
+05-19-2022   <a href="/Archives/edgar/data/1809889/0001809889-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1809889">1809889</a>   GVB Biopharma
+05-19-2022   <a href="/Archives/edgar/data/1413426/0001413426-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1413426">1413426</a>   Genesee Global Holdings, LLC
+05-19-2022   <a href="/Archives/edgar/data/1817048/0001817048-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1817048">1817048</a>   Gilgamesh Pharmaceuticals, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1929476/0001929476-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929476">1929476</a>   Ginossar Ventures I LP
+05-19-2022   <a href="/Archives/edgar/data/1930212/0001930212-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930212">1930212</a>   Givers, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1862441/0001862441-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1862441">1862441</a>   Goanna Capital 21A LLC
+05-19-2022   <a href="/Archives/edgar/data/1912129/0001862441-22-000003-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1912129">1912129</a>   Goanna Capital 21AA LLC
+05-19-2022   <a href="/Archives/edgar/data/1862416/0001862416-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1862416">1862416</a>   Goanna Capital 21B LLC
+05-19-2022   <a href="/Archives/edgar/data/1910265/0001910265-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1910265">1910265</a>   Goanna Capital 21BB LLC
+05-19-2022   <a href="/Archives/edgar/data/1862605/0001910265-22-000003-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1862605">1862605</a>   Goanna Capital 21C LLC
+05-19-2022   <a href="/Archives/edgar/data/1862604/0001862604-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1862604">1862604</a>   Goanna Capital 21D LLC
+05-19-2022   <a href="/Archives/edgar/data/1910292/0001862604-22-000003-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1910292">1910292</a>   Goanna Capital 21DD LLC
+05-19-2022   <a href="/Archives/edgar/data/1862467/0001862467-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1862467">1862467</a>   Goanna Capital 21E LLC
+05-19-2022   <a href="/Archives/edgar/data/1910184/0001862467-22-000003-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1910184">1910184</a>   Goanna Capital 21EE LLC
+05-19-2022   <a href="/Archives/edgar/data/1863225/0001862467-22-000004-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1863225">1863225</a>   Goanna Capital 21F LLC
+05-19-2022   <a href="/Archives/edgar/data/1437925/0001477932-22-003658-index.html">DEFA14C</a>       <a href="browse-edgar?action=getcompany&CIK=1437925">1437925</a>   Golden Matrix Group, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1745871/0001745871-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1745871">1745871</a>   Good Tree Capital Partners Fund
+05-19-2022   <a href="/Archives/edgar/data/1847127/0001193125-22-154620-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1847127">1847127</a>   Gores Guggenheim, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1808141/0001493152-22-014433-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1808141">1808141</a>   Gramercy Emerging Markets Dynamic Credit Fund
+05-19-2022   <a href="/Archives/edgar/data/1930233/0001930233-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930233">1930233</a>   Gray Duck Robbinsdale, LLC
+05-19-2022   <a href="/Archives/edgar/data/1921848/0001921848-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1921848">1921848</a>   Greenbird Intelligence Fund, LLC, Series H
+05-19-2022   <a href="/Archives/edgar/data/1894604/0001894604-22-000010-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1894604">1894604</a>   Griffin Capital Qualified Opportunity Zone Fund III, L.P.
+05-19-2022   <a href="/Archives/edgar/data/1693610/0001693610-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1693610">1693610</a>   Griffin Capital, LLC
+05-19-2022   <a href="/Archives/edgar/data/46080/0000921895-22-001735-index.html">DFAN14A</a>         <a href="browse-edgar?action=getcompany&CIK=46080">46080</a>   HASBRO, INC.
+05-19-2022   <a href="/Archives/edgar/data/1927110/0000897069-22-000325-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927110">1927110</a>   HL Impact Fund II iCapital Access Fund, L.P.
+05-19-2022   <a href="/Archives/edgar/data/1929961/0001929961-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929961">1929961</a>   HOM Fund I, a series of Schroeder Investments, LP
+05-19-2022   <a href="/Archives/edgar/data/1922751/0001922751-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1922751">1922751</a>   HY Fund I, a series of Kepler Operator's Investments, LP
+05-19-2022   <a href="/Archives/edgar/data/1522486/0000919574-22-003556-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1522486">1522486</a>   Half Moon Capital Partners, LP
+05-19-2022   <a href="/Archives/edgar/data/1930169/0000899797-22-000012-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930169">1930169</a>   Heirlume Inc.
+05-19-2022   <a href="/Archives/edgar/data/1929350/0001929350-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929350">1929350</a>   Humantic AI, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1929871/0001929871-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929871">1929871</a>   Huntley Ridge Investor LLC
+05-19-2022   <a href="/Archives/edgar/data/1862478/0001862478-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1862478">1862478</a>   IDEO CoLab Ventures Forte Series A LLC
+05-19-2022   <a href="/Archives/edgar/data/1425432/0001425432-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1425432">1425432</a>   INCA Latin American Fund, LP
+05-19-2022   <a href="/Archives/edgar/data/1489660/0001489660-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1489660">1489660</a>   INCA Latin American Offshore Fund, Ltd.
+05-18-2022   <a href="/Archives/edgar/data/311670/9999999997-22-002968-index.html">DSTRBRPT</a>       <a href="browse-edgar?action=getcompany&CIK=311670">311670</a>   INTER AMERICAN DEVELOPMENT BANK/
+05-19-2022   <a href="/Archives/edgar/data/1923308/0001923308-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1923308">1923308</a>   IT Fund I, a series of Elevator Studio Syndicate, LP
+05-19-2022   <a href="/Archives/edgar/data/1838100/0001013594-22-000441-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1838100">1838100</a>   JAT Capital Domestic LP
+05-19-2022   <a href="/Archives/edgar/data/1838266/0001013594-22-000442-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1838266">1838266</a>   JAT Capital Offshore Ltd
+05-19-2022   <a href="/Archives/edgar/data/1158463/0001193125-22-154875-index.html">DFAN14A</a>       <a href="browse-edgar?action=getcompany&CIK=1158463">1158463</a>   JETBLUE AIRWAYS CORP
+05-19-2022   <a href="/Archives/edgar/data/1929464/0001929404-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929464">1929464</a>   Jacksonville Real Estate Fund, LLC
+05-19-2022   <a href="/Archives/edgar/data/1929386/0001929386-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929386">1929386</a>   Jungle Studios (BVI) Inc.
+05-19-2022   <a href="/Archives/edgar/data/1929866/0001929866-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929866">1929866</a>   KKR Indigo Equity Partners Private Investors A L.P.
+05-19-2022   <a href="/Archives/edgar/data/1799663/0001903368-22-000003-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1799663">1799663</a>   KRE Holdco LLC
+05-19-2022   <a href="/Archives/edgar/data/1903368/0001903368-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1903368">1903368</a>   KRE Summit Co-Invest Feeder REIT LLC
+05-19-2022   <a href="/Archives/edgar/data/1687690/0001687690-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1687690">1687690</a>   KUVARE HOLDINGS LP
+05-19-2022   <a href="/Archives/edgar/data/1706762/0001929391-22-000003-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1706762">1706762</a>   Kadensa Fund
+05-19-2022   <a href="/Archives/edgar/data/1706759/0001929391-22-000004-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1706759">1706759</a>   Kadensa US Fund
+05-19-2022   <a href="/Archives/edgar/data/1927154/0001927154-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927154">1927154</a>   LE Fund I, a series of DVC, LP
+05-19-2022   <a href="/Archives/edgar/data/1926242/0001926242-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1926242">1926242</a>   LHG HYDE PARK, LLC
+05-19-2022   <a href="/Archives/edgar/data/1914176/0001914176-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1914176">1914176</a>   LM Fund I, a series of Roll Up Vehicles, LP
+05-19-2022   <a href="/Archives/edgar/data/1929584/0001929584-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929584">1929584</a>   Leo@Huntsville Investors, LP
+05-19-2022   <a href="/Archives/edgar/data/1809668/0001315863-22-000426-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1809668">1809668</a>   Lido Uncapped Platinum Fund (Institutional), LP
+05-19-2022   <a href="/Archives/edgar/data/1809669/0001315863-22-000425-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1809669">1809669</a>   Lido Uncapped Platinum Fund, LP
+05-19-2022   <a href="/Archives/edgar/data/1838402/0000950172-22-000087-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1838402">1838402</a>   Litera Holdco LP
+05-19-2022   <a href="/Archives/edgar/data/1840541/0001840541-22-000003-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1840541">1840541</a>   LiveView Technologies, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1913110/0001913110-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1913110">1913110</a>   LowerMyCloudBill Inc.
+05-19-2022   <a href="/Archives/edgar/data/1918227/0001879785-22-000050-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1918227">1918227</a>   MCH Iberian Capital Fund V, FCR
+05-19-2022   <a href="/Archives/edgar/data/1869829/0001869829-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1869829">1869829</a>   MIX CAPITAL LTD
+05-19-2022   <a href="/Archives/edgar/data/1875388/0001875388-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1875388">1875388</a>   MVP ES FUND C LLC
+05-19-2022   <a href="/Archives/edgar/data/1924757/0001924757-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1924757">1924757</a>   MVP LS FUND CCCLXXVI LLC
+05-19-2022   <a href="/Archives/edgar/data/1876464/0001876464-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1876464">1876464</a>   MVP LS FUND CCCXXII LLC
+05-19-2022   <a href="/Archives/edgar/data/1788320/0001788320-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1788320">1788320</a>   MVP LS Fund CXLI LLC
+05-19-2022   <a href="/Archives/edgar/data/1812338/0000902664-22-003031-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1812338">1812338</a>   Marcho Partners Feeder Fund ICAV
+05-19-2022   <a href="/Archives/edgar/data/1929404/0001929404-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929404">1929404</a>   McKenzie Capital Fund I, LLC
+05-19-2022   <a href="/Archives/edgar/data/1928874/0001928874-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928874">1928874</a>   Millwork USA Holding Co., LLC
+05-19-2022   <a href="/Archives/edgar/data/1930246/0001213900-22-028348-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930246">1930246</a>   MizMaa Venture Partners, L.P.
+05-19-2022   <a href="/Archives/edgar/data/1929439/0001929439-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929439">1929439</a>   Mucker Select II, L.P.
+05-19-2022   <a href="/Archives/edgar/data/1761278/0001761278-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1761278">1761278</a>   Narmi, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1682508/0001682508-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1682508">1682508</a>   NexHealth, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1811381/0001802349-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1811381">1811381</a>   Niagara Plus Income (Tax Exempt) Feeder LP
+05-19-2022   <a href="/Archives/edgar/data/1802349/0001802349-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1802349">1802349</a>   Niagara Plus Income Fund LP
+05-19-2022   <a href="/Archives/edgar/data/1091596/0001437749-22-013070-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1091596">1091596</a>   Nuo Therapeutics, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1711799/0001193125-22-155185-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1711799">1711799</a>   Nuveen Global Cities REIT, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1254309/0001315863-22-000424-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1254309">1254309</a>   OMNIQUEST I LLC
+05-19-2022   <a href="/Archives/edgar/data/1926556/0001926556-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1926556">1926556</a>   ON Realty MF Value Fund 2022 LLC
+05-19-2022   <a href="/Archives/edgar/data/1929970/0001929970-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929970">1929970</a>   OT Fund I, a series of Kepler Operator's Investments, LP
+05-19-2022   <a href="/Archives/edgar/data/1802457/0001802457-22-000028-index.html">DEFR14A</a>       <a href="browse-edgar?action=getcompany&CIK=1802457">1802457</a>   Origin Materials, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1860198/0001860198-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1860198">1860198</a>   PAG Loan Fund V L.P.
+05-19-2022   <a href="/Archives/edgar/data/1860312/0001860198-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1860312">1860312</a>   PAG Loan V Feeder Fund L.P.
+05-19-2022   <a href="/Archives/edgar/data/1926124/0000950142-22-001679-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1926124">1926124</a>   PCA Opportunities Fund 2022, L.P. - Series G (Bain Europe VI
+05-19-2022   <a href="/Archives/edgar/data/1053517/0001053517-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1053517">1053517</a>   PECONIC GRENADIER FUND L.P.
+05-19-2022   <a href="/Archives/edgar/data/1467895/0001467895-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1467895">1467895</a>   PECONIC PARTNERS INSURANCE FUND LP
+05-19-2022   <a href="/Archives/edgar/data/1929972/0001929972-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929972">1929972</a>   PL Fund I, a series of Better Capital, LP
+05-19-2022   <a href="/Archives/edgar/data/914025/0001193125-22-154833-index.html">DEFA14A</a>        <a href="browse-edgar?action=getcompany&CIK=914025">914025</a>   PLANTRONICS INC /CA/
+05-19-2022   <a href="/Archives/edgar/data/1914968/0001914968-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1914968">1914968</a>   PORTLAND REVERE COMMUNITY, LP
+05-19-2022   <a href="/Archives/edgar/data/1811442/0001811442-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1811442">1811442</a>   PRINCIPAL REAL ESTATE LIQUID DEBT FUND, LP
+05-19-2022   <a href="/Archives/edgar/data/315545/0001493152-22-014393-index.html">DEFA14A</a>        <a href="browse-edgar?action=getcompany&CIK=315545">315545</a>   PROVECTUS BIOPHARMACEUTICALS, INC.
+05-19-2022   <a href="/Archives/edgar/data/1929331/0001929331-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929331">1929331</a>   Paradise Village Office Equities I LLC
+05-19-2022   <a href="/Archives/edgar/data/1497402/0001497402-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1497402">1497402</a>   Pelorus Fund, LLC
+05-19-2022   <a href="/Archives/edgar/data/1925453/0001925453-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1925453">1925453</a>   Posterus Austin SPV I Series of Posterus Partners, LLC
+05-19-2022   <a href="/Archives/edgar/data/1929013/0000897069-22-000327-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929013">1929013</a>   Premier BX Growth P Co-Invest Feeder, L.P.
+05-19-2022   <a href="/Archives/edgar/data/1930051/0001930051-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930051">1930051</a>   Primer Labs Inc.
+05-19-2022   <a href="/Archives/edgar/data/1480402/0001480402-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1480402">1480402</a>   QUADRE INVESTMENTS, L.P.
+05-19-2022   <a href="/Archives/edgar/data/1376730/0001376730-22-000003-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1376730">1376730</a>   REGENT EDUCATION, INC
+05-19-2022   <a href="/Archives/edgar/data/1928179/0001928179-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928179">1928179</a>   REM Fund I, a series of Hustle Fund Angel Squad, LP
+05-19-2022   <a href="/Archives/edgar/data/834285/0000921895-22-001738-index.html">DFAN14A</a>        <a href="browse-edgar?action=getcompany&CIK=834285">834285</a>   REPUBLIC FIRST BANCORP INC
+05-19-2022   <a href="/Archives/edgar/data/1895475/0001895475-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1895475">1895475</a>   RF Bistatics, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1528849/0001558370-22-009193-index.html">DEF 14A</a>       <a href="browse-edgar?action=getcompany&CIK=1528849">1528849</a>   RH
+05-19-2022   <a href="/Archives/edgar/data/1528849/0001558370-22-009196-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1528849">1528849</a>   RH
+05-19-2022   <a href="/Archives/edgar/data/1929962/0001929962-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929962">1929962</a>   RI Fund I, a series of 640 Oxford Ventures, LP
+05-19-2022   <a href="/Archives/edgar/data/1892338/0001892338-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1892338">1892338</a>   RNR Capital, LLC
+05-19-2022   <a href="/Archives/edgar/data/1928802/0001928802-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928802">1928802</a>   RREF I SPV, LP
+05-19-2022   <a href="/Archives/edgar/data/1929741/0001929741-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929741">1929741</a>   Radiant Domestic Fund, LP
+05-19-2022   <a href="/Archives/edgar/data/1929873/0001929873-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929873">1929873</a>   Ranch@Sienna Equity Partners LLC
+05-19-2022   <a href="/Archives/edgar/data/1607962/0001178913-22-002092-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1607962">1607962</a>   ReWalk Robotics Ltd.
+05-19-2022   <a href="/Archives/edgar/data/1929541/0000902664-22-003030-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929541">1929541</a>   Red Hills Rail I, L.P.
+05-19-2022   <a href="/Archives/edgar/data/1879742/0001362118-22-000047-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1879742">1879742</a>   Remora Capital Partners I LP
+05-19-2022   <a href="/Archives/edgar/data/1879693/0001362118-22-000046-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1879693">1879693</a>   Remora Capital Partners I QP LP
+05-19-2022   <a href="/Archives/edgar/data/1873038/0001873038-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1873038">1873038</a>   Rewardsweb, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1871144/0001871144-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1871144">1871144</a>   Rialto Trading Holdings LLC
+05-19-2022   <a href="/Archives/edgar/data/1928804/0001928804-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928804">1928804</a>   Root Capital Fund LP
+05-19-2022   <a href="/Archives/edgar/data/1929597/0001096906-22-001186-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929597">1929597</a>   SANCTUARY BROADWAY MULTIFAMILY, LLC
+05-19-2022   <a href="/Archives/edgar/data/1110449/0001110449-22-000003-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1110449">1110449</a>   SCOGGIN OVERSEAS FUND LTD
+05-19-2022   <a href="/Archives/edgar/data/1926866/0001926866-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1926866">1926866</a>   SEP Tomball, LP
+05-19-2022   <a href="/Archives/edgar/data/1300734/0001493152-22-014470-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1300734">1300734</a>   SHINECO, INC.
+05-19-2022   <a href="/Archives/edgar/data/1300734/0001493152-22-014474-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1300734">1300734</a>   SHINECO, INC.
+05-19-2022   <a href="/Archives/edgar/data/1929971/0001929971-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929971">1929971</a>   SI Fund I, a series of Menaverse, LP
+05-19-2022   <a href="/Archives/edgar/data/1929201/0001929201-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929201">1929201</a>   SINEWAVE VENTURES FUND III, L.P
+05-19-2022   <a href="/Archives/edgar/data/1913400/0001913400-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1913400">1913400</a>   SK21 Fund I, a series of Roll Up Vehicles, LP
+05-19-2022   <a href="/Archives/edgar/data/1872853/0001872853-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1872853">1872853</a>   SPECTRAL FINANCE INC.
+05-19-2022   <a href="/Archives/edgar/data/1930023/0001930023-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930023">1930023</a>   SR CD Fund, LP
+05-19-2022   <a href="/Archives/edgar/data/1756962/0001756962-22-000003-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1756962">1756962</a>   STANDARD MEASURE LLC
+05-19-2022   <a href="/Archives/edgar/data/1928695/0001928695-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928695">1928695</a>   SaasLink Inc.
+05-19-2022   <a href="/Archives/edgar/data/1530163/0001213900-22-028070-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1530163">1530163</a>   Samsara Luggage, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1490978/0001564590-22-020697-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1490978">1490978</a>   Schrodinger, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1898767/0001183740-22-000114-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1898767">1898767</a>   Securter Systems Inc.
+05-19-2022   <a href="/Archives/edgar/data/1929114/0001929114-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929114">1929114</a>   Self-Storage Portfolio XVII DST
+05-19-2022   <a href="/Archives/edgar/data/1681300/0001315863-22-000423-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1681300">1681300</a>   Series M - Virage Capital Partners II LP
+05-19-2022   <a href="/Archives/edgar/data/1928397/0000897069-22-000328-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928397">1928397</a>   Shaw Park Private Markets 2022 Onshore Fund L.P.
+05-19-2022   <a href="/Archives/edgar/data/1667486/0001667486-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1667486">1667486</a>   Shyft Moving Inc.
+05-19-2022   <a href="/Archives/edgar/data/1929768/0001929768-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929768">1929768</a>   Skeptigo Partners, LLC
+05-19-2022   <a href="/Archives/edgar/data/1929266/0001929266-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929266">1929266</a>   SkyKnight Aero Holdings II, LLC
+05-19-2022   <a href="/Archives/edgar/data/1893768/0001893768-22-000003-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1893768">1893768</a>   Slingshot USA LLC
+05-19-2022   <a href="/Archives/edgar/data/1902981/0001902981-22-000002-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1902981">1902981</a>   Slow Yourself Down, Club
+05-19-2022   <a href="/Archives/edgar/data/1929657/0001929657-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929657">1929657</a>   Sofi Carr Joint Venture
+05-19-2022   <a href="/Archives/edgar/data/1925717/0001925717-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1925717">1925717</a>   Sofi Drake Joint Venture
+05-19-2022   <a href="/Archives/edgar/data/1498710/0001193125-22-154875-index.html">DFAN14A</a>       <a href="browse-edgar?action=getcompany&CIK=1498710">1498710</a>   Spirit Airlines, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1928500/0000945621-22-000229-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928500">1928500</a>   StepStone Senior Corporate Lending Fund II (Cayman) LP
+05-19-2022   <a href="/Archives/edgar/data/1924722/0001924722-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1924722">1924722</a>   Stone Marque Fund LLC
+05-19-2022   <a href="/Archives/edgar/data/1929762/0001929762-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929762">1929762</a>   Student Housing Qualified Opportunity Fund, L.L.C.
+05-19-2022   <a href="/Archives/edgar/data/1920478/0001920478-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1920478">1920478</a>   Sustainable Infrastructure Fund IV (Offshore), LP
+05-19-2022   <a href="/Archives/edgar/data/1890846/0001890846-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1890846">1890846</a>   Sustainable Infrastructure Fund IV, LP
+05-19-2022   <a href="/Archives/edgar/data/1929883/0001929883-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929883">1929883</a>   T Tauri Ltd.
+05-19-2022   <a href="/Archives/edgar/data/1927366/0000897069-22-000330-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927366">1927366</a>   TCV XII (iCapital), L.P.
+05-19-2022   <a href="/Archives/edgar/data/1929969/0001929969-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929969">1929969</a>   TH Fund I 3ig, a series of Zachary Ginsburg Funds, LP
+05-19-2022   <a href="/Archives/edgar/data/1929963/0001929963-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929963">1929963</a>   TH Fund I, a series of The Fortia Group's Investment Syndica
+05-19-2022   <a href="/Archives/edgar/data/1929157/0001929157-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929157">1929157</a>   TM Sponsor Fund II LLC
+05-19-2022   <a href="/Archives/edgar/data/730349/0001493152-22-014484-index.html">DEF 14A</a>        <a href="browse-edgar?action=getcompany&CIK=730349">730349</a>   TOFUTTI BRANDS INC
+05-19-2022   <a href="/Archives/edgar/data/1455684/0001171843-22-003815-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1455684">1455684</a>   TPI COMPOSITES, INC
+05-19-2022   <a href="/Archives/edgar/data/86312/0000086312-22-000041-index.html">DEFA14A</a>         <a href="browse-edgar?action=getcompany&CIK=86312">86312</a>   TRAVELERS COMPANIES, INC.
+05-19-2022   <a href="/Archives/edgar/data/1929426/0001929426-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929426">1929426</a>   TRG Sneads Ferry SPV, LLC
+05-19-2022   <a href="/Archives/edgar/data/1929987/0001929987-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929987">1929987</a>   TRUE DC Waldorf Partners, LLC
+05-19-2022   <a href="/Archives/edgar/data/1925821/0001925821-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1925821">1925821</a>   Teton Crypto Capital Fund I LLC
+05-19-2022   <a href="/Archives/edgar/data/1929359/0001929359-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929359">1929359</a>   Texas Oil Partners Permian BSW2, L.P.
+05-19-2022   <a href="/Archives/edgar/data/1923936/0001923936-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1923936">1923936</a>   Texsun Mason Investors, LLC
+05-19-2022   <a href="/Archives/edgar/data/1765011/0001929391-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1765011">1765011</a>   Tifin Group LLC
+05-19-2022   <a href="/Archives/edgar/data/1811977/0001811977-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1811977">1811977</a>   Titan ML, Ltd.
+05-19-2022   <a href="/Archives/edgar/data/1857652/0001857652-22-000001-index.html">D/A</a>           <a href="browse-edgar?action=getcompany&CIK=1857652">1857652</a>   Transwestern Strategic Partners Fund III, L.P.
+05-19-2022   <a href="/Archives/edgar/data/1928326/0001896410-22-000008-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928326">1928326</a>   Troy532 Sai Investments, LLC
+05-19-2022   <a href="/Archives/edgar/data/1929301/0001929301-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929301">1929301</a>   UNION APARTMENTS, LLC
+05-19-2022   <a href="/Archives/edgar/data/1801126/0001801126-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1801126">1801126</a>   US CourtScript Acquisition, LP
+05-19-2022   <a href="/Archives/edgar/data/1929965/0001929965-22-000002-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929965">1929965</a>   VAL Fund I, a series of Schroeder Investments, LP
+05-19-2022   <a href="/Archives/edgar/data/751365/0001628280-22-014853-index.html">DEF 14A</a>        <a href="browse-edgar?action=getcompany&CIK=751365">751365</a>   VIRCO MFG CORPORATION
+05-19-2022   <a href="/Archives/edgar/data/1929774/0001929774-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929774">1929774</a>   VS Growth XIV, a series of Venture Science Master Fund I, LL
+05-19-2022   <a href="/Archives/edgar/data/1930055/0001930055-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930055">1930055</a>   VareCo 1679-1695 Reed, LLC
+05-19-2022   <a href="/Archives/edgar/data/1930216/0001930216-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930216">1930216</a>   Vey-Alta Pines, LLC
+05-19-2022   <a href="/Archives/edgar/data/1082324/0001140361-22-019830-index.html">DEFA14A</a>       <a href="browse-edgar?action=getcompany&CIK=1082324">1082324</a>   VirnetX Holding Corp
+05-19-2022   <a href="/Archives/edgar/data/1929421/0001929421-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929421">1929421</a>   WHITE HAT STRATEGIC PARTNERS II LP
+05-19-2022   <a href="/Archives/edgar/data/1929273/0001929273-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929273">1929273</a>   WIN Reality, Inc.
+05-19-2022   <a href="/Archives/edgar/data/1927361/0000897069-22-000329-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927361">1927361</a>   WMA Systematic Equity Alpha Long/Short Offshore Fund (iCapit
+05-19-2022   <a href="/Archives/edgar/data/1928715/0001928715-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1928715">1928715</a>   Wander Capital Real Estate Fund LLC
+05-19-2022   <a href="/Archives/edgar/data/1906477/0000950138-22-000130-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1906477">1906477</a>   Watermark 2022 Multifamily Development Fund IV, LP
+05-19-2022   <a href="/Archives/edgar/data/1927601/0001927601-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927601">1927601</a>   Whitley Apartments, LLC
+05-19-2022   <a href="/Archives/edgar/data/1929545/0001929545-22-000001-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1929545">1929545</a>   Wonder Fund III LLC
+05-19-2022   <a href="/Archives/edgar/data/1927083/0000897069-22-000326-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927083">1927083</a>   iCapital - Bridgewater All Weather Portfolio II (Internation
+05-19-2022   <a href="/Archives/edgar/data/1927259/0000897069-22-000331-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927259">1927259</a>   iCapital - Vista Equity Partners Fund VIII U.S. Access Fund,
+05-19-2022   <a href="/Archives/edgar/data/1927249/0000897069-22-000324-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1927249">1927249</a>   iCapital Venture International, L.P.
+05-19-2022   <a href="/Archives/edgar/data/1930090/0000897069-22-000335-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1930090">1930090</a>   iCapital-BREP X Offshore Access Fund, L.P.
+05-19-2022   <a href="/Archives/edgar/data/1908601/0000897069-22-000332-index.html">D</a>             <a href="browse-edgar?action=getcompany&CIK=1908601">1908601</a>   iCapital-Bridge Multifamily V (International) Access Fund, L
+<hr></pre><a href="/edgar/searchedgar/currentevents.htm">Perform another current events analysis?</a><hr><p>
+Generated  at 15:23:55 EDT on May 20, 2022<hr></td><td width="20%"></tr></table>
+</body></html>
