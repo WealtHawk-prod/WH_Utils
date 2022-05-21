@@ -60,5 +60,3 @@ def post_prospect(auth_dict: Dict[str, str], prospect: Prospect, event: Event, c
 
     """
     return
-
-

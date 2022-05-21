@@ -4,7 +4,7 @@ from WH_Utils.Utils.global_utils import backend_auth
 
 """Basic Event Analytics
 
-This module handles the most basic 
+This module handles the most basic
 
 Public Functions:
 

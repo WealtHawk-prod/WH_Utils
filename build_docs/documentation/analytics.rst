@@ -25,4 +25,3 @@ Prospects
 
 .. automodule:: WH_Utils.Analytics.Prospects.API
    :members:
-

@@ -30,4 +30,3 @@ class TestUser:
             #response2 = requests.delete(BASE_URL + "/user", params={'id': id})
 
         assert response.status_code==200
-

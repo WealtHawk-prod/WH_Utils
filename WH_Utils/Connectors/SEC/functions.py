@@ -27,17 +27,17 @@ def get_info_from_line(line: str) -> dict:
     root_url = "https://www.sec.gov"
     api_url = "https://data.sec.gov/submissions/CIK{}.json"
     date, form, CIK_code, name = [x for x in line.split("   ") if x]
-  
+
     data['date'] = datetime.datetime.strptime(date, '%m-%d-%Y')
     form_bs = BeautifulSoup(form, 'html.parser')
     data['form_type'] = form_bs.text
     data['form_link'] = root_url + form_bs.a['href']
-  
+
     CIK_code = BeautifulSoup(CIK_code, "html.parser").text.strip()
     CIK_code = '0' * (10 - len(CIK_code)) + CIK_code
-  
+
     data['CIK_code'] = CIK_code
-  
+
     try:
       req = requests.get(api_url.format(CIK_code))
       if req.status_code != 200:
@@ -46,7 +46,7 @@ def get_info_from_line(line: str) -> dict:
         info = req.json()
     except Exception as e:
       info = {"Error": e}
-  
+
     data['info'] = info
     data['company_name'] = name
 
@@ -83,9 +83,3 @@ def get_all_recent_reg_D(webpage: str) -> List[Dict]:
     time.sleep(.5)
 
   return reg_d_info
-
-
-
-
-
-

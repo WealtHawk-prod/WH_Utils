@@ -121,4 +121,3 @@ class Company:
 
     def __str__(self) -> str:
         return "CompanyID: {} \n Name: {}".format(self.id, self.name)
-

@@ -44,5 +44,3 @@ How to contribute
 7. If everything works, build the docs with ``sphinx-build build_docs docs``
 
 8. If that builds correctly, just push to github as per usual.
-
-

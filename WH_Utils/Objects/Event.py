@@ -129,4 +129,3 @@ class Event:
 
     def __str__(self) -> str:
         return "EventID: {} \n Title: {}".format(self.id, self.title)
-

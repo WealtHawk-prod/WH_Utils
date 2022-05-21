@@ -7,7 +7,7 @@ The py-template-project package allows users to download the contents of this [G
 
 - a minimal `setup.py` file;
 - testing with PyTest;
-- documentation (HTML and PDF) generated using Sphinx with auto-documentation setup; 
+- documentation (HTML and PDF) generated using Sphinx with auto-documentation setup;
 - an entry-point that allows the package to execute functions directly from the command line - e.g. to start a server, interact with a user, download a GitHub repository, etc.; and,
 - automated testing and deployment using Travis CI.
 

@@ -30,8 +30,3 @@ To see what your documentation looks like in the sphinx site you can run:
 
 This will generate the docs and dump them in the `docs` folder. Open the index.html file in that folder in
 browser and you can see the full website. Make sure it looks how you want it to before you PR.
-
-
-
-
-

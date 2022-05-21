@@ -53,4 +53,3 @@ Check reference for documentation and usage for examples.
    usage/usage
    documentation/documentation
    contributing
-
