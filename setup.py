@@ -32,8 +32,8 @@ setup(
         'requests',
         'pandas',
         'pydantic',
-        'validators',
-        ''],
+        'validators'
+        ],
     license=about['__license__'],
     zip_safe=False,
     #entry_points={'console_scripts': ['py-package-template=py_pkg.entry_points:main'],},
