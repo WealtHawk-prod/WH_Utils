@@ -5,7 +5,12 @@ import json
 from datetime import datetime, timedelta
 
 from WH_Utils.Objects.Enums import UserRank
-from WH_Utils.Objects.Object_utils import verify_json, verify_auth_header, minus_key, WH_DB_URL
+from WH_Utils.Objects.Object_utils import (
+    verify_json,
+    verify_auth_header,
+    minus_key,
+    WH_DB_URL,
+)
 
 from dataclasses import dataclass
 
@@ -63,10 +68,12 @@ class User:
     class Config:
         arbitrary_types_allowed = True
 
-    def __init__(self,
-                WH_ID: Optional[str] = None,
-                auth_header: Optional[Dict[str, Any]] = None,
-                data_dict: Optional[Dict[str, Any]] = None) -> None:
+    def __init__(
+        self,
+        WH_ID: Optional[str] = None,
+        auth_header: Optional[Dict[str, Any]] = None,
+        data_dict: Optional[Dict[str, Any]] = None,
+    ) -> None:
         """
         Initialization function for user
 
@@ -101,12 +108,13 @@ class User:
         else:
             raise ValueError("Invalid combination of init parameters")
 
-
     def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
         verify_auth_header(auth_header)
-        request = requests.get(WH_DB_URL + "/user", params={'userID': WH_ID}, headers=auth_header)
+        request = requests.get(
+            WH_DB_URL + "/user", params={"userID": WH_ID}, headers=auth_header
+        )
         content = request.json()[0]
-        if "detail" in list(content.keys()) and content['detail'] == "User Not Found":
+        if "detail" in list(content.keys()) and content["detail"] == "User Not Found":
             raise ValueError("User Not Found or bad auth")
 
         for key in list(content.keys()):
@@ -119,7 +127,6 @@ class User:
 
         self.in_database = True
 
-
     def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
         verify_json("user", data)
         for key in list(data.keys()):
@@ -129,7 +136,6 @@ class User:
             self.id = str(uuid.uuid4())
 
         self.in_database = False
-
 
     def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
         """
@@ -167,12 +173,12 @@ class User:
         data = self.__dict__
         data = minus_key("in_database", data)
         url = "https://db.wealthawk.com/user"
-        data['other_info'] = json.dumps(self.other_info)
+        data["other_info"] = json.dumps(self.other_info)
 
         if self.in_database:
-            response = requests.put(url, json = data, headers = auth_header)
+            response = requests.put(url, json=data, headers=auth_header)
         else:
-            response = requests.post(url, json = data, headers = auth_header)
+            response = requests.post(url, json=data, headers=auth_header)
 
         if response.status_code != 200:
             raise ConnectionError(response.content)
@@ -180,7 +186,11 @@ class User:
         return response
 
     def __repr__(self) -> str:
-        return "UserID: {} \n Name: {}, {}\n Email: {}, \n Rank: {}".format(self.id, self.last_name, self.first_name, self.email, self.rank)
+        return "UserID: {} \n Name: {}, {}\n Email: {}, \n Rank: {}".format(
+            self.id, self.last_name, self.first_name, self.email, self.rank
+        )
 
     def __str__(self) -> str:
-        return "UserID: {} \n Name: {}, {}\n Email: {}, \n Rank: {}".format(self.id, self.last_name, self.first_name, self.email, self.rank)
+        return "UserID: {} \n Name: {}, {}\n Email: {}, \n Rank: {}".format(
+            self.id, self.last_name, self.first_name, self.email, self.rank
+        )

@@ -10,10 +10,16 @@ from datetime import datetime, timedelta
 from pydantic import Json, HttpUrl
 
 from WH_Utils.Objects.Enums import UserRank, EventType, CompanyType
-from WH_Utils.Objects.Object_utils import verify_json, verify_auth_header, minus_key, WH_DB_URL
+from WH_Utils.Objects.Object_utils import (
+    verify_json,
+    verify_auth_header,
+    minus_key,
+    WH_DB_URL,
+)
 from WH_Utils.Utils import parse_linkedin_date
 
 from dataclasses import dataclass
+
 
 @dataclass
 class Prospect:
@@ -58,6 +64,7 @@ class Prospect:
         data_dict: Optional[Dict[str, Any]]
             data to construct a user from
     """
+
     id: Optional[str]
     name: Optional[str]
     location: Optional[str]
@@ -73,12 +80,14 @@ class Prospect:
     class Config:
         arbitrary_types_allowed = True
 
-    def __init__(self,
-                WH_ID: Optional[str] = None,
-                auth_header: Optional[Dict[str, Any]] = None,
-                data_dict: Optional[Dict[str, Any]] = None,
-                company_name: Optional[str] = None,
-                event_type: Optional[EventType] = None) -> None:
+    def __init__(
+        self,
+        WH_ID: Optional[str] = None,
+        auth_header: Optional[Dict[str, Any]] = None,
+        data_dict: Optional[Dict[str, Any]] = None,
+        company_name: Optional[str] = None,
+        event_type: Optional[EventType] = None,
+    ) -> None:
 
         self.company = company_name
         self.event_type = event_type
@@ -95,15 +104,17 @@ class Prospect:
         """
         parses full_data for prospect languages
         """
-        if not self.full_data or 'member_languages_collection' not in self.full_data:
+        if not self.full_data or "member_languages_collection" not in self.full_data:
             return None
 
-        member_lang = self.full_data['member_languages_collection']
+        member_lang = self.full_data["member_languages_collection"]
 
         # iterate through language info to return a list of language names
-        langs = [lang_data['member_language_list']['language']
-                 for lang_data in member_lang
-                 if 'member_language_list' in lang_data]
+        langs = [
+            lang_data["member_language_list"]["language"]
+            for lang_data in member_lang
+            if "member_language_list" in lang_data
+        ]
 
         if len(langs) == 0:
             return None
@@ -121,17 +132,25 @@ class Prospect:
         try:
             # first we can try by finding when they graduated high school / college.
             date = None
-            member_edu = self.full_data['member_education_collection']
-            education_table = pd.DataFrame.from_records(member_edu).fillna({"title": '', "subtitle": ''})
+            member_edu = self.full_data["member_education_collection"]
+            education_table = pd.DataFrame.from_records(member_edu).fillna(
+                {"title": "", "subtitle": ""}
+            )
 
-            high_school_edu = education_table[education_table.title.str.contains("high school", case=False)].dropna(
-                subset=['date_to'])  # might be able to expand term list here
+            high_school_edu = education_table[
+                education_table.title.str.contains("high school", case=False)
+            ].dropna(
+                subset=["date_to"]
+            )  # might be able to expand term list here
             if len(high_school_edu):
                 date = list(high_school_edu.loc[:, "date_from"])[0]
                 date = parse_linkedin_date(date)
 
-            bach_edu = education_table[education_table.subtitle.str.contains("Bachelor", case=False)].dropna(
-                subset=['date_from'])  # might be able to expand term list here
+            bach_edu = education_table[
+                education_table.subtitle.str.contains("Bachelor", case=False)
+            ].dropna(
+                subset=["date_from"]
+            )  # might be able to expand term list here
             if len(bach_edu):
                 date = list(bach_edu.loc[:, "date_from"])[0]
                 date = parse_linkedin_date(date)
@@ -147,10 +166,13 @@ class Prospect:
         except:
             return None
 
-
-    def _build_from_WH_db(self, WH_ID: Optional[str], auth_header: Dict[str, Any]) -> None:
+    def _build_from_WH_db(
+        self, WH_ID: Optional[str], auth_header: Dict[str, Any]
+    ) -> None:
         verify_auth_header(auth_header)
-        request = requests.get(WH_DB_URL + "/person", params={'personID': WH_ID}, headers=auth_header)
+        request = requests.get(
+            WH_DB_URL + "/person", params={"personID": WH_ID}, headers=auth_header
+        )
         content = request.json()
 
         for key in list(content.keys()):
@@ -211,8 +233,8 @@ class Prospect:
         data = self.__dict__
         data = minus_key("in_database", data)
         url = WH_DB_URL + "/person"
-        data['analytics'] = json.dumps(self.analytics)
-        data['full_data'] = json.dumps(self.full_data)
+        data["analytics"] = json.dumps(self.analytics)
+        data["full_data"] = json.dumps(self.full_data)
 
         if self.in_database:
             response = requests.put(url, json=data, headers=auth_header)
@@ -225,7 +247,11 @@ class Prospect:
         return response
 
     def __repr__(self) -> str:
-        return "ProspectID: {} \n Name: {} \n Location: {}".format(self.id, self.name, self.location)
+        return "ProspectID: {} \n Name: {} \n Location: {}".format(
+            self.id, self.name, self.location
+        )
 
     def __str__(self) -> str:
-        return "ProspectID: {} \n Name: {} \n Location: {}".format(self.id, self.name, self.location)
+        return "ProspectID: {} \n Name: {} \n Location: {}".format(
+            self.id, self.name, self.location
+        )

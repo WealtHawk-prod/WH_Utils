@@ -35,10 +35,13 @@ def get_person_by_id(id_number: int, auth_dict: Dict[str, Any]) -> Any:
         data = json.loads(response.text)
         return data
     else:
-        raise ValueError("Bad Response Code. Response code: {}".format(response.status_code))
+        raise ValueError(
+            "Bad Response Code. Response code: {}".format(response.status_code)
+        )
 
-def get_person_by_url(linkedin_url: str , auth_dict: Dict[str, Any]) -> Any:
-    """ Returns the coresignal for a person given the persons linkedin URL
+
+def get_person_by_url(linkedin_url: str, auth_dict: Dict[str, Any]) -> Any:
+    """Returns the coresignal for a person given the persons linkedin URL
 
     Args
     -----
@@ -65,11 +68,14 @@ def get_person_by_url(linkedin_url: str , auth_dict: Dict[str, Any]) -> Any:
         data = json.loads(response.text)
         return data
     else:
-        raise ValueError("Bad Response Code. Response code: {}".format(response.status_code))
+        raise ValueError(
+            "Bad Response Code. Response code: {}".format(response.status_code)
+        )
 
 
-
-def find_employees_by_work_history(company_url: str, auth_dict: Dict[str, Any]) -> List[int]:
+def find_employees_by_work_history(
+    company_url: str, auth_dict: Dict[str, Any]
+) -> List[int]:
     """
     Finds a list of employee coresignal id numbers based on where the employees worked.
 
@@ -91,5 +97,5 @@ def find_employees_by_work_history(company_url: str, auth_dict: Dict[str, Any]) 
     url = "https://api.coresignal.com/dbapi/v1/search/member"
     data = {"experience_company_linkedin_url": company_url}
     response = requests.post(url, headers=auth_dict, json=data)
-    t = [int(x) for x in response.text[1:-1].split(',')]
+    t = [int(x) for x in response.text[1:-1].split(",")]
     return t

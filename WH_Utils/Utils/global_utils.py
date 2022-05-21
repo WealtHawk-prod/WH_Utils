@@ -2,10 +2,12 @@ import os
 import sys
 from datetime import datetime, timedelta
 
+
 def backend_auth():
     """
     This returns an auth header to access the WEALTHAWK backend
     """
+
 
 def parse_linkedin_date(date: str) -> datetime:
     """

@@ -11,9 +11,15 @@ from datetime import datetime, timedelta
 from pydantic import Json, HttpUrl
 
 from WH_Utils.Objects.Enums import CompanyType
-from WH_Utils.Objects.Object_utils import verify_json, verify_auth_header, minus_key, WH_DB_URL
+from WH_Utils.Objects.Object_utils import (
+    verify_json,
+    verify_auth_header,
+    minus_key,
+    WH_DB_URL,
+)
 
 from dataclasses import dataclass
+
 
 @dataclass
 class Company:
@@ -34,10 +40,12 @@ class Company:
     class Config:
         arbitrary_types_allowed = True
 
-    def __init__(self,
-                WH_ID: Optional[str] = None,
-                auth_header: Optional[Dict[str, Any]] = None,
-                data_dict: Optional[Dict[str, Any]]= None) -> None:
+    def __init__(
+        self,
+        WH_ID: Optional[str] = None,
+        auth_header: Optional[Dict[str, Any]] = None,
+        data_dict: Optional[Dict[str, Any]] = None,
+    ) -> None:
         """
         verify combination of variables and call the right function with the right params.
 
@@ -51,7 +59,9 @@ class Company:
 
     def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
         verify_auth_header(auth_header)
-        request = requests.get(WH_DB_URL + "/company", params={'companyID': WH_ID}, headers=auth_header)
+        request = requests.get(
+            WH_DB_URL + "/company", params={"companyID": WH_ID}, headers=auth_header
+        )
         content = request.json()
 
         for key in list(content.keys()):
@@ -74,7 +84,6 @@ class Company:
             self.full_data = {}
 
         self.in_database = False
-
 
     def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
         """
@@ -104,7 +113,7 @@ class Company:
         data = self.__dict__
         data = minus_key("in_database", data)
         url = WH_DB_URL + "/company"
-        data['full_data'] = json.dumps(data['full_data'])
+        data["full_data"] = json.dumps(data["full_data"])
 
         if self.in_database:
             response = requests.put(url, json=data, headers=auth_header)

@@ -6,6 +6,7 @@ import datetime
 
 WH_DB_URL = "https://db.wealthawk.com"
 
+
 class AuthError(Exception):
     pass
 
@@ -15,14 +16,12 @@ class JsonError(Exception):
 
 
 def verify_json(expected_class: str, json: Dict[str, Any]) -> None:
-    """
-
-    """
-    if expected_class == 'client':
+    """ """
+    if expected_class == "client":
         _verify_as_client(json)
-    elif expected_class == 'company':
+    elif expected_class == "company":
         _verify_as_company(json)
-    elif expected_class == 'user':
+    elif expected_class == "user":
         _verify_as_user(json)
     elif expected_class == "event":
         _verify_as_event(json)
@@ -31,56 +30,116 @@ def verify_json(expected_class: str, json: Dict[str, Any]) -> None:
 
 
 def _verify_as_client(json: Dict[str, Any]) -> None:
-    expected_keys = ['id', 'name', 'location', 'coresignal_id', 'linkedin_url', 'picture', 'event_type', 'full_data', 'analytics', 'date_created', 'last_modified']
+    expected_keys = [
+        "id",
+        "name",
+        "location",
+        "coresignal_id",
+        "linkedin_url",
+        "picture",
+        "event_type",
+        "full_data",
+        "analytics",
+        "date_created",
+        "last_modified",
+    ]
     actual_keys = list(json.keys())
     same_keys = set(expected_keys) == set(actual_keys)
     if not same_keys:
         raise JsonError(
-            "JSON did not have expected keys. Expected keys are {} and actual keys are {}".format(expected_keys,
-                                                                                                  actual_keys))
+            "JSON did not have expected keys. Expected keys are {} and actual keys are {}".format(
+                expected_keys, actual_keys
+            )
+        )
 
 
 def _verify_as_company(json: Dict[str, Any]) -> None:
-    expected_keys = ['id', 'name', 'coresignal_id', 'linkedin_url', 'industry', 'description', 'location', 'logo',
-                     'type', 'website', 'full_data', 'created', 'last_modified', "CIK"]
+    expected_keys = [
+        "id",
+        "name",
+        "coresignal_id",
+        "linkedin_url",
+        "industry",
+        "description",
+        "location",
+        "logo",
+        "type",
+        "website",
+        "full_data",
+        "created",
+        "last_modified",
+        "CIK",
+    ]
     actual_keys = list(json.keys())
     same_keys = set(expected_keys) == set(actual_keys)
     if not same_keys:
         raise JsonError(
-            "JSON did not have expected keys. Expected keys are {} and actual keys are {}".format(expected_keys,
-                                                                                                  actual_keys))
+            "JSON did not have expected keys. Expected keys are {} and actual keys are {}".format(
+                expected_keys, actual_keys
+            )
+        )
 
 
 def _verify_as_user(json: Dict[str, Any]) -> None:
-    expected_keys = ['id', 'first_name', 'last_name', 'email', 'other_info', 'rank', 'firebase_id', 'created', 'last_modified']
-    actual_keys = list(json.keys())
-    same_keys =  set(expected_keys) == set(actual_keys)
-    if not same_keys:
-        raise JsonError("JSON did not have expected keys. Expected keys are {} and actual keys are {}".format(expected_keys,
-                                                                                                              actual_keys))
-
-
-def _verify_as_event(json: Dict[str, Any]) -> None:
-    expected_keys = ['id', 'description', 'type', 'title', 'date_of', 'link', 'location', 'value', 'other_info', 'created', 'last_modified']
+    expected_keys = [
+        "id",
+        "first_name",
+        "last_name",
+        "email",
+        "other_info",
+        "rank",
+        "firebase_id",
+        "created",
+        "last_modified",
+    ]
     actual_keys = list(json.keys())
     same_keys = set(expected_keys) == set(actual_keys)
     if not same_keys:
         raise JsonError(
-            "JSON did not have expected keys. Expected keys are {} and actual keys are {}".format(expected_keys,
-                                                                                                  actual_keys))
+            "JSON did not have expected keys. Expected keys are {} and actual keys are {}".format(
+                expected_keys, actual_keys
+            )
+        )
+
+
+def _verify_as_event(json: Dict[str, Any]) -> None:
+    expected_keys = [
+        "id",
+        "description",
+        "type",
+        "title",
+        "date_of",
+        "link",
+        "location",
+        "value",
+        "other_info",
+        "created",
+        "last_modified",
+    ]
+    actual_keys = list(json.keys())
+    same_keys = set(expected_keys) == set(actual_keys)
+    if not same_keys:
+        raise JsonError(
+            "JSON did not have expected keys. Expected keys are {} and actual keys are {}".format(
+                expected_keys, actual_keys
+            )
+        )
+
 
 def verify_auth_header(json: Dict[str, Any]) -> None:
     if "Authorization" not in json:
         raise AuthError("The auth header dict doesn't appear to be in the right format")
-    s = json['Authorization']
+    s = json["Authorization"]
     if "Bearer " not in s:
         raise AuthError("The auth header dict doesn't appear to be in the right format")
     return None
+
 
 def minus_key(key, dictionary):
     shallow_copy = dict(dictionary)
     del shallow_copy[key]
     return shallow_copy
+
 
 def is_string_an_url(url_string: str) -> bool:
     """
@@ -113,8 +172,8 @@ def company_urls_similar(url1, url2):
 
     comp1, comp2 = url1.split("linkedin.com")[-1], url2.split("linkedin.com")[-1]
 
-    comp1 = comp1.replace("/", '').lower().strip()
-    comp2 = comp2.replace("/", '').lower().strip()
+    comp1 = comp1.replace("/", "").lower().strip()
+    comp2 = comp2.replace("/", "").lower().strip()
 
     return comp1 == comp2
 
@@ -179,11 +238,24 @@ def get_company_data(company, exp_dict):
                 break
 
     if not flag:
-        company_names = [x['company_name'] for x in exp_dict]
-        raise ValueError("Could not find any expirences with company: {}. Available company names are: {}".format(company, company_names))
+        company_names = [x["company_name"] for x in exp_dict]
+        raise ValueError(
+            "Could not find any expirences with company: {}. Available company names are: {}".format(
+                company, company_names
+            )
+        )
 
-    keys_we_want = ['title', 'location', 'company_name', 'company_url', 'date_from', 'date_to', 'duration',
-                    'description', 'company_id']
+    keys_we_want = [
+        "title",
+        "location",
+        "company_name",
+        "company_url",
+        "date_from",
+        "date_to",
+        "duration",
+        "description",
+        "company_id",
+    ]
     return {k: exp[k] for k in keys_we_want}
 
 

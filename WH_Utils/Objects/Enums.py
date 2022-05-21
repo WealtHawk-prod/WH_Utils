@@ -25,6 +25,7 @@ class UserRank(str, Enum):
 
 
     """
+
     admin = "admin"
     analyst = "analyst"
     user = "user"
@@ -32,7 +33,7 @@ class UserRank(str, Enum):
 
 
 class Followables(str, Enum):
-    """ All available followable entities
+    """All available followable entities
 
     Args
     -----
@@ -40,13 +41,14 @@ class Followables(str, Enum):
         client
         event
     """
+
     company = "company"
     client = "client"
     event = "event"
 
 
 class EventType(str, Enum):
-    """ The possible MIM events.
+    """The possible MIM events.
 
     Args
     -----
@@ -58,6 +60,7 @@ class EventType(str, Enum):
         injury
         other
     """
+
     IPO = "IPO"
     acquisition = "acquisition"
     trust_dis = "trust_dis"
@@ -68,7 +71,7 @@ class EventType(str, Enum):
 
 
 class CompanyType(str, Enum):
-    """ Possible stages of company.
+    """Possible stages of company.
 
     Args
     ------
@@ -81,26 +84,28 @@ class CompanyType(str, Enum):
         partnership: like a sole_proprietor but with > 1 person
 
     """
-    public = 'public'
-    private = 'private'
-    state_owned = 'state_owned'
-    subsidiary_of_public = 'subsidiary_of_public'
-    sole_proprietor = 'sole proprietor'
-    partnership = 'partnership'
+
+    public = "public"
+    private = "private"
+    state_owned = "state_owned"
+    subsidiary_of_public = "subsidiary_of_public"
+    sole_proprietor = "sole proprietor"
+    partnership = "partnership"
 
 
 class JobRank(str, Enum):
     """
     The possible ranks a person can have within their company ranked from most to least equity
     """
-    founder = 'founder'
-    c_suite = 'c-suite'
+
+    founder = "founder"
+    c_suite = "c-suite"
     vice_president = "vp"
     director = "director"
     manager = "manager"
     senior = "senior"
     entry_level = "entry"
-    intern = 'intern'
+    intern = "intern"
     other = "other"
 
 
@@ -108,6 +113,7 @@ class EventStage(str, Enum):
     """
     The possible stages an event can take
     """
+
     not_started = "Not Started"
     early_stage = "Early Stage"
     in_progress = "In Progress"

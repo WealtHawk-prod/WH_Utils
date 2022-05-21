@@ -12,11 +12,17 @@ from datetime import datetime
 from pydantic import Json, HttpUrl
 
 from WH_Utils.Objects.Enums import EventType
-from WH_Utils.Objects.Object_utils import verify_json, verify_auth_header, minus_key, WH_DB_URL
+from WH_Utils.Objects.Object_utils import (
+    verify_json,
+    verify_auth_header,
+    minus_key,
+    WH_DB_URL,
+)
 
 from dataclasses import dataclass
 
-#todo: insert some safty to ensure the keys are what we expect them to be
+# todo: insert some safty to ensure the keys are what we expect them to be
+
 
 @dataclass
 class Event:
@@ -36,30 +42,36 @@ class Event:
     class Config:
         arbitrary_types_allowed = True
 
-    def __init__(self,
-                WH_ID: Optional[str] = None,
-                auth_header: Optional[Dict[str, Any]] = None,
-                data_dict: Optional[Dict[str, Any]] = None):
+    def __init__(
+        self,
+        WH_ID: Optional[str] = None,
+        auth_header: Optional[Dict[str, Any]] = None,
+        data_dict: Optional[Dict[str, Any]] = None,
+    ):
         """
         verify combination of variables and call the right function with the right params.
 
         """
         if WH_ID and auth_header:
-            self._build_from_WH_db(WH_ID,auth_header)
+            self._build_from_WH_db(WH_ID, auth_header)
         elif data_dict:
             self._build_from_data_dict(data_dict)
         else:
-            raise ValueError("Invalid Combination of initialization variables. Did you include the auth_header?")
+            raise ValueError(
+                "Invalid Combination of initialization variables. Did you include the auth_header?"
+            )
 
     def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
         verify_auth_header(auth_header)
-        request = requests.get(WH_DB_URL + "/event", params={'eventID': WH_ID}, headers=auth_header)
+        request = requests.get(
+            WH_DB_URL + "/event", params={"eventID": WH_ID}, headers=auth_header
+        )
         content = request.json()
 
         for key in list(content.keys()):
             self.__dict__[key] = content[key]
 
-        self.date_of = datetime.strptime(self.date_of, '%Y-%m-%d')
+        self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d")
 
         if not self.other_info or self.other_info == '"null"':
             self.other_info = {}
@@ -75,7 +87,7 @@ class Event:
         if not self.id:
             self.id = str(uuid.uuid4())
 
-        self.date_of = datetime.strptime(self.date_of, '%Y-%m-%d')
+        self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d")
 
         if not self.other_info:
             self.other_info = {}
@@ -110,8 +122,8 @@ class Event:
         data = self.__dict__
         data = minus_key("in_database", data)
         url = "https://db.wealthawk.com/event"
-        data['other_info'] = json.dumps(data['other_info'])
-        data['date_of'] = str(self.date_of.date())
+        data["other_info"] = json.dumps(data["other_info"])
+        data["date_of"] = str(self.date_of.date())
 
         if self.in_database:
             response = requests.put(url, json=data, headers=auth_header)
@@ -122,7 +134,6 @@ class Event:
             raise ConnectionError(response.content.decode())
 
         return response
-
 
     def __repr__(self) -> str:
         return "EventID: {} \n Title: {}".format(self.id, self.title)

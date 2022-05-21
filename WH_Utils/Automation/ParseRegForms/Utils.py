@@ -1,6 +1,7 @@
 import unicodedata
 import re
 
+
 def indexOfSubstring(list, substring):
     substring = substring.lower()
     for i, s in enumerate(list):
@@ -33,9 +34,9 @@ def getDetails(text):
 
 
 def strip(line):
-    escapes = ''.join([chr(char) for char in range(1, 32)])
-    translator = str.maketrans('', '', escapes)
+    escapes = "".join([chr(char) for char in range(1, 32)])
+    translator = str.maketrans("", "", escapes)
     t = line.translate(translator)
-    t = unicodedata.normalize("NFKD",t).strip()
-    t = re.sub("\([0-9]\)", '', t)
+    t = unicodedata.normalize("NFKD", t).strip()
+    t = re.sub("\([0-9]\)", "", t)
     return t

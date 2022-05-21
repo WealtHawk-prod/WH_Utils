@@ -2,7 +2,7 @@
 Simple functions for interacting with coresignal in a progromatic way
 """
 
-#TODO: make these return WH objects
+# TODO: make these return WH objects
 
 import pandas as pd
 import requests
@@ -39,11 +39,13 @@ def get_person_by_id(id_number: int, auth_dict: Dict[str, Any]) -> Any:
         data = json.loads(response.text)
         return data
     else:
-        raise ValueError("Bad Response Code. Response code: {}".format(response.status_code))
+        raise ValueError(
+            "Bad Response Code. Response code: {}".format(response.status_code)
+        )
 
 
-def get_person_by_url(linkedin_url: str , auth_dict: Dict[str, Any]) -> Any:
-    """ Returns the coresignal for a person given the persons linkedin URL
+def get_person_by_url(linkedin_url: str, auth_dict: Dict[str, Any]) -> Any:
+    """Returns the coresignal for a person given the persons linkedin URL
 
     Args
     -----
@@ -70,11 +72,14 @@ def get_person_by_url(linkedin_url: str , auth_dict: Dict[str, Any]) -> Any:
         data = json.loads(response.text)
         return data
     else:
-        raise ValueError("Bad Response Code. Response code: {}".format(response.status_code))
+        raise ValueError(
+            "Bad Response Code. Response code: {}".format(response.status_code)
+        )
 
 
-
-def find_employees_by_work_history(company_url: str, auth_dict: Dict[str, Any]) -> List[int]:
+def find_employees_by_work_history(
+    company_url: str, auth_dict: Dict[str, Any]
+) -> List[int]:
     """
     Finds a list of employee coresignal id numbers based on where the employees worked.
 
@@ -96,14 +101,17 @@ def find_employees_by_work_history(company_url: str, auth_dict: Dict[str, Any]) 
     url = "https://api.coresignal.com/dbapi/v1/search/member"
     data = {"experience_company_linkedin_url": company_url}
     response = requests.post(url, headers=auth_dict, json=data)
-    t = [int(x) for x in response.text[1:-1].split(',')]
+    t = [int(x) for x in response.text[1:-1].split(",")]
     return t
 
 
-def coresingal_to_prospect(id: Union[int, str], auth_dict: Dict[str, Any],
-                           event_type: Optional[EventType] = None,
-                           company_id: Optional[str] = None) -> Prospect:
-    """ Build a prospect from an ID or linkedin url
+def coresingal_to_prospect(
+    id: Union[int, str],
+    auth_dict: Dict[str, Any],
+    event_type: Optional[EventType] = None,
+    company_id: Optional[str] = None,
+) -> Prospect:
+    """Build a prospect from an ID or linkedin url
 
     Args:
         id: Union[int, str]
@@ -124,8 +132,8 @@ def coresingal_to_prospect(id: Union[int, str], auth_dict: Dict[str, Any],
             the prospect
 
     """
-    #TODO: cut down extra data
-    #TODO: add company id to extra data
+    # TODO: cut down extra data
+    # TODO: add company id to extra data
 
     if isinstance(id, int):
         data = get_person_by_id(id, auth_dict)
@@ -138,16 +146,16 @@ def coresingal_to_prospect(id: Union[int, str], auth_dict: Dict[str, Any],
 
     data_dict = {
         "id": None,
-        "name": data['name'],
-        "location": data['location'],
-        "coresignal_id": data['id'],
-        "linkedin_url": data['url'],
-        "picture": data['logo_url'],
+        "name": data["name"],
+        "location": data["location"],
+        "coresignal_id": data["id"],
+        "linkedin_url": data["url"],
+        "picture": data["logo_url"],
         "event_type": event_type,
         "full_data": data,
         "analytics": None,
         "date_created": None,
-        "last_modified": None
+        "last_modified": None,
     }
 
     prospect = Prospect(data_dict=data_dict, event_type=event_type)
