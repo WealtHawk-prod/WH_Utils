@@ -14,6 +14,7 @@ from typing import List, Dict, Optional, Any, Union
 from WH_Utils.Objects.Company import Company
 from WH_Utils.Objects.Prospect import Prospect
 from WH_Utils.Objects.Enums import EventType
+from datetime import datetime
 
 
 def get_person_by_id(id_number: int, auth_dict: Dict[str, Any]) -> Any:
@@ -163,5 +164,31 @@ def coresingal_to_prospect(
     return prospect
 
 
-def build_company(id: Union[int, str], auth_dict: Dict[str, str]):
-    return
+def coresignal_to_company(id: Union[int, str], auth_dict: Dict[str, str]):
+    path = "https://api.coresignal.com/dbapi/v1/linkedin/company/collect/{}".format(id)
+    response = requests.get(path, headers=auth_dict)
+    assert response.status_code == 200, "Bad Response Code: {}".format(response.text)
+    response_data = response.json()
+
+    data_dict = {
+        "id": None,
+        "name": response_data['name'],
+        "coresignal_id": response_data['id'],
+        "linkedin_url":response_data['url'],
+        "industry":response_data['industry'],
+        "description": response_data['description'],
+        "location":response_data['headquarters_city'],
+        "logo":response_data['logo_url'],
+        "type": response_data['type'],
+        "website": response_data['website'],
+        "full_data": response_data,
+        "created": datetime.now().date(),
+        "last_modified": datetime.now().date(),
+        "CIK": "Unknown"
+    }
+
+    return Company(data_dict=data_dict)
+
+
+
+

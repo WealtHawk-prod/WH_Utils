@@ -8,6 +8,8 @@ import re
 from typing import List, Dict, Optional
 import time
 from tqdm import tqdm
+#from secedgar.cik_lookup import CIKLookup
+
 
 
 def get_info_from_line(line: str) -> dict:
@@ -81,3 +83,5 @@ def get_all_recent_reg_D(webpage: str) -> List[Dict]:
         time.sleep(0.5)
 
     return reg_d_info
+
+#def get_CIK_from_ticker

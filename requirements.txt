@@ -110,4 +110,5 @@ virtualenv==20.14.1
 wcwidth==0.2.5
 webencodings==0.5.1
 -e git+https://github.com/McClain-Thiel/WH_Utils.git@0a2aac400e09b59d889a951c18ffd82f707cd28a#egg=wh_utils
+secedgar
 zipp==3.7.0
