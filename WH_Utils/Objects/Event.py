@@ -3,13 +3,12 @@ Description of Event Class
 """
 
 from datetime import datetime, date
-from typing import Any, Optional, Union, List, Dict, Any
+from typing import Any, Optional, Dict
 import requests
 import uuid
 import json
-from datetime import datetime
 
-from pydantic import Json, HttpUrl
+from pydantic import HttpUrl
 
 from WH_Utils.Objects.Enums import EventType
 from WH_Utils.Objects.Object_utils import (
@@ -71,7 +70,7 @@ class Event:
         for key in list(content.keys()):
             self.__dict__[key] = content[key]
 
-        self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d")
+        self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d").date()
 
         if not self.other_info or self.other_info == '"null"':
             self.other_info = {}
@@ -87,7 +86,7 @@ class Event:
         if not self.id:
             self.id = str(uuid.uuid4())
 
-        self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d")
+        self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d").date()
 
         if not self.other_info:
             self.other_info = {}
@@ -123,7 +122,9 @@ class Event:
         data = minus_key("in_database", data)
         url = "https://db.wealthawk.com/event"
         data["other_info"] = json.dumps(data["other_info"])
-        data["date_of"] = str(self.date_of.date())
+        data["date_of"] = str(self.date_of)
+        data['created'] = None
+        data['last_modified'] = None
 
         if self.in_database:
             response = requests.put(url, json=data, headers=auth_header)

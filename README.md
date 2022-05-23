@@ -3,7 +3,7 @@ WH_Utils
 
 
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Read the Docs](https://img.shields.io/badge/Docs-Here-blue.svg)](https://mcclain-thiel.github.io/WH_Utils/)
+[![Read the Docs](https://img.shields.io/badge/Docs-Here-blue.svg)](https://docs.wealthawk.com)
 [![Tests](https://github.com/McClain-Thiel/WH_Utils/workflows/Tests/badge.svg)](https://github.com/McClain-Thiel/WH_Utils/actions?workflow=Tests)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![Lines of Code](https://tokei.rs/b1/github/McClain-Thiel/WH_Utils)](https://github.com/McClain-Thiel/WH_Utils)
@@ -19,7 +19,7 @@ objects. For more info on this check out the docs.
 How to install
 -------------------
 
-``python -m pip install git+https://github.com/django/django.git@45dfb3641aa4d98``
+``python -m pip install git+https://github.com/WealtHawk-prod/WH_Utils``
 
 How to Use
 -------------

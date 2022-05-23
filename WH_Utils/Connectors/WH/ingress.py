@@ -93,7 +93,7 @@ def push_event(
     linkedin_of_exited_company: Optional[str] = None,
     associated_people_coresignal_ids: Optional[List[int]] = None,
     associated_people_WH_ids: Optional[List[str]] = None,
-    run_analytics: Optional[bool] = False,
+    run_analytics: Optional[bool] = False
 ) -> None:
     """
     This is a big boy. Given enough information it will handle all the data inputation for an event.
@@ -145,7 +145,7 @@ def push_event(
             linkedin_of_exited_company = linkedin_of_exited_company[:-1]
         shorthand_path = linkedin_of_exited_company.split("/")[-1]
 
-        company = coresignal_to_company(shorthand_path)
+        company = coresignal_to_company(shorthand_path, CS_auth_dict)
         company_push_response = company.send_to_db(WH_auth_dict)
         assert (
             company_push_response.status_code == 200
@@ -166,7 +166,6 @@ def push_event(
         "type": type,
         "date_of": date,
         "link": link,
-        "industry": industry,
         "location": location,
         "value": value,
         "other_info": other_info,
