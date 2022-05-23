@@ -232,8 +232,8 @@ def push_event(
                 print("Problem with prospect id {}: {}".format(prosp.id, e))
 
     # pushig prospects
+    print("pushing prospects")
     for prosp in tqdm(prospects):
-        print("pushing prospects")
         try:
             if company:
                 push_person(WH_auth_dict, prosp, event_id, company_id)

@@ -21,12 +21,13 @@ model = AutoModelForSequenceClassification.from_pretrained(
 
 map_to_string = [
     "c-suite",
-    "vp" "director",
+    "vp",
+    "director",
     "manager",
     "senior",
     "entry",
     "intern",
-    "other",
+    "other"
 ]
 
 
