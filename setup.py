@@ -32,6 +32,8 @@ setup(
         'numpy',
         'requests',
         'pandas',
+        "validators",
+        "pydantic"
         ],
     license=about['__license__'],
     zip_safe=False,

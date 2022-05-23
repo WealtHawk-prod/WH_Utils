@@ -191,9 +191,11 @@ def push_event(
         associated_people_coresignal_ids = find_employees_by_work_history(
             company.linkedin_url, auth_dict=CS_auth_dict
         )
+        print("Found {} people for this event".format(len(associated_people_coresignal_ids)))
 
     if associated_people_coresignal_ids:
-        for id in associated_people_coresignal_ids:
+        print("making prospects")
+        for id in tqdm(associated_people_coresignal_ids):
             prosp = coresingal_to_prospect(id, CS_auth_dict, type)
             prospects.append(prosp)
 
@@ -204,6 +206,7 @@ def push_event(
 
     # run analytics if requested
     if run_analytics:
+        print("running analytics")
         for prosp in tqdm(prospects):
             if company:
                 tags = get_prospect_tags(
@@ -216,6 +219,7 @@ def push_event(
 
     # pushig prospects
     for prosp in tqdm(prospects):
+        print("pushing prospects")
         try:
             if company:
                 push_person(WH_auth_dict, prosp, event_id, company_id)
@@ -228,5 +232,6 @@ def push_event(
                     prosp.id, e
                 )
             )
+    print(f"Finished event {title}")
 
     return None

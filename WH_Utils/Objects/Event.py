@@ -70,7 +70,8 @@ class Event:
         for key in list(content.keys()):
             self.__dict__[key] = content[key]
 
-        self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d").date()
+        if isinstance(self.date_of, str):
+            self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d").date()
 
         if not self.other_info or self.other_info == '"null"':
             self.other_info = {}
@@ -86,7 +87,8 @@ class Event:
         if not self.id:
             self.id = str(uuid.uuid4())
 
-        self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d").date()
+        if isinstance(self.date_of, str):
+            self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d").date()
 
         if not self.other_info:
             self.other_info = {}
