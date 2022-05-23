@@ -125,8 +125,8 @@ class Event:
         url = "https://db.wealthawk.com/event"
         data["other_info"] = json.dumps(data["other_info"])
         data["date_of"] = str(self.date_of)
-        data['created'] = None
-        data['last_modified'] = None
+        data["created"] = None
+        data["last_modified"] = None
 
         if self.in_database:
             response = requests.put(url, json=data, headers=auth_header)

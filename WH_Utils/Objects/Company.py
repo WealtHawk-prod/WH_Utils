@@ -115,7 +115,7 @@ class Company:
         url = WH_DB_URL + "/company"
         data["full_data"] = json.dumps(data["full_data"])
         data["created"] = None
-        data['last_modified'] = None
+        data["last_modified"] = None
 
         if self.in_database:
             response = requests.put(url, json=data, headers=auth_header)

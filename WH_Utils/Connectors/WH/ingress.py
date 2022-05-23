@@ -93,7 +93,7 @@ def push_event(
     linkedin_of_exited_company: Optional[str] = None,
     associated_people_coresignal_ids: Optional[List[int]] = None,
     associated_people_WH_ids: Optional[List[str]] = None,
-    run_analytics: Optional[bool] = False
+    run_analytics: Optional[bool] = False,
 ) -> None:
     """
     This is a big boy. Given enough information it will handle all the data inputation for an event.
@@ -191,31 +191,45 @@ def push_event(
         associated_people_coresignal_ids = find_employees_by_work_history(
             company.linkedin_url, auth_dict=CS_auth_dict
         )
-        print("Found {} people for this event".format(len(associated_people_coresignal_ids)))
+        print(
+            "Found {} people for this event".format(
+                len(associated_people_coresignal_ids)
+            )
+        )
 
     if associated_people_coresignal_ids:
         print("making prospects")
         for id in tqdm(associated_people_coresignal_ids):
-            prosp = coresingal_to_prospect(id, CS_auth_dict, type)
-            prospects.append(prosp)
+            try:
+                prosp = coresingal_to_prospect(id, CS_auth_dict, type)
+                prospects.append(prosp)
+            except Exception as e:
+                print("Problem with coresignal id {}: {}".format(id, e))
 
     if associated_people_WH_ids:
         for id in associated_people_coresignal_ids:
-            prosp = Prospect(WH_ID=id, auth_header=WH_auth_dict)
-            prospects.append(prosp)
+            try:
+                prosp = Prospect(WH_ID=id, auth_header=WH_auth_dict)
+                prospects.append(prosp)
+            except Exception as e:
+                print("Problem with WH id {}: {}".format(id, e))
 
     # run analytics if requested
     if run_analytics:
         print("running analytics")
         for prosp in tqdm(prospects):
-            if company:
-                tags = get_prospect_tags(
-                    prosp, company_id=company.coresignal_id, event_date=date
-                )
-            else:
-                tags = get_prospect_tags(prosp, event_date=date)
+            try:
+                if company:
+                    tags = get_prospect_tags(
+                        prosp, company_id=company.coresignal_id, event_date=date
+                    )
+                else:
+                    tags = get_prospect_tags(prosp, event_date=date)
 
-            prosp.analytics = tags
+                prosp.analytics = tags
+
+            except Exception as e:
+                print("Problem with prospect id {}: {}".format(prosp.id, e))
 
     # pushig prospects
     for prosp in tqdm(prospects):
