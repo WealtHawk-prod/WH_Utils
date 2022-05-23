@@ -3,17 +3,19 @@ from WH_Utils.Objects.Enums import JobRank
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta, date
+from WH_Utils.Utils.test_utils import HF_TOKEN
 
 from typing import Dict, List, Any
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import torch
 
+
 torch_device = "cuda" if torch.cuda.is_available() else "cpu"
 tokenizer = AutoTokenizer.from_pretrained(
-    "McClain/JobTitleClassification", use_auth_token=True
+    "McClain/JobTitleClassification", use_auth_token=HF_TOKEN
 )
 model = AutoModelForSequenceClassification.from_pretrained(
-    "McClain/JobTitleClassification", use_auth_token=True
+    "McClain/JobTitleClassification", use_auth_token=HF_TOKEN
 ).to(torch_device)
 
 

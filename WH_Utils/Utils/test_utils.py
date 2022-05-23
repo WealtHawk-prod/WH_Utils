@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 import requests
+import warnings
 
 load_dotenv()
 
@@ -35,3 +36,10 @@ CS_API_KEY = "Bearer " + os.getenv("CORESIGNAL_API_KEY")
 CS_auth_dict = {"accept": "application/json", "Authorization": CS_API_KEY}
 
 BASE_URL = "https://db.wealthawk.com"
+
+try:
+    HF_TOKEN = os.environ['HF_AUTH_TOKEN']
+except Exception as e:
+    HF_TOKEN = ""
+    warnings.warn("No huggingface token found. This will limit use of analytics package")
+

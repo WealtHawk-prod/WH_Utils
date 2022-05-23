@@ -3,6 +3,7 @@ on: push
 env:
   CORESIGNAL_API_KEY: ${{ secrets.CORESIGNAL_API_KEY }}
   WH_ACCOUNT_PASSWORD: ${{ secrets.WH_ACCOUNT_PASSWORD }}
+  HF_AUTH_TOKEN: ${{ secrets.HF_AUTH_TOKEN }}
 jobs:
   test:
     runs-on: ubuntu-latest
