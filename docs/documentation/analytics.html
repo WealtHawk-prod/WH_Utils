@@ -10,7 +10,7 @@
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-
+  
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
@@ -20,10 +20,10 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Connectors" href="connectors.html" />
-    <link rel="prev" title="Automation" href="automation.html" />
+    <link rel="prev" title="Automation" href="automation.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
@@ -83,8 +83,8 @@
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-
-
+             
+  
 <style>
 /* CSS overrides for sphinx_rtd_theme */
 
@@ -160,11 +160,14 @@
 <span id="prospects"></span><h2>Prospects<a class="headerlink" href="#module-WH_Utils.Analytics.Prospects.Nodes" title="Permalink to this headline"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.Nodes.classify_job_title">
-<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.Nodes.</span></span><span class="sig-name descname"><span class="pre">classify_job_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sentences</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.Nodes.classify_job_title" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.Nodes.</span></span><span class="sig-name descname"><span class="pre">classify_job_title</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.Nodes.classify_job_title" title="Permalink to this definition"></a></dt>
 <dd><p>Classify a list of job titles into one of the following ranks: [‘C-Suite’, “Director”, “VP”, “Manager”, “Senior”, “Entry”, “Intern”, “Other”]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sentences</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – the list of job titles as strings</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sentences</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – the list of job titles as strings</p></li>
+<li><p><strong>title</strong> (<em>str</em>) – </p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p><strong>ranks</strong> – The list of the classified ranks</p>
@@ -176,35 +179,37 @@
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.Nodes.get_company_data">
-<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.Nodes.</span></span><span class="sig-name descname"><span class="pre">get_company_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prospect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.Nodes.get_company_data" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.Nodes.get_company_data_by_id">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.Nodes.</span></span><span class="sig-name descname"><span class="pre">get_company_data_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prospect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.Nodes.get_company_data_by_id" title="Permalink to this definition"></a></dt>
 <dd><p>This function gets all the data related to an employment record</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>prospect</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Prospect.Prospect" title="WH_Utils.Objects.Prospect.Prospect"><em>WH_Utils.Objects.Prospect.Prospect</em></a>) – </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prospect</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Prospect.Prospect" title="WH_Utils.Objects.Prospect.Prospect"><em>WH_Utils.Objects.Prospect.Prospect</em></a>) – </p></li>
+<li><p><strong>company_id</strong> (<em>int</em>) – </p></li>
+<li><p><strong>date</strong> (<em>None.datetime.date</em>) – </p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><em>Dict</em>[str, str]</p>
+<dd class="field-even"><p><em>Dict</em>[str, <em>Any</em>]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <span class="target" id="module-WH_Utils.Analytics.Prospects.Hawkrank"></span><span class="target" id="module-WH_Utils.Analytics.Prospects.API"></span><dl class="py function">
-<dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.API.run_analytics">
-<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.API.</span></span><span class="sig-name descname"><span class="pre">run_analytics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prospect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.API.run_analytics" title="Permalink to this definition"></a></dt>
-<dd><p>Get all analytics for a prospect</p>
-<dl class="simple">
-<dt>Currently supported analytics:</dt><dd><ul class="simple">
-<li><p>ect</p></li>
-</ul>
-</dd>
-</dl>
+<dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.API.get_prospect_tags">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.API.</span></span><span class="sig-name descname"><span class="pre">get_prospect_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prospect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.API.get_prospect_tags" title="Permalink to this definition"></a></dt>
+<dd><p>This function takes a prospect and generates all the tags for this prospeect</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>prospect</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Prospect.Prospect" title="WH_Utils.Objects.Prospect.Prospect"><em>WH_Utils.Objects.Prospect.Prospect</em></a>) – </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prospect</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Prospect.Prospect" title="WH_Utils.Objects.Prospect.Prospect"><em>WH_Utils.Objects.Prospect.Prospect</em></a>) – </p></li>
+<li><p><strong>company_id</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – </p></li>
+<li><p><strong>event_date</strong> (<em>Optional</em><em>[</em><em>datetime.date</em><em>]</em>) – </p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><em>Dict</em>[str, str]</p>
+<dd class="field-even"><p><em>Dict</em>[str, <em>Any</em>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -229,7 +234,7 @@
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-
+   
 
 </footer>
         </div>
@@ -240,7 +245,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
+  </script> 
 
 </body>
 </html>

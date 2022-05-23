@@ -172,23 +172,19 @@ def coresignal_to_company(id: Union[int, str], auth_dict: Dict[str, str]):
 
     data_dict = {
         "id": None,
-        "name": response_data['name'],
-        "coresignal_id": response_data['id'],
-        "linkedin_url":response_data['url'],
-        "industry":response_data['industry'],
-        "description": response_data['description'],
-        "location":response_data['headquarters_city'],
-        "logo":response_data['logo_url'],
-        "type": response_data['type'],
-        "website": response_data['website'],
+        "name": response_data["name"],
+        "coresignal_id": response_data["id"],
+        "linkedin_url": response_data["url"],
+        "industry": response_data["industry"],
+        "description": response_data["description"],
+        "location": response_data["headquarters_city"],
+        "logo": response_data["logo_url"],
+        "type": response_data["type"],
+        "website": response_data["website"],
         "full_data": response_data,
         "created": datetime.now().date(),
         "last_modified": datetime.now().date(),
-        "CIK": "Unknown"
+        "CIK": "Unknown",
     }
 
     return Company(data_dict=data_dict)
-
-
-
-

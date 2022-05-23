@@ -17,11 +17,9 @@ model = AutoModelForSequenceClassification.from_pretrained(
 ).to(torch_device)
 
 
-
 map_to_string = [
     "c-suite",
-    "vp"
-    "director",
+    "vp" "director",
     "manager",
     "senior",
     "entry",

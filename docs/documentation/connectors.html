@@ -10,7 +10,7 @@
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
-
+  
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
@@ -20,10 +20,10 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Utils" href="utils.html" />
-    <link rel="prev" title="Analytics" href="analytics.html" />
+    <link rel="prev" title="Analytics" href="analytics.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
@@ -83,8 +83,8 @@
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-
-
+             
+  
 <style>
 /* CSS overrides for sphinx_rtd_theme */
 
@@ -114,8 +114,8 @@
 <span id="coresignal"></span><h2>Coresignal<a class="headerlink" href="#module-WH_Utils.Connectors.Coresignal.functions" title="Permalink to this headline"></a></h2>
 <p>Simple functions for interacting with coresignal in a progromatic way</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="WH_Utils.Connectors.Coresignal.functions.build_prospect">
-<span class="sig-prename descclassname"><span class="pre">WH_Utils.Connectors.Coresignal.functions.</span></span><span class="sig-name descname"><span class="pre">build_prospect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Connectors.Coresignal.functions.build_prospect" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="WH_Utils.Connectors.Coresignal.functions.coresingal_to_prospect">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Connectors.Coresignal.functions.</span></span><span class="sig-name descname"><span class="pre">coresingal_to_prospect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Connectors.Coresignal.functions.coresingal_to_prospect" title="Permalink to this definition"></a></dt>
 <dd><p>Build a prospect from an ID or linkedin url</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -126,6 +126,8 @@ coresignal id (int) or linkedin url (str)</p></li>
 the authorization header. Check here for instructions on how to make this</p></li>
 <li><p><strong>event_type</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="objects.html#WH_Utils.Objects.Enums.EventType" title="WH_Utils.Objects.Enums.EventType"><em>WH_Utils.Objects.Enums.EventType</em></a><em>]</em>) – Optional[EventType]
 if you know the event type for this prospect you can add it here</p></li>
+<li><p><strong>company_id</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – Optional[Union[int, str]]
+If they are associated with a company event and we know the company, put it here (the WH id)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -201,38 +203,6 @@ if you know the event type for this prospect you can add it here</p></li>
 <section id="module-WH_Utils.Connectors.WH.api">
 <span id="wealthawk"></span><h2>WEALTHAWK<a class="headerlink" href="#module-WH_Utils.Connectors.WH.api" title="Permalink to this headline"></a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="WH_Utils.Connectors.WH.api.get_company_by_person">
-<span class="sig-prename descclassname"><span class="pre">WH_Utils.Connectors.WH.api.</span></span><span class="sig-name descname"><span class="pre">get_company_by_person</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Connectors.WH.api.get_company_by_person" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client</strong> (<em>Union</em><em>[</em><a class="reference internal" href="objects.html#WH_Utils.Objects.Prospect.Prospect" title="WH_Utils.Objects.Prospect.Prospect"><em>WH_Utils.Objects.Prospect.Prospect</em></a><em>, </em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>auth_header</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="objects.html#WH_Utils.Objects.Company.Company" title="WH_Utils.Objects.Company.Company">WH_Utils.Objects.Company.Company</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="WH_Utils.Connectors.WH.api.get_event_by_person">
-<span class="sig-prename descclassname"><span class="pre">WH_Utils.Connectors.WH.api.</span></span><span class="sig-name descname"><span class="pre">get_event_by_person</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth_header</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Connectors.WH.api.get_event_by_person" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client</strong> (<em>Union</em><em>[</em><a class="reference internal" href="objects.html#WH_Utils.Objects.Prospect.Prospect" title="WH_Utils.Objects.Prospect.Prospect"><em>WH_Utils.Objects.Prospect.Prospect</em></a><em>, </em><em>str</em><em>]</em>) – </p></li>
-<li><p><strong>auth_header</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – </p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="objects.html#WH_Utils.Objects.Event.Event" title="WH_Utils.Objects.Event.Event">WH_Utils.Objects.Event.Event</a></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="WH_Utils.Connectors.WH.api.post_prospect">
 <span class="sig-prename descclassname"><span class="pre">WH_Utils.Connectors.WH.api.</span></span><span class="sig-name descname"><span class="pre">post_prospect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">auth_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prospect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Connectors.WH.api.post_prospect" title="Permalink to this definition"></a></dt>
 <dd><p>Adds a prospect with all connections to other entities as appropriate</p>
@@ -285,7 +255,7 @@ If the client was related to a company, put it here</p></li>
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     provided by <a href="https://readthedocs.org">Read the Docs</a>.
-
+   
 
 </footer>
         </div>
@@ -296,7 +266,7 @@ If the client was related to a company, put it here</p></li>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
+  </script> 
 
 </body>
 </html>
