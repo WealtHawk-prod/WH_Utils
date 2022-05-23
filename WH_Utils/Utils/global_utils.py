@@ -3,6 +3,7 @@ import sys
 from datetime import datetime, timedelta
 
 
+
 def backend_auth():
     """
     This returns an auth header to access the WEALTHAWK backend

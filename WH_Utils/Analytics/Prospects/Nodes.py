@@ -2,7 +2,7 @@ from WH_Utils.Objects.Prospect import Prospect
 from WH_Utils.Objects.Enums import JobRank
 import pandas as pd
 import numpy as np
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
 from typing import Dict, List, Any
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
@@ -15,15 +15,18 @@ tokenizer = AutoTokenizer.from_pretrained(
 model = AutoModelForSequenceClassification.from_pretrained(
     "McClain/JobTitleClassification", use_auth_token=True
 ).to(torch_device)
+
+
+
 map_to_string = [
-    "C-Suite",
-    "Director",
-    "VP",
-    "Manager",
-    "Senior",
-    "Entry",
-    "Intern",
-    "Other",
+    "c-suite",
+    "vp"
+    "director",
+    "manager",
+    "senior",
+    "entry",
+    "intern",
+    "other",
 ]
 
 
@@ -47,7 +50,7 @@ def get_company_data_by_id(
     date_started = df["date_from_df"].min()
     title = df.iloc[0]["title"]
 
-    days_pre_exit = (date - date_started).days
+    days_pre_exit = (date - date_started.date()).days
 
     data = {
         "title": title,
@@ -58,7 +61,7 @@ def get_company_data_by_id(
     return data
 
 
-def classify_job_title(sentences: List[str]) -> List[JobRank]:
+def classify_job_title(title: str) -> JobRank:
     """
     Classify a list of job titles into one of the following ranks: ['C-Suite', "Director", "VP", "Manager", "Senior", "Entry", "Intern", "Other"]
 
@@ -73,9 +76,15 @@ def classify_job_title(sentences: List[str]) -> List[JobRank]:
             The list of the classified ranks
 
     """
+    if "founder" in title.lower():
+        return JobRank("founder")
+
+    if "intern" in title.lower():
+        return JobRank("intern")
+
     encoded = [
-        tokenizer.encode(x, return_tensors="pt").to(torch_device) for x in sentences
+        tokenizer.encode(x, return_tensors="pt").to(torch_device) for x in [title]
     ]
     predictions = [int(model(e).logits.argmax()) for e in encoded]
-    str_pred = [JobRank(map_to_string[int(x)]) for x in predictions]
+    str_pred = JobRank(map_to_string[int(predictions[0])])
     return str_pred

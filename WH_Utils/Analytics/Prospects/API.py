@@ -29,7 +29,7 @@ def get_prospect_tags(
 
     data = {
         "title": company_info["title"],
-        "employee_rank": classify_job_title([company_info["title"]])[0],
+        "employee_rank": classify_job_title(company_info["title"]),
         "languages_spoken": prospect.languages,
         "age": prospect.age,
         "joined_pre_exit": company_info["joined_pre_exit?"],
