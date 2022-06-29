@@ -242,7 +242,7 @@ def push_event(
 
         except Exception as e:
             print(
-                "Problem pushing prospect with connectors. Prospect: {}, Error: {]".format(
+                "Problem pushing prospect with connectors. Prospect: {}, Error: {}".format(
                     prosp.id, e
                 )
             )

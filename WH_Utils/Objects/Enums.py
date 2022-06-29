@@ -63,6 +63,7 @@ class EventType(str, Enum):
 
     IPO = "IPO"
     acquisition = "acquisition"
+    fund_raise = "fund_raise"
     trust_dis = "trust_dis"
     divorce = "divorce"
     lottery = "lottery"
