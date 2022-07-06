@@ -87,8 +87,8 @@ class Event:
         if not self.id:
             self.id = str(uuid.uuid4())
 
-        if isinstance(self.date_of, str):
-            self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d").date()
+        if isinstance(self.date_of, datetime) or isinstance(self.date_of, date):
+            self.date_of = str(self.date_of)
 
         if not self.other_info:
             self.other_info = {}
