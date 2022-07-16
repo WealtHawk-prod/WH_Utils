@@ -8,92 +8,50 @@ import requests
 import uuid
 import json
 
-from pydantic import HttpUrl
+from pydantic import HttpUrl, BaseModel, Json
 
 from WH_Utils.Objects.Enums import EventType
 from WH_Utils.Objects.Object_utils import (
-    verify_json,
     verify_auth_header,
     minus_key,
     WH_DB_URL,
 )
 
-from dataclasses import dataclass
 
-# todo: insert some safty to ensure the keys are what we expect them to be
-
-
-@dataclass
-class Event:
-    id: Optional[str]
-    title: Optional[str]
-    description: Optional[str]
-    type: Optional[EventType]
-    date_of: Optional[date]
+class Event(BaseModel):
+    id: Optional[str] = str(uuid.uuid4())
+    title: str
+    description: str
+    type: EventType
+    date_of: date
     link: Optional[HttpUrl]
     industry: Optional[str]
     location: Optional[str]
-    value: Optional[int]
-    other_info: Optional[Any]
-    created: Optional[datetime]
-    last_modified: Optional[datetime]
+    value: Optional[int] = 0
+    other_info: dict = {}
+    created: Optional[datetime] = datetime.now()
+    last_modified: Optional[datetime] = datetime.now()
+    in_database: bool = False
 
-    class Config:
-        arbitrary_types_allowed = True
+    def __repr__(self) -> str:
+        return "EventID: {} \n Title: {}".format(self.id, self.title)
 
-    def __init__(
-        self,
-        WH_ID: Optional[str] = None,
-        auth_header: Optional[Dict[str, Any]] = None,
-        data_dict: Optional[Dict[str, Any]] = None,
-    ):
-        """
-        verify combination of variables and call the right function with the right params.
+    def __str__(self) -> str:
+        return "EventID: {} \n Title: {}".format(self.id, self.title)
 
-        """
-        if WH_ID and auth_header:
-            self._build_from_WH_db(WH_ID, auth_header)
-        elif data_dict:
-            self._build_from_data_dict(data_dict)
-        else:
-            raise ValueError(
-                "Invalid Combination of initialization variables. Did you include the auth_header?"
-            )
-
-    def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
+    @staticmethod
+    def from_db(WH_ID: str, auth_header: Dict[str, Any]):
         verify_auth_header(auth_header)
         request = requests.get(
             WH_DB_URL + "/event", params={"eventID": WH_ID}, headers=auth_header
         )
         content = request.json()
 
-        for key in list(content.keys()):
-            self.__dict__[key] = content[key]
+        if isinstance(content['date_of'], str):
+            content['date_of'] = datetime.strptime(content['date_of'], "%Y-%m-%d").date()
 
-        if isinstance(self.date_of, str):
-            self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d").date()
+        return Event(**content)
 
-        if not self.other_info or self.other_info == '"null"':
-            self.other_info = {}
-
-        self.in_database = True
-        return
-
-    def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
-        verify_json("event", data)
-        for key in list(data.keys()):
-            self.__dict__[key] = data[key]
-
-        if not self.id:
-            self.id = str(uuid.uuid4())
-
-        if isinstance(self.date_of, str):
-            self.date_of = datetime.strptime(self.date_of, "%Y-%m-%d").date()
-
-        if not self.other_info:
-            self.other_info = {}
-
-        self.in_database = False
 
     def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
         """
@@ -138,8 +96,4 @@ class Event:
 
         return response
 
-    def __repr__(self) -> str:
-        return "EventID: {} \n Title: {}".format(self.id, self.title)
 
-    def __str__(self) -> str:
-        return "EventID: {} \n Title: {}".format(self.id, self.title)

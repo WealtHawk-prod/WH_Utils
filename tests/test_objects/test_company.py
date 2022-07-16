@@ -5,13 +5,17 @@ import requests
 import warnings
 
 
+import os
+script_path = os.path.realpath(__file__)
+parent_path = os.path.dirname(script_path)
+json_path = os.path.join(os.path.sep, parent_path, "../test_data/objects_data", "company.json")
 
 class TestCompany:
 
     def test_company_valid_json(self):
-        with open("tests/test_data/objects_data/company.json", 'r') as f:
+        with open(json_path, 'r') as f:
             data = json.load(f)
-        company = Company(data_dict=data)
+        company = Company(**data)
         assert isinstance(company, Company)
 
     def test_company_invalid_json(self):
@@ -19,13 +23,13 @@ class TestCompany:
 
     def test_company_from_db(self):
         company_id="0701bd03-423f-46d3-afcc-7fac9c2a279f"
-        company = Company(WH_ID=company_id, auth_header=WH_auth_dict)
+        company = Company.from_db(WH_ID=company_id, auth_header=WH_auth_dict)
         assert isinstance(company, Company)
 
     def test_push_to_db(self):
-        with open("tests/test_data/objects_data/company.json", 'r') as f:
+        with open(json_path, 'r') as f:
             data = json.load(f)
-        company = Company(data_dict=data)
+        company = Company(**data)
 
         response = company.send_to_db(WH_auth_dict)
 

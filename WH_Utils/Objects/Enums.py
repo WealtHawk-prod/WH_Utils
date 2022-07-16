@@ -7,6 +7,9 @@ enum classes for the most part.
 from enum import Enum
 
 
+# from aenum import Enum
+
+
 class UserRank(str, Enum):
     """Enum for the possible ranks of users
 
@@ -23,13 +26,23 @@ class UserRank(str, Enum):
 
         user_expired: If they were once a user but no longer. Basically a user soft delete.
 
+        user_new: If they are a new user not yet initialized by stripe webhook.
+
 
     """
 
-    admin = "admin"
-    analyst = "analyst"
-    user = "user"
-    user_expired = "user_expired"
+    ADMIN = "admin"
+    ANALYST = "analyst"
+    USER = "user"
+    USER_EXPIRED = "user_expired"
+    USER_NEW = "user_new"
+    USER_WAITLIST = "user_waitlist"
+
+
+class OrgRank:
+    ADMIN = "admin"
+    USER = "user"
+    NONE = "none"
 
 
 class Followables(str, Enum):
@@ -42,9 +55,9 @@ class Followables(str, Enum):
         event
     """
 
-    company = "company"
-    client = "client"
-    event = "event"
+    COMPANY = "company"
+    PROSPECT = "prospect"
+    EVENT = "event"
 
 
 class EventType(str, Enum):
@@ -62,13 +75,13 @@ class EventType(str, Enum):
     """
 
     IPO = "IPO"
-    acquisition = "acquisition"
-    fund_raise = "fund_raise"
-    trust_dis = "trust_dis"
-    divorce = "divorce"
-    lottery = "lottery"
-    injury = "injury"
-    other = "other"
+    ACQUISITION = "Acquisition"
+    FUND_RAISE = "fund_raise"
+    TRUST_DIS = "trust_dis"
+    DIVORCE = "Divorce"
+    LOTTERY = "lottery"
+    INJURY = "injury"
+    OTHER = "other"
 
 
 class CompanyType(str, Enum):
@@ -86,12 +99,12 @@ class CompanyType(str, Enum):
 
     """
 
-    public = "public"
-    private = "private"
-    state_owned = "state_owned"
-    subsidiary_of_public = "subsidiary_of_public"
-    sole_proprietor = "sole proprietor"
-    partnership = "partnership"
+    PUBLIC = "public"
+    PRIVATE = "private"
+    STATE_OWNED = "state_owned"
+    SUBSIDIARY_OF_PUBLIC = "subsidiary_of_public"
+    SOLE_PROPRIETOR = "sole proprietor"
+    PARTNERSHIP = "partnership"
 
 
 class JobRank(str, Enum):
@@ -99,15 +112,15 @@ class JobRank(str, Enum):
     The possible ranks a person can have within their company ranked from most to least equity
     """
 
-    founder = "founder"
-    c_suite = "c-suite"
-    vice_president = "vp"
-    director = "director"
-    manager = "manager"
-    senior = "senior"
-    entry_level = "entry"
-    intern = "intern"
-    other = "other"
+    FOUNDER = "founder"
+    C_SUITE = "c-suite"
+    VICE_PRESIDENT = "vp"
+    DIRECTOR = "director"
+    MANAGER = "manager"
+    SENIOR = "senior"
+    ENTRY_LEVEL = "entry"
+    INTERN = "intern"
+    OTHER = "other"
 
 
 class EventStage(str, Enum):
@@ -115,8 +128,8 @@ class EventStage(str, Enum):
     The possible stages an event can take
     """
 
-    not_started = "Not Started"
-    early_stage = "Early Stage"
-    in_progress = "In Progress"
-    late_stage = "Late Stage"
-    closed = "Closed"
+    NOT_STARTED = "Not Started"
+    EARLY_STAGE = "Early Stage"
+    IN_PROGRESS = "In Progress"
+    LATE_STAGE = "Late Stage"
+    CLOSED = "Closed"
