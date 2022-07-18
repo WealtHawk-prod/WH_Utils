@@ -3,8 +3,9 @@ import requests
 import uuid
 import json
 from datetime import datetime, timedelta
+from pydantic import Json, HttpUrl, BaseModel
 
-from WH_Utils.Objects.Enums import UserRank
+from WH_Utils.Objects.Enums import UserRank, OrgRank
 from WH_Utils.Objects.Object_utils import (
     verify_json,
     verify_auth_header,
@@ -12,103 +13,28 @@ from WH_Utils.Objects.Object_utils import (
     WH_DB_URL,
 )
 
-from dataclasses import dataclass
 
-
-@dataclass
-class User:
-    """
-    Class attributes
-        - id: Optional[str]
-        - first_name: Optional[str]
-        - last_name: Optional[str]
-        - email: Optional[str]
-        - other_info: Optional[Any]
-        - rank: Optional[UserRank]
-        - firebase_id: Optional[str]
-        - created: Optional[datetime]
-        - last_modified: Optional[datetime]
-
-
-    Initialization function:
-        This function allows several combinations of parameters tha behave differently.
-
-        if only `data_dict` parameter is passed in:
-            a `User` object will be constructed from the data passed in via the dictionary. The data dict must
-            have the same keys as the object itself.
-
-        if `WH_ID` and `auth_header` are passed in:
-            this will cause the program to attempt to pull the user from the WH database. User with that UUID
-            must already exist in the database and the credentials must be valid and properly formatted.
-
-        All other combinations are invalid.
-
-    Args
-    -----
-        WH_ID: Optional[str]
-            the UUID of a user in the database
-
-        auth_header: Optional[Dict[str, Any]]
-            the authorization header for the WEALTHAWK database
-
-        data_dict: Optional[Dict[str, Any]]
-            data to construct a user from
-    """
-
+class User(BaseModel):
     id: Optional[str]
-    first_name: Optional[str]
-    last_name: Optional[str]
-    email: Optional[str]
-    other_info: Optional[Any]
-    rank: Optional[UserRank]
-    firebase_id: Optional[str]
+    first_name: str
+    last_name: str
+    email: str
+    other_info: Optional[dict]
+    firebase_id: str
+    stripe_id: str
+    location: Optional[str]
     created: Optional[datetime]
     last_modified: Optional[datetime]
+    in_database: bool = False
+    rank: UserRank = UserRank.USER_NEW
+    organization_rank: OrgRank = OrgRank.USER
 
     class Config:
         arbitrary_types_allowed = True
+        orm_mode = True
 
-    def __init__(
-        self,
-        WH_ID: Optional[str] = None,
-        auth_header: Optional[Dict[str, Any]] = None,
-        data_dict: Optional[Dict[str, Any]] = None,
-    ) -> None:
-        """
-        Initialization function for user
-
-        This function allows several combinations of parameters tha behave differently.
-
-        if only `data_dict` parameter is passed in:
-            a `User` object will be constructed from the data passed in via the dictionary. The data dict must
-            have the same keys as the object itself.
-
-        if `WH_ID` and `auth_header` are passed in:
-            this will cause the program to attempt to pull the user from the WH database. User with that UUID
-            must already exist in the database and the credentials must be valid and properly formatted.
-
-        All other combinations are invalid.
-
-        Args
-        -----
-            WH_ID: Optional[str]
-                the UUID of a user in the database
-
-            auth_header: Optional[Dict[str, Any]]
-                the authorization header for the WEALTHAWK database
-
-            data_dict: Optional[Dict[str, Any]]
-                data to construct a user from
-
-        """
-        if WH_ID and auth_header:
-            self._build_from_WH_db(WH_ID, auth_header)
-        elif data_dict:
-            self._build_from_data_dict(data_dict)
-        else:
-            raise ValueError("Invalid combination of init parameters")
-
-    def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
+    @staticmethod
+    def from_db(WH_ID: str, auth_header: Dict[str, Any]):
         verify_auth_header(auth_header)
         request = requests.get(
             WH_DB_URL + "/user", params={"userID": WH_ID}, headers=auth_header
@@ -117,25 +43,9 @@ class User:
         if "detail" in list(content.keys()) and content["detail"] == "User Not Found":
             raise ValueError("User Not Found or bad auth")
 
-        for key in list(content.keys()):
-            self.__dict__[key] = content[key]
-
-        # this is a hacky fix for the fact that the api wont send empty JSON types it just sends "null" which
-        # breaks the verification on push
-        if not self.other_info:
-            self.other_info = {}
-
-        self.in_database = True
-
-    def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
-        verify_json("user", data)
-        for key in list(data.keys()):
-            self.__dict__[key] = data[key]
-
-        if not self.id:
-            self.id = str(uuid.uuid4())
-
-        self.in_database = False
+        u =  User(**content)
+        u.in_database = True
+        return u
 
     def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
         """
@@ -173,7 +83,10 @@ class User:
         data = self.__dict__
         data = minus_key("in_database", data)
         url = "https://db.wealthawk.com/user"
+
         data["other_info"] = json.dumps(self.other_info)
+        data["created"] = None
+        data["last_modified"] = None
 
         if self.in_database:
             response = requests.put(url, json=data, headers=auth_header)

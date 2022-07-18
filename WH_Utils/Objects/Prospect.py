@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
 
-from pydantic import Json, HttpUrl
+from pydantic import Json, HttpUrl, BaseModel
 
 from WH_Utils.Objects.Enums import UserRank, EventType, CompanyType
 from WH_Utils.Objects.Object_utils import (
@@ -18,11 +18,8 @@ from WH_Utils.Objects.Object_utils import (
 )
 from WH_Utils.Utils import parse_linkedin_date
 
-from dataclasses import dataclass
 
-
-@dataclass
-class Prospect:
+class Prospect(BaseModel):
     """
     Class attributes
         - id: Optional[str]
@@ -66,38 +63,34 @@ class Prospect:
     """
 
     id: Optional[str]
-    name: Optional[str]
-    location: Optional[str]
+    name: str
+    location: str
     coresignal_id: Optional[int]
     linkedin_url: Optional[HttpUrl]
     picture: Optional[HttpUrl]
     event_type: Optional[EventType]
-    full_data: Optional[Any]
-    analytics: Optional[Any]
+    full_data: dict
+    analytics: dict
     date_created: Optional[datetime]
     last_modified: Optional[datetime]
+    company_name: Optional[str] = None
+    event_type: Optional[EventType] = None
+    hawkrank: Optional[int] = 0
+    in_database: bool = False
 
     class Config:
         arbitrary_types_allowed = True
+        orm_mode = True
 
-    def __init__(
-        self,
-        WH_ID: Optional[str] = None,
-        auth_header: Optional[Dict[str, Any]] = None,
-        data_dict: Optional[Dict[str, Any]] = None,
-        company_name: Optional[str] = None,
-        event_type: Optional[EventType] = None,
-    ) -> None:
+    def __repr__(self) -> str:
+        return "ProspectID: {} \n Name: {} \n Location: {}".format(
+            self.id, self.name, self.location
+        )
 
-        self.company = company_name
-        self.event_type = event_type
-
-        if WH_ID and auth_header:
-            self._build_from_WH_db(WH_ID, auth_header)
-        elif data_dict:
-            self._build_from_data_dict(data_dict)
-        else:
-            raise ValueError("Invalid combination of init parameters")
+    def __str__(self) -> str:
+        return "ProspectID: {} \n Name: {} \n Location: {}".format(
+            self.id, self.name, self.location
+        )
 
     @property
     def languages(self) -> Optional[List[str]]:
@@ -166,39 +159,17 @@ class Prospect:
         except:
             return None
 
-    def _build_from_WH_db(
-        self, WH_ID: Optional[str], auth_header: Dict[str, Any]
-    ) -> None:
+    @staticmethod
+    def from_db(WH_ID: Optional[str], auth_header: Dict[str, Any]):
         verify_auth_header(auth_header)
         request = requests.get(
             WH_DB_URL + "/person", params={"personID": WH_ID}, headers=auth_header
         )
         content = request.json()
+        p = Prospect(**content)
+        p.in_database = True
+        return p
 
-        for key in list(content.keys()):
-            self.__dict__[key] = content[key]
-
-        if not self.full_data or self.full_data == '"null"':
-            self.full_data = {}
-
-        if not self.analytics or self.analytics == '"null"':
-            self.analytics = {}
-
-        self.in_database = True
-
-    def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
-        verify_json("client", data)
-        for key in list(data.keys()):
-            self.__dict__[key] = data[key]
-
-        if not self.id:
-            self.id = str(uuid.uuid4())
-        self.in_database = False
-        if not self.analytics:
-            self.analytics = {}
-
-        if not self.full_data:
-            self.full_data = {}
 
     def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
         """
@@ -235,6 +206,9 @@ class Prospect:
         url = WH_DB_URL + "/person"
         data["analytics"] = json.dumps(self.analytics)
         data["full_data"] = json.dumps(self.full_data)
+        data["date_created"] = None
+        data["last_modified"] = None
+
 
         if self.in_database:
             response = requests.put(url, json=data, headers=auth_header)
@@ -246,12 +220,3 @@ class Prospect:
 
         return response
 
-    def __repr__(self) -> str:
-        return "ProspectID: {} \n Name: {} \n Location: {}".format(
-            self.id, self.name, self.location
-        )
-
-    def __str__(self) -> str:
-        return "ProspectID: {} \n Name: {} \n Location: {}".format(
-            self.id, self.name, self.location
-        )

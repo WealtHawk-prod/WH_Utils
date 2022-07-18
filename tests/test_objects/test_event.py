@@ -4,28 +4,33 @@ from WH_Utils.Utils.test_utils import WH_auth_dict, BASE_URL
 import requests
 import warnings
 
+import os
+script_path = os.path.realpath(__file__)
+parent_path = os.path.dirname(script_path)
+json_path = os.path.join(os.path.sep, parent_path, "../test_data/objects_data", "event.json")
+
 
 
 class TestEvent:
 
     def test_event_valid_json(self):
-        with open("tests/test_data/objects_data/event.json", 'r') as f:
+        with open(json_path, 'r') as f:
             data = json.load(f)
-        prospect = Event(data_dict=data)
-        assert isinstance(prospect, Event)
+        event = Event(**data)
+        assert isinstance(event, Event)
 
     def test_event_invalid_json(self):
         assert True
 
     def test_event_from_db(self):
         event_id="e936e1a3-1114-426f-927a-186a92287d66"
-        event = Event(WH_ID=event_id, auth_header=WH_auth_dict)
+        event = Event.from_db(WH_ID=event_id, auth_header=WH_auth_dict)
         assert isinstance(event, Event)
 
     def test_push_to_db(self):
-        with open("tests/test_data/objects_data/event.json", 'r') as f:
+        with open(json_path, 'r') as f:
             data = json.load(f)
-        event = Event(data_dict=data)
+        event = Event(**data)
 
         response = event.send_to_db(WH_auth_dict)
 

@@ -8,82 +8,52 @@ import uuid
 import json
 from datetime import datetime, timedelta
 
-from pydantic import Json, HttpUrl
+from pydantic import Json, HttpUrl, BaseModel
 
 from WH_Utils.Objects.Enums import CompanyType
 from WH_Utils.Objects.Object_utils import (
-    verify_json,
     verify_auth_header,
     minus_key,
     WH_DB_URL,
 )
 
-from dataclasses import dataclass
 
-
-@dataclass
-class Company:
+class Company(BaseModel):
     id: Optional[str]
-    name: Optional[str]
-    coresignal_id: Optional[int]
-    linkedin_url: Optional[HttpUrl]
-    industry: Optional[str]
-    description: Optional[str]
-    location: Optional[str]
+    name: str
+    coresignal_id: int
+    linkedin_url: HttpUrl
+    industry: str
+    description: str
+    location: str
     logo: Optional[HttpUrl]
-    type: Optional[CompanyType]
-    website: Optional[HttpUrl]
+    type: Optional[CompanyType] = CompanyType.PRIVATE
+    website: HttpUrl
     created: Optional[datetime]
     last_modified: Optional[datetime]
-    full_data: Optional[Any]
+    full_data: dict = {}
+    in_database: bool = False
 
     class Config:
         arbitrary_types_allowed = True
+        orm_mode = True
 
-    def __init__(
-        self,
-        WH_ID: Optional[str] = None,
-        auth_header: Optional[Dict[str, Any]] = None,
-        data_dict: Optional[Dict[str, Any]] = None,
-    ) -> None:
-        """
-        verify combination of variables and call the right function with the right params.
+    def __repr__(self) -> str:
+        return "CompanyID: {} \n Name: {}".format(self.id, self.name)
 
-        """
-        if WH_ID and auth_header:
-            self._build_from_WH_db(WH_ID, auth_header)
-        elif data_dict:
-            self._build_from_data_dict(data_dict)
-        else:
-            raise ValueError("Invalid combination of init parameters")
+    def __str__(self) -> str:
+        return "CompanyID: {} \n Name: {}".format(self.id, self.name)
 
-    def _build_from_WH_db(self, WH_ID: str, auth_header: Dict[str, Any]) -> None:
+    @staticmethod
+    def from_db(WH_ID: str, auth_header: Dict[str, Any]):
         verify_auth_header(auth_header)
         request = requests.get(
             WH_DB_URL + "/company", params={"companyID": WH_ID}, headers=auth_header
         )
         content = request.json()
-
-        for key in list(content.keys()):
-            self.__dict__[key] = content[key]
-
-        if not self.full_data or self.full_data == '"null"':
-            self.full_data = {}
-
-        self.in_database = True
-
-    def _build_from_data_dict(self, data: Dict[str, Any]) -> None:
-        verify_json("company", data)
-        for key in list(data.keys()):
-            self.__dict__[key] = data[key]
-
-        if not self.id:
-            self.id = str(uuid.uuid4())
-
-        if not self.full_data:
-            self.full_data = {}
-
-        self.in_database = False
+        c =  Company(**content)
+        c.in_database = True
+        return c
 
     def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
         """
@@ -126,9 +96,3 @@ class Company:
             raise ConnectionError(response.content.decode())
 
         return response
-
-    def __repr__(self) -> str:
-        return "CompanyID: {} \n Name: {}".format(self.id, self.name)
-
-    def __str__(self) -> str:
-        return "CompanyID: {} \n Name: {}".format(self.id, self.name)
