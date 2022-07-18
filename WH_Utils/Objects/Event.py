@@ -50,7 +50,9 @@ class Event(BaseModel):
         if isinstance(content['date_of'], str):
             content['date_of'] = datetime.strptime(content['date_of'], "%Y-%m-%d").date()
 
-        return Event(**content)
+        e =  Event(**content)
+        e.in_database = True
+        return e
 
 
     def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:

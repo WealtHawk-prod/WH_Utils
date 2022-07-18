@@ -14,7 +14,7 @@ class TestProspect:
     def test_user_valid_json(self):
         with open(json_path, 'r') as f:
             data = json.load(f)
-        prospect = Prospect(data_dict=data)
+        prospect = Prospect(**data)
         assert isinstance(prospect, Prospect)
 
     def test_user_invalid_json(self):
@@ -22,13 +22,13 @@ class TestProspect:
 
     def test_user_from_db(self):
         prospect_id="21e38609-11f9-42c1-b785-d8a6e78fc7ff"
-        prospect = Prospect(WH_ID=prospect_id, auth_header=WH_auth_dict)
+        prospect = Prospect.from_db(WH_ID=prospect_id, auth_header=WH_auth_dict)
         assert isinstance(prospect, Prospect)
 
     def test_push_to_db(self):
         with open(json_path, 'r') as f:
             data = json.load(f)
-        prospect = Prospect(data_dict=data)
+        prospect = Prospect(**data)
 
         response = prospect.send_to_db(WH_auth_dict)
 

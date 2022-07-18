@@ -27,7 +27,7 @@ class Company(BaseModel):
     description: str
     location: str
     logo: Optional[HttpUrl]
-    type: Optional[CompanyType] = CompanyType.private
+    type: Optional[CompanyType] = CompanyType.PRIVATE
     website: HttpUrl
     created: Optional[datetime]
     last_modified: Optional[datetime]
@@ -51,7 +51,9 @@ class Company(BaseModel):
             WH_DB_URL + "/company", params={"companyID": WH_ID}, headers=auth_header
         )
         content = request.json()
-        return Company(**content)
+        c =  Company(**content)
+        c.in_database = True
+        return c
 
     def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
         """

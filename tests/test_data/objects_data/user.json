@@ -3,6 +3,7 @@
   "first_name": "test",
   "last_name": "user",
   "email": "test.user@wealthawk.edu",
+  "stripe_id": "cus_00000000000000",
   "other_info": {
     "company": "wealthawk",
     "location": "Boston",

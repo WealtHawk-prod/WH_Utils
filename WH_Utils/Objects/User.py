@@ -43,7 +43,9 @@ class User(BaseModel):
         if "detail" in list(content.keys()) and content["detail"] == "User Not Found":
             raise ValueError("User Not Found or bad auth")
 
-        return User(**content)
+        u =  User(**content)
+        u.in_database = True
+        return u
 
     def send_to_db(self, auth_header: Dict[str, Any]) -> requests.Response:
         """
@@ -81,7 +83,10 @@ class User(BaseModel):
         data = self.__dict__
         data = minus_key("in_database", data)
         url = "https://db.wealthawk.com/user"
+
         data["other_info"] = json.dumps(self.other_info)
+        data["created"] = None
+        data["last_modified"] = None
 
         if self.in_database:
             response = requests.put(url, json=data, headers=auth_header)
