@@ -12,3 +12,4 @@ Examples
    :maxdepth: 2
 
    model_usage
+   analytics

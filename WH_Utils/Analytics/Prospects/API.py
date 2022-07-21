@@ -1,6 +1,6 @@
 from WH_Utils.Objects.Prospect import Prospect
 from WH_Utils.Analytics.Prospects.Nodes import (
-    get_company_data_by_id,
+    _get_company_data_by_id,
     classify_job_title,
 )
 
@@ -15,7 +15,7 @@ def get_prospect_tags(
 ) -> Dict[str, Any]:
     """This function takes a prospect and generates all the tags for this prospeect"""
     if company_id and event_date:
-        company_info = get_company_data_by_id(prospect, company_id, event_date)
+        company_info = _get_company_data_by_id(prospect, company_id, event_date)
 
     else:
         return {

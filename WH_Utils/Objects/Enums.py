@@ -7,9 +7,6 @@ enum classes for the most part.
 from enum import Enum
 
 
-# from aenum import Enum
-
-
 class UserRank(str, Enum):
     """Enum for the possible ranks of users
 
@@ -121,6 +118,29 @@ class JobRank(str, Enum):
     ENTRY_LEVEL = "entry"
     INTERN = "intern"
     OTHER = "other"
+
+    def __int__(self):
+        if self == JobRank.FOUNDER:
+            return 10
+        elif self == JobRank.C_SUITE:
+            return 8
+        elif self == JobRank.VICE_PRESIDENT:
+            return 7
+        elif self == JobRank.DIRECTOR:
+            return 6
+        elif self == JobRank.MANAGER:
+            return 5
+        elif self == JobRank.SENIOR:
+            return 4
+        elif self == JobRank.ENTRY_LEVEL:
+            return 3
+        elif self == JobRank.INTERN:
+            return 0
+        elif self == JobRank.OTHER:
+            return 1
+        else:
+            return 0
+
 
 
 class EventStage(str, Enum):

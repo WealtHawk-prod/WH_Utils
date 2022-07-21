@@ -124,7 +124,7 @@
 <dd><p>Classifies the stage of an event.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Event.Event" title="WH_Utils.Objects.Event.Event"><em>WH_Utils.Objects.Event.Event</em></a>) – the event you want to classify</p>
+<dd class="field-odd"><p><strong>event</strong> (<em>WH_Utils.Objects.Event.Event</em>) – the event you want to classify</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>EventStage</p>
@@ -144,7 +144,7 @@
 <dd><p>Returns the number of affiliated people for an event</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Event.Event" title="WH_Utils.Objects.Event.Event"><em>WH_Utils.Objects.Event.Event</em></a>) – event: the event you want to classify</p>
+<dd class="field-odd"><p><strong>event</strong> (<em>WH_Utils.Objects.Event.Event</em>) – event: the event you want to classify</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>num_beneficiaries</p>
@@ -164,39 +164,84 @@
 <dd><p>Classify a list of job titles into one of the following ranks: [‘C-Suite’, “Director”, “VP”, “Manager”, “Senior”, “Entry”, “Intern”, “Other”]</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>title</strong> (<em>str</em>) – the job title to classify</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>rank</strong> – the classified ranks</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="objects.html#WH_Utils.Objects.Enums.JobRank" title="WH_Utils.Objects.Enums.JobRank">JobRank</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-WH_Utils.Analytics.Prospects.Hawkrank"></span><dl class="py function">
+<dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.Hawkrank.HawkRank_for_Company_event">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.Hawkrank.</span></span><span class="sig-name descname"><span class="pre">HawkRank_for_Company_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_rank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">industry_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">years_at_company</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_years</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.Hawkrank.HawkRank_for_Company_event" title="Permalink to this definition"></a></dt>
+<dd><p>Public wrapper function for <cite>_hawk_rank_from_company_event</cite>.</p>
+<p>This function will calculate the HawkRank for a prospect that is affiliated with a company event like an IPO or
+acquisition.</p>
+<p>This replaces any missing values with a reasonable but conservative value. If run with no parameters, it will return
+a value of about 30 which is a reasonable default. An enrty level person with a bit of experience bit still affiliated
+with an exit. This is a reasonable default.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sentences</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – the list of job titles as strings</p></li>
-<li><p><strong>title</strong> (<em>str</em>) – </p></li>
+<li><p><strong>job_rank</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="objects.html#WH_Utils.Objects.Enums.JobRank" title="WH_Utils.Objects.Enums.JobRank"><em>WH_Utils.Objects.Enums.JobRank</em></a><em>]</em>) – JobRank
+The rank the person has in the company.</p></li>
+<li><p><strong>location</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em>) – str
+the name of the city the person is based in.</p></li>
+<li><p><strong>industry_index</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – ind
+the industry index for the job (1-8) higher numbers for higher paying industries</p></li>
+<li><p><strong>years_at_company</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – int
+Number of years the person spent at the company</p></li>
+<li><p><strong>total_years</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – int
+Number of years the person has worked</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><strong>ranks</strong> – The list of the classified ranks</p>
+<dd class="field-even"><p><dl class="simple">
+<dt>Dict[str, float]</dt><dd><p>A dictionary of the score breakdown for the prospect.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>List[<a class="reference internal" href="objects.html#WH_Utils.Objects.Enums.JobRank" title="WH_Utils.Objects.Enums.JobRank">JobRank</a>]</p>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If There is too much missing data to calculate the score.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Dict</em>[str, float]</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.Nodes.get_company_data_by_id">
-<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.Nodes.</span></span><span class="sig-name descname"><span class="pre">get_company_data_by_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prospect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.Nodes.get_company_data_by_id" title="Permalink to this definition"></a></dt>
-<dd><p>This function gets all the data related to an employment record</p>
+<dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.Hawkrank.hawkrank">
+<span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.Hawkrank.</span></span><span class="sig-name descname"><span class="pre">hawkrank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prospect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.Hawkrank.hawkrank" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the HawkRank for a prospect.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>prospect</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Prospect.Prospect" title="WH_Utils.Objects.Prospect.Prospect"><em>WH_Utils.Objects.Prospect.Prospect</em></a>) – </p></li>
-<li><p><strong>company_id</strong> (<em>int</em>) – </p></li>
-<li><p><strong>date</strong> (<em>None.datetime.date</em>) – </p></li>
-</ul>
+<dd class="field-odd"><p><strong>prospect</strong> (<a class="reference internal" href="objects.html#WH_Utils.Objects.Prospect.Prospect" title="WH_Utils.Objects.Prospect.Prospect"><em>WH_Utils.Objects.Prospect.Prospect</em></a>) – Prospect
+The prospect to calculate the HawkRank for.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p><em>Dict</em>[str, <em>Any</em>]</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>Dict[str, float]</dt><dd><p>A dictionary of the score breakdown for the prospect.</p>
 </dd>
 </dl>
+</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If There is too much missing data to calculate the score.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><em>Dict</em>[str, float]</p>
+</dd>
+</dl>
+<p># TODO: Make this possible.</p>
 </dd></dl>
 
-<span class="target" id="module-WH_Utils.Analytics.Prospects.Hawkrank"></span><span class="target" id="module-WH_Utils.Analytics.Prospects.API"></span><dl class="py function">
+<span class="target" id="module-WH_Utils.Analytics.Prospects.API"></span><dl class="py function">
 <dt class="sig sig-object py" id="WH_Utils.Analytics.Prospects.API.get_prospect_tags">
 <span class="sig-prename descclassname"><span class="pre">WH_Utils.Analytics.Prospects.API.</span></span><span class="sig-name descname"><span class="pre">get_prospect_tags</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prospect</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">company_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event_date</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WH_Utils.Analytics.Prospects.API.get_prospect_tags" title="Permalink to this definition"></a></dt>
 <dd><p>This function takes a prospect and generates all the tags for this prospeect</p>

@@ -31,7 +31,7 @@ map_to_string = [
 ]
 
 
-def get_company_data_by_id(
+def _get_company_data_by_id(
     prospect: Prospect, company_id: int, date: datetime.date
 ) -> Dict[str, Any]:
     """
@@ -68,13 +68,13 @@ def classify_job_title(title: str) -> JobRank:
 
     Args
     ----
-        sentences: List[str]
-            the list of job titles as strings
+        title: str
+            the job title to classify
 
     Returns
     --------
-        ranks: List[JobRank]
-            The list of the classified ranks
+        rank: JobRank
+            the classified ranks
 
     """
     if "founder" in title.lower():
